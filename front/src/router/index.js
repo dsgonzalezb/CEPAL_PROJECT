@@ -19,16 +19,21 @@ const routes = [
         component: Home,
       },
       {
-        path: '/settings',
+        path: 'settings',
         name: 'Settings',
         component: Settings,
       },
       {
-        path: '/descriptives',
+        path: 'descriptives',
         component: Descriptives,
         children: [
           {
-            path: '/d1',
+            path: ':id',
+            name: 'DesIndex',
+            redirect: { name: 'Des1' }
+          },
+          {
+            path: 'd1',
             name: 'Des1',
             component: Des1,
           },
@@ -39,7 +44,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  //mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

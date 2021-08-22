@@ -1,6 +1,9 @@
 <template>
     <div>
-        <router-view/>
+        <div class="content-c">
+            <router-view/>
+        </div>
+        
     </div>
 </template>
 

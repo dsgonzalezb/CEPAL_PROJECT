@@ -6,6 +6,7 @@ import messages from './i18n'
 import BootstrapVue from 'bootstrap-vue'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import './stylessheets/style.sass'
+import "./stylessheets/fontawesome/css/all.min.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'chart.js';
