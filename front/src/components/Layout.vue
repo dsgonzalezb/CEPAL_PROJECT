@@ -21,6 +21,6 @@ export default {
 .layout 
     height: 100%
 .body-c
-    height: calc( 100% - 300px )
-    
+    height: calc( 100% - 270px )
+
 </style>

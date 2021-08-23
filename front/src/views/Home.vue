@@ -1,5 +1,5 @@
 <template>
-    <div class="home content-c">
+    <div class="home content-c scroll1">
         <h2>
             {{$t('home.title')}}
         </h2>

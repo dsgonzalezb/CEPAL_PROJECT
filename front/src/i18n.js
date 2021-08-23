@@ -15,7 +15,9 @@ const messages = {
         descriptive:{
             see_data: 'Ver datos',
             populationSeries: 'Serie de población',
-            populationDensity: 'Densidad poblacional'
+            populationDensity: 'Densidad poblacional',
+            name: 'Descriptiva',
+            des1: 'Capacidades poblacionales',
         }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="settings content-c">
+    <div class="settings content-c scroll1">
         <div class="controls">
             <div class="control">
                 <b-form-checkbox switch>Punto A</b-form-checkbox>

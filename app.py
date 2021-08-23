@@ -50,8 +50,8 @@ def find_descriptive(value):
             'fill': False
         },
     ]
-    dfilter1 = dfilter.drop(['ID_DESCRIPTIVA', 'DENSITY', 'ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'AREA'], axis=1)
-    dfilter2 = dfilter.drop(['ID_DESCRIPTIVA', 'ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'POBLACION_CABECERA', 'POBLACION_RESTO'], axis=1)
+    dfilter1 = dfilter.drop(['DENSITY', 'ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'AREA'], axis=1)
+    dfilter2 = dfilter.drop(['ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'POBLACION_CABECERA', 'POBLACION_RESTO', 'AREA'], axis=1)
     dfilter1.rename(columns={'ANIO': 'AÑO'}, inplace=True)
     dfilter2.rename(columns={'ANIO': 'AÑO', 'DENSITY': 'DENSIDAD POBLACIONAL'}, inplace=True)
     returnData = {

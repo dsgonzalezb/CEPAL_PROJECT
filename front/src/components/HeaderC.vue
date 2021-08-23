@@ -26,8 +26,8 @@
                     ></vue-bootstrap-typeahead>
                     <!--<b-button variant="outline-primary"><i class="fas fa-search"></i> {{$t('header.start')}}</b-button>-->
                 </div>
-                <div class="sub-location" v-if="$route.name == 'Des1'">
-
+                <div class="sub-location" v-if="$route.name == 'Des1' && searchData['CODIGO'] != undefined">
+                    {{searchData['CODIGO']}} - {{searchData['SUB_DIVI_POL']}} - {{searchData['DIVI_POL']}} - {{searchData['PAIS'].toUpperCase()}}
                 </div>
                 <div class="sub-location" v-else>
                     {{$t('header.sub_loc')}}
@@ -85,7 +85,7 @@ export default {
 <style lang="sass" scoped>
 .head-b
     border-bottom: 1px solid #007bff
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
     height: 100px
     width: 100%
     overflow:  hidden
@@ -98,8 +98,9 @@ export default {
         padding-left: 50px
         grid-auto-flow: column
         img
-           height: 90%
-           margin-right: 15px
+            cursor: pointer
+            height: 90%
+            margin-right: 15px
     .buttons
         display: flex
         align-items: center
@@ -107,25 +108,25 @@ export default {
         padding-right: 50px
         gap: 10px
 .sub-head
-    margin: 10px 10px
+    margin: 5px 10px
     display: grid
     grid-template-columns: 1fr 1fr
     gap: 15px
-    height: 150px
+    height: 100px
     .searcher
         border: 1px solid #007bff
         border-radius: 5px
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
         padding: 10px
         display: grid
-        grid-template-rows: 55px 55px
+        grid-template-rows: 40px 40px
         .input
             display: grid
             grid-template-columns: 1fr
             gap: 10px
             align-items: center
         .sub-location
-            font-size: 1.5rem
+            font-size: 1.3rem
             font-weight: bold
             display: grid
             align-items: center
