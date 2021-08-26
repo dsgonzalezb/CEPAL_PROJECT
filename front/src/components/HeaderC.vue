@@ -67,7 +67,7 @@ export default {
     },
     methods:{
         findData(search){
-            eel.find_territory(search)((val) => {
+            window.eel.find_territory(search)((val) => {
                 this.data = JSON.parse(val)
             })
         },

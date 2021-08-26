@@ -4,6 +4,8 @@ import router from './router'
 import VueI18n from 'vue-i18n'
 import messages from './i18n'
 import BootstrapVue from 'bootstrap-vue'
+import { ToastPlugin } from 'bootstrap-vue'
+
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import './stylessheets/style.sass'
 import "./stylessheets/fontawesome/css/all.min.css"
@@ -21,12 +23,15 @@ Vue.use(window.VueCharts);
 Vue.use(ChartJSPluginDatalabels);
 Vue.use(VueI18n)
 Vue.use(BootstrapVue)
+Vue.use(ToastPlugin)
 const i18n = new VueI18n({
   locale: 'es', // set locale
   messages, // set locale messages
   silentTranslationWarn: true
 })
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
+var eel
+if (eel == undefined) eel = {}
 
 new Vue({
   router,

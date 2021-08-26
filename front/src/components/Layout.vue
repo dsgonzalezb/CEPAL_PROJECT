@@ -11,6 +11,7 @@
 <script>
 import HeaderC from './HeaderC.vue'
 export default {
+    name:'Layout',
     components: {
         'header-c' : HeaderC
     }
