@@ -14,7 +14,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'chart.js';
 import 'hchs-vue-charts';
 import ChartJSPluginDatalabels from "chartjs-plugin-labels";
-
+import store from './store/index'
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
@@ -32,9 +32,10 @@ const i18n = new VueI18n({
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 var eel
 if (eel == undefined) eel = {}
-
+Vue.prototype.$loading =  false
 new Vue({
   router,
+  store,
   i18n,
   render: h => h(App)
 }).$mount('#app')

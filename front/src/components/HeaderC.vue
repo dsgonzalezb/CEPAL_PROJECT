@@ -12,7 +12,8 @@
         </div>
         <div class="sub-head">
             <div class="searcher">
-                <div class="input">
+                <div class="input-c">
+                    <i class="fas fa-search"></i>
                     <vue-bootstrap-typeahead
                         id="geo"
                         :data="data"
@@ -26,7 +27,7 @@
                     ></vue-bootstrap-typeahead>
                     <!--<b-button variant="outline-primary"><i class="fas fa-search"></i> {{$t('header.start')}}</b-button>-->
                 </div>
-                <div class="sub-location" v-if="$route.name == 'Des1' && searchData['CODIGO'] != undefined">
+                <div class="sub-location" v-if="($route.name == 'Des1' || $route.name == 'SPDA' ) && searchData['CODIGO'] != undefined">
                     {{searchData['CODIGO']}} - {{searchData['SUB_DIVI_POL']}} - {{searchData['DIVI_POL']}} - {{searchData['PAIS'].toUpperCase()}}
                 </div>
                 <div class="sub-location" v-else>
@@ -37,6 +38,10 @@
                 <!-- TODO -->
             </div>
         </div>
+
+        <b-modal id="yearSelection" size="sm" hide-footer :title="$t('descriptive.populationSeries')">
+
+        </b-modal>
     </div>
 </template>
 
@@ -61,7 +66,7 @@ export default {
             }
             this.$refs['taSearch'].$data.inputValue  = search.toUpperCase() 
         }, 500),
-        searcht : function(newValue, oldValue){
+        searcht : function(newValue){
             newValue['ID_TERRITORIO'] != undefined ? this.goToDescriptive(): null
         },
     },
@@ -120,11 +125,15 @@ export default {
         padding: 10px
         display: grid
         grid-template-rows: 40px 40px
-        .input
+        .input-c
             display: grid
             grid-template-columns: 1fr
             gap: 10px
             align-items: center
+            i
+                position: absolute
+                padding: 10px !important
+                z-index: 100
         .sub-location
             font-size: 1.3rem
             font-weight: bold

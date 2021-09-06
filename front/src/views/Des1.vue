@@ -1,70 +1,64 @@
 <template>
     <div>
-        <div class="wizard">
-            <div class="bt" :class="{'active': wizard==1 }" @click="wizard = 1" v-b-tooltip.hover :title="$t('descriptive.des1')">1</div>
-            <div>
-                <svg height="50" width="100">
-                    <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
-                </svg>    
-            </div>
-            <div class="bt" :class="{'active': wizard==2 }" @click="wizard = 2" v-b-tooltip.hover :title="$t('descriptive.des2')">2</div>
-            <div>
-                <svg height="50" width="100">
-                    <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
-                </svg>    
-            </div>
-            <div class="bt" :class="{'active': wizard==3 }" @click="wizard = 3" v-b-tooltip.hover :title="$t('descriptive.des3')">3</div>
-        </div>
-        <div class="dis-c" v-if="wizard == 1">
-            <hr />
-            <h3>{{$t('descriptive.des1')}}</h3>
+        <b-button class="data-s" variant="outline-primary" v-b-modal.popS> <i class="fas fa-table"></i> {{$t('descriptive.see_data')}}</b-button>
+        <div class="dis-c" >
+            <h3><i class="fas fa-user-friends"></i> {{$t('descriptive.des1')}}</h3> 
             <div class="graphs" v-if="descriptive.labels != undefined" :key="wizard">
                 <div>
                     <div class="label">{{$t('descriptive.populationSeries')}}</div>
                     <chartjs-line :labels="labels" :datasets="datasets" :bind="true"></chartjs-line>
-                    <br>
-                    <br>
-                    <b-button variant="outline-primary" v-b-modal.popS> <i class="fas fa-cog"></i> {{$t('descriptive.see_data')}}</b-button>
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.populationDensity')}}</div>
                     <chartjs-line :labels="labels" :datasets="dDatasets"  :bind="true"></chartjs-line>
-                    <br>
-                    <br>
-                    <b-button variant="outline-primary" v-b-modal.popD> <i class="fas fa-cog"></i> {{$t('descriptive.see_data')}}</b-button>
                 </div>
             </div>
         </div>
 
-        <div class="dis-c" v-if="wizard == 2">
+        <div class="dis-c" >
             <hr />
-            <h3>{{$t('descriptive.des2')}}</h3>
+            <h3><i class="fas fa-coins"></i> {{$t('descriptive.des2')}}</h3>
             <div class="graphs" v-if="descriptive.labels != undefined" :key="wizard">
                 <div>
                     <div class="label">{{$t('descriptive.bussinessDesnsity')}}</div>
                     <chartjs-line :labels="labels" :datasets="bDatasets" :bind="true"></chartjs-line>
-                    <br>
-                    <br>
-                    <b-button variant="outline-primary" v-b-modal.popB> <i class="fas fa-cog"></i> {{$t('descriptive.see_data')}}</b-button>
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.agregateValue')}}</div>
                     <chartjs-line :labels="vLabesl" :datasets="vDatasets"  :bind="true"></chartjs-line>
-                    <br>
-                    <br>
-                    <b-button variant="outline-primary" v-b-modal.popV> <i class="fas fa-cog"></i> {{$t('descriptive.see_data')}}</b-button>
+                </div>
+                 <div>
+                    <div class="label">{{$t('descriptive.economy')}}</div>
+                    <div class="big-number">
+                        {{economy}}
+                    </div>
+                </div>
+                <div>
+                    <div class="label">{{$t('descriptive.money')}}</div>
+                    <chartjs-line :labels="labels" :datasets="iDatasets"  :bind="true"></chartjs-line>
+                </div>
+            </div>
+        </div>
+
+        <div class="dis-c" >
+            <hr />
+            <h3><i class="fas fa-recycle"></i> {{$t('descriptive.des3')}}</h3>
+            <div class="graphs" v-if="descriptive.labels != undefined" :key="wizard">
+                <div>
+                    <div class="label">{{$t('descriptive.eca')}}</div>
+                    <chartjs-line :labels="labels" :datasets="eDatasets" :bind="true"></chartjs-line>
+                </div>
+                <div>
+                    <div class="label">{{$t('descriptive.pgris')}}</div>
+                    <chartjs-doughnut :labels="pLabels" :data="pgDatasets" :bind="true" :option="dougRoundOption"></chartjs-doughnut>
+                </div>
+                <div>
+                    <div class="label">{{$t('descriptive.res')}}</div>
+                    <chartjs-line :labels="labels" :datasets="resDatasets" :bind="true"></chartjs-line>
                 </div>
             </div>
         </div>
         
-        <b-modal id="popB" size="xl" hide-footer :title="$t('descriptive.bussinessDesnsity')">
-
-        </b-modal>
-
-        <b-modal id="popV" size="xl" hide-footer :title="$t('descriptive.agregateValue')">
-
-        </b-modal>
-
         <b-modal id="popS" size="xl" hide-footer :title="$t('descriptive.populationSeries')">
             <div class="table">
                 <div class="table-header">
@@ -115,56 +109,6 @@
                 </div>	
             </div>
         </b-modal>
-
-        <b-modal id="popD" size="xl" hide-footer :title="$t('descriptive.populationDensity')">
-           <div class="table">
-                <div class="table-header">
-                    <div class="header__item">{{fieldsDensity[0]}}</div>
-                    <div class="header__item">{{fieldsDensity[1]}}</div>
-                    <div class="header__item">{{fieldsDensity[2]}}</div>
-                    <div class="header__item">{{fieldsDensity[3]}}</div>
-                    <div class="header__item">{{fieldsDensity[4]}}</div>
-                </div>
-                <div class="table-content">	
-                    <div class="table-row" v-for="(data, i) in descriptive.datatableD" :key="i+'-'+editD[i]">		
-                        <div class="table-data" :key="editD[i]">
-                            <span v-show="!editD[i]">
-                                {{ data['POBLACION_TOTAL'] }} hab
-                            </span>
-                            <b-input v-show="editD[i]" v-model="tempDensity.pTotal"></b-input>
-                        </div>
-                        <div class="table-data">
-                            <span>
-                                {{ data['DENSIDAD POBLACIONAL'] }} hab/ha
-                            </span>
-                        </div>
-                        <div class="table-data" :key="editD[i]">
-                            <span v-show="!editD[i]">
-                                {{ data['AREA'] }} ha
-                            </span>
-                            <b-input v-show="editD[i]" v-model="tempDensity.area"></b-input>
-                        </div>
-                        <div class="table-data" :key="editD[i]">
-                            <span v-show="!editD[i]">
-                                {{ data['AÑO'] }}
-                            </span>
-                            <b-input v-show="editD[i]" v-model="tempDensity.anio"></b-input>
-                        </div>
-                        <div class="table-data" :key="editD[i]">
-                            <b-button v-if="!editD[i]" @click="editD[i]= true; doEditD(data,i)" variant="outline-primary">
-                                {{$t('descriptive.edit')}}
-                            </b-button>
-                            <b-button v-if="editD[i]" @click="doSaveD(i)" variant="outline-success">
-                                {{$t('descriptive.save')}}
-                            </b-button>
-                            <b-button v-if="editD[i]" @click="doCancelD(i); editD[i] = false" variant="outline-info">
-                                {{$t('descriptive.cancel')}}
-                            </b-button>
-                        </div>
-                    </div>
-                </div>	
-            </div>
-        </b-modal>
     </div>
 </template>
 
@@ -182,7 +126,13 @@ export default {
             bDatasets: [],
             vLabesl: [],
             vDatasets: [],
-            wizard: 1,
+            iDatasets: [],
+            eDatasets: [],
+            cDatasets: [],
+            resDatasets: [],
+            pLabels: [],
+            pgDatasets: [],
+            economy: '',
             tempPopulation:{
                 id: '',
                 pTotal: '',
@@ -198,26 +148,45 @@ export default {
                 'AÑO',
                 'ACCIÓN'
             ],
-            tempDensity: {
-                id: '',
-                pTotal: '',
-                area: '',
-                anio: ''
+            dougRoundOption :{
+                responsive: true,
+                title: {
+                    display: true,
+                    position: "top",
+                    fontSize: 18,
+                    text: ''
+                },
+                maintainAspectRatio : true,
+                cutoutPercentage:50,
+                legend: {
+                        position: 'left',
+                        labels: {
+                            boxWidth: 20,
+                            padding: 20,
+                        }
+                },
+                plugins: {
+                    labels: {
+                        render: 'percentage',
+                        fontSize: 14,
+                        fontStyle: 'bold',
+                        fontColor: 'black',
+                        precision: 2
+                    }
+                }
             },
-            editD: [],
-            fieldsDensity:[
-                'POBLACION TOTAL',
-                'DENSIDAD POBLACIONAL',
-                "AREA (hectáreas)",
-                'AÑO',
-                'ACCIÓN'
-            ]
         }
     },
-    mounted(){
+    beforeCreate: function() {
+        console.log('Des 1 '+this.$loading)
+    },
+    async mounted(){
         if(this.$route.params.id != null){
             this.idDes = this.$route.params.id
-            window.eel.find_descriptive(this.idDes)((val) => {
+            localStorage.setItem('id_territorio', this.idDes);
+            this.$store.dispatch('setLoading')
+            try{
+                var val = await window.eel.find_descriptive(this.idDes)(val)
                 this.descriptive = JSON.parse(val)
                 this.labels = this.descriptive.labels
                 this.vLabesl = this.descriptive.vLabesl
@@ -225,15 +194,49 @@ export default {
                 this.dDatasets = this.descriptive.dDatasets
                 this.bDatasets = this.descriptive.bDatasets
                 this.vDatasets = this.descriptive.vDatasets
+                this.iDatasets = this.descriptive.iDatasets
+                this.eDatasets = this.descriptive.eDatasets
+                this.economy = this.descriptive.economy
+                this.pLabels = this.descriptive.pLabels
+                this.pgDatasets = this.descriptive.pgDatasets
+                this.resDatasets = this.descriptive.resDatasets
 
                 for (let index = 0; index <  this.descriptive.datatableS.length; index++) {
                     this.editP.push(false);
                 }
-                for (let index = 0; index <  this.descriptive.datatableD.length; index++) {
-                    this.editD.push(false);
-                }
+                this.$store.dispatch('clearLoading')
+            }
+            catch{
+                this.$store.dispatch('clearLoading')
+            }
+        }
+        else{
+            try{
+                this.idDes =  localStorage.getItem('id_territorio');
+                this.$store.dispatch('setLoading')
+                var val2 = await window.eel.find_descriptive(this.idDes)(val2)
+                this.descriptive = JSON.parse(val2)
+                this.labels = this.descriptive.labels
+                this.vLabesl = this.descriptive.vLabesl
+                this.datasets = this.descriptive.datasets
+                this.dDatasets = this.descriptive.dDatasets
+                this.bDatasets = this.descriptive.bDatasets
+                this.vDatasets = this.descriptive.vDatasets
+                this.iDatasets = this.descriptive.iDatasets
+                this.eDatasets = this.descriptive.eDatasets
+                this.economy = this.descriptive.economy
+                this.pLabels = this.descriptive.pLabels
+                this.pgDatasets = this.descriptive.pgDatasets
+                this.resDatasets = this.descriptive.resDatasets
 
-            })
+                for (let index = 0; index <  this.descriptive.datatableS.length; index++) {
+                    this.editP.push(false);
+                }
+                this.$store.dispatch('clearLoading')
+            }
+            catch{
+                this.$store.dispatch('clearLoading')
+            }
         }
         
     },
@@ -368,8 +371,8 @@ export default {
 .graphs
     display: grid
     grid-template-columns: 1fr 1fr
-    padding: 10px
-    gap: 10px
+    padding: 20px
+    gap: 50px
     text-align: center
    
 .label
@@ -408,5 +411,17 @@ export default {
 .header__item
     color: #fff
     text-transform: uppercase
+.big-number
+    min-height: 250px
+    display: grid
+    align-items: center
+    justify-items: center
+    text-align: center
+    font-size: 2rem
+    font-weight: bold
 
+.data-s
+    position: absolute
+    top: 0
+    right: 0
 </style>

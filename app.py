@@ -1,3 +1,4 @@
+from typing import List
 import pandas as pd
 import eel
 import json
@@ -38,10 +39,12 @@ def find_territory(value):
   
 @eel.expose
 def find_descriptive(value):
-    data = decrypt('data/descriptiva')
+    data = json.dumps(decrypt('data/descriptiva'))
     dframe = pd.DataFrame(eval(data))
-    dfilter = dframe.loc[dframe['ID_TERRITORIO'] == value]
+    dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(value)) & (dframe['ANIO'] < 2020)]
     dfilter = dfilter.sort_values(by=['ANIO'])
+    #print(dfilter['PGIRS_APROVADO'])
+    
     #Labels
     years = dfilter['ANIO'].to_list()
     #Poblacion
@@ -88,10 +91,14 @@ def find_descriptive(value):
     ]
     
     #Valor Agregado
-    print((datetime.datetime.now().year - 4))
+    #print((datetime.datetime.now().year - 4))
     last4Years = dfilter.loc[(dfilter['ANIO'] > datetime.datetime.now().year - 4) & (dfilter['ANIO'] < datetime.datetime.now().year + 1) ]
     listValue = last4Years['VALOR_AGREGADO'].to_list()
-    last4Years['AVG'] = sum(listValue) / len(listValue)
+    last4Years['AVG'] = 0
+    try:
+        last4Years['AVG'] = sum(listValue) / len(listValue)
+    except:
+        last4Years['AVG'] = 0
     vDatasets = [
         {
             'data': last4Years['AVG'].to_list(),
@@ -107,26 +114,68 @@ def find_descriptive(value):
         },
     ]
     
+    #Ingesos
+    moneyDatsets =[
+        {
+            'data': dfilter['INGRESOS'].to_list(),
+            'label': 'INGRESOS',
+            'borderColor': "#8e5ea2",
+            'fill': False
+        },
+    ]
+    
+    #ECA
+    ecaDatasets =[
+        {
+            'data': dfilter['CAPACIDAD_ECA'].to_list(),
+            'label': 'CAPACIDAD ECA',
+            'borderColor': "#8e5ea2",
+            'fill': False
+        },
+    ]
+    
+    #PGRIS
+    pLabels= ['SI', 'NO']
+    listPG = []
+    total = int(dfilter['PGIRS_APROVADO'].count())
+    listPG.append(int(dfilter[dfilter['PGIRS_APROVADO'] == 'SI'].count().iloc[0]))
+    listPG.append(int(dfilter[dfilter['PGIRS_APROVADO'] == 'NO'].count().iloc[0]))
+    #print([dfilter[dfilter['PGIRS_APROVADO'] == 'SI'].count().iloc[0], dfilter[dfilter['PGIRS_APROVADO'] == 'NO'].count().iloc[0]])
+    
+    #Residuos
+    
+    resDatasets =[
+        {
+            'data': dfilter['CARACTERIZACION_DE_RESIDUO'].to_list(),
+            'label': 'CARACTERIZACION DE RESIDUO',
+            'borderColor': "#8e5ea2",
+            'fill': False
+        },
+    ]
+    
     #Configuracion output 
-    dfilter1 = dfilter.drop(['DENSITY', 'ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'AREA'], axis=1)
-    dfilter2 = dfilter.drop(['ID_TERRITORIO', 'EMPRESAS', 'VALOR_AGREGADO', 'INGRESOS', 'SISTEMA_CIUDADES', 'POBLACION_CABECERA', 'POBLACION_RESTO'], axis=1)
-    dfilter3 = last4Years.drop(['ID_TERRITORIO', 'EMPRESAS', 'INGRESOS', 'SISTEMA_CIUDADES', 'POBLACION_CABECERA', 'POBLACION_RESTO'], axis=1)
-    dfilter1.rename(columns={'ANIO': 'AÑO'}, inplace=True)
-    dfilter2.rename(columns={'ANIO': 'AÑO', 'DENSITY': 'DENSIDAD POBLACIONAL'}, inplace=True)
-    dfilter3.rename(columns={'ANIO': 'AÑO', 'DENSITY': 'DENSIDAD POBLACIONAL'}, inplace=True)
+    dfilter.rename(columns={'ANIO': 'AÑO', 'DENSITY': 'DENSIDAD POBLACIONAL'}, inplace=True)
+    economy = None
+    try:
+        economy = dfilter['SISTEMA_CIUDADES'].iloc[0]
+    except:
+        economy = None
     returnData = {
         'labels': years,
         'vLabesl': last4Years['ANIO'].to_list(),
+        'pLabels': pLabels,
         'datasets' :datasets,
         'dDatasets': densityDatsets,
         'bDatasets': bussinessDatsets,
         'vDatasets': vDatasets,
-        'datatableS': json.loads(dfilter1.to_json(orient="records")),
-        'datatableD': json.loads(dfilter2.to_json(orient="records")),
-        'datatableB': json.loads(dfilter2.to_json(orient="records")),
-        'datatableVB': json.loads(dfilter3.to_json(orient="records"))
+        'iDatasets': moneyDatsets,
+        'eDatasets': ecaDatasets,
+        'pgDatasets' : listPG,
+        'resDatasets': resDatasets,
+        'economy': economy,
+        'datatableS': json.loads(dfilter.to_json(orient="records")),
     }
-    #print(dfilter)
+    #print(returnData)
     return json.dumps(returnData)
 
 

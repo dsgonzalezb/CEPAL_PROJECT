@@ -6,6 +6,7 @@ const Settings = () => import( '../views/Settings.vue')
 
 const Descriptives = () => import( '../views/Descriptives.vue')
 const Des1 = () => import( '../views/Des1.vue')
+const SPDA = () => import('../views/SPDA.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,14 +29,19 @@ const routes = [
         component: Descriptives,
         children: [
           {
-            path: ':id',
+            path: '',
             name: 'DesIndex',
             redirect: { name: 'Des1' }
           },
           {
-            path: 'd1',
+            path: 'd1/:id',
             name: 'Des1',
             component: Des1,
+          },
+          {
+            path: 'd2',
+            name: 'SPDA',
+            component: SPDA,
           },
         ]
       },
