@@ -59,7 +59,7 @@
             </div>
         </div>
         
-        <b-modal id="popS" size="xl" hide-footer :title="$t('descriptive.populationSeries')">
+        <b-modal id="popS" size="xl" hide-footer :title="$t('descriptive.see_data_t')">
             <div class="table">
                 <div class="table-header">
                     <div class="header__item">{{fieldsPupulation[0]}}</div>
@@ -67,6 +67,14 @@
                     <div class="header__item">{{fieldsPupulation[2]}}</div>
                     <div class="header__item">{{fieldsPupulation[3]}}</div>
                     <div class="header__item">{{fieldsPupulation[4]}}</div>
+                    <div class="header__item">{{fieldsPupulation[5]}}</div>
+                    <div class="header__item">{{fieldsPupulation[6]}}</div>
+                    <div class="header__item">{{fieldsPupulation[7]}}</div>
+                    <div class="header__item">{{fieldsPupulation[8]}}</div>
+                    <div class="header__item">{{fieldsPupulation[9]}}</div>
+                    <div class="header__item">{{fieldsPupulation[10]}}</div>
+                    <div class="header__item">{{fieldsPupulation[11]}}</div>
+                    <div class="header__item">{{fieldsPupulation[12]}}</div>
                 </div>
                 <div class="table-content">	
                     <div class="table-row" v-for="(data, i) in descriptive.datatableS" :key="i+'-'+editP[i]">		
@@ -93,6 +101,60 @@
                                 {{ data['AÑO'] }}
                             </span>
                             <b-input v-show="editP[i]" v-model="tempPopulation.anio"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['EMPRESAS'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.empresas"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['AREA'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.area"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['COD_DANE'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.cod_dane"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['INGRESOS'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.ingresos"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['CAPACIDAD_ECA'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.capacidad_eca"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['VALOR_AGREGADO'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.valor_agregado"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['TONELADAS DISPUESTAS'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.ton_dis"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['PGIRS_APROVADO'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.pgris_ap"></b-input>
+                        </div>
+                        <div class="table-data" :key="editP[i]">
+                            <span v-show="!editP[i]">
+                                {{ data['CARACTERIZACION_DE_RESIDUO'] }}
+                            </span>
+                            <b-input v-show="editP[i]" v-model="tempPopulation.car_residuo"></b-input>
                         </div>
                         <div class="table-data" :key="editP[i]">
                             <b-button v-if="!editP[i]" @click="editP[i]= true; doEditP(data,i)" variant="outline-primary">
@@ -138,7 +200,16 @@ export default {
                 pTotal: '',
                 pCabecera: '',
                 pResto: '',
-                anio: ''
+                anio: '',
+                empresas: '',
+                area: '',
+                cod_dane: '',
+                ingresos: '',
+                capacidad_eca: '',
+                valor_agregado: '',
+                ton_dis: '',
+                pgris_ap: '',
+                car_residuo: '',
             },
             editP: [],
             fieldsPupulation:[
@@ -146,7 +217,16 @@ export default {
                 'POBLACION CABECERA',
                 'POBLACION RESTO', 
                 'AÑO',
-                'ACCIÓN'
+                'EMPRESAS',
+                'AREA',
+                'CODIGO DANE',
+                'INGRESOS',
+                'CAPACIDAD ECA',
+                'VALOR AGREGADO',
+                'TONELADAS DISPUESTAS',
+                'PGRIS APROVADO',
+                'CARACTERIZACIÓN DE RESIDUO',
+                'ACCIÓN',
             ],
             dougRoundOption :{
                 responsive: true,
@@ -184,6 +264,7 @@ export default {
         if(this.$route.params.id != null){
             this.idDes = this.$route.params.id
             localStorage.setItem('id_territorio', this.idDes);
+            localStorage.setItem('year', this.$route.params.year);
             this.$store.dispatch('setLoading')
             try{
                 var val = await window.eel.find_descriptive(this.idDes)(val)
@@ -252,25 +333,37 @@ export default {
                 toaster: 'b-toaster-bottom-right'
             })
         },
-        reloadData(){
+        async reloadData(){
             this.descriptive = {}
             this.labels = {}
             this.datasets = {}
             this.dDatasets = {}
-            window.eel.find_descriptive(this.idDes)((val) => {
-                this.descriptive = JSON.parse(val)
+            try{
+                this.idDes =  localStorage.getItem('id_territorio');
+                this.$store.dispatch('setLoading')
+                var val2 = await window.eel.find_descriptive(this.idDes)(val2)
+                this.descriptive = JSON.parse(val2)
                 this.labels = this.descriptive.labels
+                this.vLabesl = this.descriptive.vLabesl
                 this.datasets = this.descriptive.datasets
                 this.dDatasets = this.descriptive.dDatasets
+                this.bDatasets = this.descriptive.bDatasets
+                this.vDatasets = this.descriptive.vDatasets
+                this.iDatasets = this.descriptive.iDatasets
+                this.eDatasets = this.descriptive.eDatasets
+                this.economy = this.descriptive.economy
+                this.pLabels = this.descriptive.pLabels
+                this.pgDatasets = this.descriptive.pgDatasets
+                this.resDatasets = this.descriptive.resDatasets
 
                 for (let index = 0; index <  this.descriptive.datatableS.length; index++) {
                     this.editP.push(false);
                 }
-                for (let index = 0; index <  this.descriptive.datatableD.length; index++) {
-                    this.editD.push(false);
-                }
-
-            })
+                this.$store.dispatch('clearLoading')
+            }
+            catch{
+                this.$store.dispatch('clearLoading')
+            }
         },
         //POPULATION
         doEditP(item, i) {
@@ -280,17 +373,32 @@ export default {
                 pTotal: item['POBLACION_TOTAL'],
                 pCabecera: item['POBLACION_CABECERA'],
                 pResto: item['POBLACION_RESTO'],
-                anio: item['AÑO']
+                anio: item['AÑO'],
+                empresas: item['EMPRESAS'],
+                area: item['AREA'],
+                cod_dane: item['COD_DANE'],
+                ingresos: item['INGRESOS'],
+                capacidad_eca: item['CAPACIDAD_ECA'],
+                valor_agregado: item['VALOR_AGREGADO'],
+                ton_dis: item['TONELADAS DISPUESTAS'],
+                pgris_ap: item['PGIRS_APROVADO'],
+                car_residuo: item['CARACTERIZACION_DE_RESIDUO'],
             }
         },
-        doSaveP(i) {
+        async doSaveP(i) {
             //this.editP[i] = false
-            window.eel.save_population(this.tempPopulation)((val) => {
+            try{
+                this.$store.dispatch('setLoading')
+                var val = await  window.eel.save_population(this.tempPopulation)(val)
                 if(val == 'true'){
+                    this.$store.dispatch('clearLoading')
                     this.makeToast('success', this.$t('descriptive.data_save'))
                     this.reloadData()
                 }
-            })
+            }
+            catch{
+                this.$store.dispatch('clearLoading')
+            }
             this.doCancelP(i)
         },
         doCancelP(i) {
@@ -303,37 +411,34 @@ export default {
                 anio: ''
             }
         },
-        //DENSITY
-        doEditD(item, i) {
-            this.editD[i] = true 
-            this.tempDensity={
-                id: item['ID_DESCRIPTIVA'],
-                pTotal: item['POBLACION_TOTAL'],
-                area: item['AREA'],
-                anio: item['AÑO']
-            }
-        },
-        doSaveD(i) {
-            //this.editP[i] = false
-            window.eel.save_density(this.tempDensity)((val) => {
-                if(val == 'true'){
-                    this.makeToast('success', this.$t('descriptive.data_save'))
-                    this.reloadData()
-                }
-            })
-            this.doCancelD(i)
-        },
-        doCancelD(i) {
-            this.editD[i] = false 
-            this.tempDensity={
-                id: '',
-                pTotal: '',
-                anio: ''
-            }
-        }
     }
 }
 </script>
+
+<style scoped>
+.table-header{
+	display: flex;
+    gap: 5px;
+	width: 100%;
+	background: #007bff;
+    font-size: 0.8rem;
+	padding: ((24px/2) * 1.5) 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-row{
+	display: flex;
+    gap: 15px;
+	width: 100%;
+	padding: ((24px/2) * 1.5) 0;
+    align-items: center;
+    justify-content: center;
+}
+.table-row:nth-of-type(odd){
+	background: #EEEEEE
+}
+</style>
 
 <style lang="sass" scoped>
 .dis-c
@@ -383,28 +488,16 @@ export default {
 	width: 100%
 	border: 1px solid #EEEEEE
 
-.table-header 
-	display: flex
-	width: 100%
-	background: #007bff
-	padding: ((24px/2) * 1.5) 0
 
-.table-row 
-	display: flex
-    gap: 15px
-	width: 100%
-	padding: ((24px/2) * 1.5) 0
-
-	&:nth-of-type(odd)
-		background: #EEEEEE
 
 .table-data, .header__item 
 	flex: 1 1 20%
 	text-align: center
+.table-data
+    font-size: 0.7rem
 
 .form-control
     margin: 5px
-    width: auto !important
 .btn
     margin: 5px
 

@@ -1,40 +1,553 @@
 <template>
     <div>
         <div class="wizard">
-            <div class="bt" :class="{'active': wizard==1 }" @click="wizard = 1" v-b-tooltip.hover :title="$t('descriptive.des1')">1</div>
+            <div class="bt" :class="{'active': wizard==1 }" @click="wizard = 1; updateQuestions(1)" v-b-tooltip.hover :title="$t('spda.sp1')">1</div>
             <div>
                 <svg height="50" width="100">
                     <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
                 </svg>    
             </div>
-            <div class="bt" :class="{'active': wizard==2 }" @click="wizard = 2" v-b-tooltip.hover :title="$t('descriptive.des2')">2</div>
+            <div class="bt" :class="{'active': wizard==2 }" @click="wizard = 2; updateQuestions(2)" v-b-tooltip.hover :title="$t('spda.sp2')">2</div>
             <div>
                 <svg height="50" width="100">
                     <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
                 </svg>    
             </div>
-            <div class="bt" :class="{'active': wizard==3 }" @click="wizard = 3" v-b-tooltip.hover :title="$t('descriptive.des3')">3</div>
+            <div class="bt" :class="{'active': wizard==3 }" @click="wizard = 3; updateQuestions(3)" v-b-tooltip.hover :title="$t('spda.sp3')">3</div>
              <div>
                 <svg height="50" width="100">
                     <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
                 </svg>    
             </div>
-            <div class="bt" :class="{'active': wizard==3 }" @click="wizard = 3" v-b-tooltip.hover :title="$t('descriptive.des3')">4</div>
+            <div class="bt" :class="{'active': wizard== 4}" @click="wizard = 4; updateQuestions(4)" v-b-tooltip.hover :title="$t('spda.sp4')">4</div>
              <div>
                 <svg height="50" width="100">
                     <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
                 </svg>    
             </div>
-            <div class="bt" :class="{'active': wizard==3 }" @click="wizard = 3" v-b-tooltip.hover :title="$t('descriptive.des3')">5</div>
+            <div class="bt" :class="{'active': wizard==5 }" @click="wizard = 5; updateQuestions(5)" v-b-tooltip.hover :title="$t('spda.sp5')">5</div>
         </div>
+        
+        <hr>
 
+        <div class="questions" v-if="answers.length>0 && isLoad" @mouseover="$forceUpdate()">
+            <div class="question" v-for="(question, i) in questions" :key="i">
+                <b>{{question['COD_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
+                <div class="cols-c" v-if="answers[i] != undefined">
+                    <!--COL1 -->
+                    <div class="col-c" v-if="question['TIPO_1'] != 'NA'">
+                        <div v-if="question['TIPO_1']== 'grafica'">
+                            <chartjs-line  :bind="true"></chartjs-line>
+                        </div>
+                        <div v-if="question['TIPO_1']== 'tabla' && question['TABLES'] != undefined && question['TANSWERS'] != undefined ">
+                            <div :class="{'header-6': question['TABLES'].length== 6,'header-7': question['TABLES'].length== 7 }">
+                                <div class="item-h" v-for="(item, j) in question['TABLES']" :key="j">
+                                    {{item['COLUMNA']}}
+                                </div>
+                                
+                            </div>
+                            <div :class="{'body-6': question['TABLES'].length== 6,'body-7': question['TABLES'].length== 7 }"  v-for="(tanswers, k) in question['TANSWERS']" :key="k+question['TANSWERS'].length" >
+                                <div class="item" v-for="(item, j) in question['TABLES']" :key="j">
+                                    <div v-if="item['TIPO']== 'abierto'">
+                                        <b-input v-model="question['TANSWERS'][k][j+1]"></b-input>
+                                    </div>
+                                    <div v-if="item['TIPO']== 'selección unica'">
+                                        <v-select :options="getRes(item['ORDEN'],i)" v-model="question['TANSWERS'][k][j+1]"  label="TEXTO" />
+                                    </div>
+                                </div>  
+                            </div>
+                            <b-button variant="outline-primary" style="width: 100%" @click="addTableAnswer(i)"><i class="far fa-plus-square"></i> {{$t('manager.add_table')}}</b-button>
+                            
+                        </div>
+                        <div class="inline" v-if="question['TIPO_1']== 'abierto'">
+                            <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_1']== 'calculado'">
+                            <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                        </div> 
+                        <div class="inline" v-if="question['TIPO_1']== 'referencia'">
+                            <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                        </div>
+                        <div v-if="question['TIPO_1']== 'selección multiple'">
+                            <b-form-checkbox
+                            v-for="(item, j) in question['RESPUESTAS']"
+                            :key="j"
+                            :id="'checkbox'+i+j"
+                            v-model="answers[i][item['COLUMNA']]"
+                            :name="'checkbox'+i+j"
+                            :value="1"
+                            :unchecked-value="0"
+                            :disabled="ifActive(answers[i],3) && answers[i][item['COLUMNA']] == 0"
+                            >
+                            {{item['TEXTO']}}
+                            </b-form-checkbox>
+                        </div>
+                        <div v-if="question['TIPO_1']== 'selección unica'">
+                            <v-select :options="question['RESPUESTAS']" v-model="answers[i]['dato_unico']"  label="TEXTO" />
+                        </div>
+                         <div v-if="question['TIPO_1']== 'año'">
+                            <b>Año {{year}}</b>
+                        </div>
+                        <div class="inline2" v-if="question['TIPO_1']== 'año editable'">
+                           <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                        </div>
+                        <br>
+                        <br v-if="question['TIPO_1'] != 'titulo'" >
+                    </div>
+                    <!--COL1 -->
+                    <!--COL2 -->
+                    <div class="col-c" v-if="question['TIPO_2'] != 'NA'">
+                         <div v-if="question['TIPO_2']== 'grafica'">
+                            <chartjs-line  :bind="true"></chartjs-line>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_2']== 'abierto'">
+                            <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_2']== 'calculado'">
+                            <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_2']== 'referencia'">
+                            <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                        </div>
+                        <div v-if="question['TIPO_2']== 'selección multiple'">
+                            <b-form-checkbox
+                            v-for="(item, j) in question['RESPUESTAS']"
+                            :key="j"
+                            :id="'checkbox'+i+j"
+                            v-model="answers[i][item['COLUMNA']]"
+                            :name="'checkbox'+i+j"
+                            :value="1"
+                            :unchecked-value="0"
+                            :disabled="ifActive(answers[i],3) && answers[i][item['COLUMNA']] == 0"
+                            >
+                            {{item['TEXTO']}}
+                            </b-form-checkbox>
+                        </div>
+                        <div v-if="question['TIPO_2']== 'selección unica'">
+                            <v-select :options="question['RESPUESTAS']" v-model="answers[i]['dato_unico']"  label="TEXTO" />
+                        </div>
+                         <div v-if="question['TIPO_2']== 'año'">
+                            <b>Año {{year}}</b>
+                        </div>
+                        <div class="inline2" v-if="question['TIPO_2']== 'año editable'">
+                           <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                        </div>
+                        <br>
+                        <br v-if="question['TIPO_2'] != 'titulo'" >
+                    </div>
+                    <!--COL2 -->
+                    <!--COL3 -->
+                    <div class="col-c" v-if="question['TIPO_3'] != 'NA'">
+                         <div v-if="question['TIPO_3']== 'grafica'">
+                            <chartjs-line  :bind="true"></chartjs-line>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_3']== 'abierto'">
+                            <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_3']== 'calculado'">
+                            <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_3']== 'referencia'">
+                            <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                        </div>
+                        <div v-if="question['TIPO_3']== 'selección multiple'">
+                            <b-form-checkbox
+                            v-for="(item, j) in question['RESPUESTAS']"
+                            :key="j"
+                            :id="'checkbox'+i+j"
+                            v-model="answers[i][item['COLUMNA']]"
+                            :name="'checkbox'+i+j"
+                            :value="1"
+                            :unchecked-value="0"
+                            :disabled="ifActive(answers[i],3) && answers[i][item['COLUMNA']] == 0"
+                            >
+                            {{item['TEXTO']}}
+                            </b-form-checkbox>
+                        </div>
+                        <div v-if="question['TIPO_3']== 'selección unica'">
+                            <v-select :options="question['RESPUESTAS']" v-model="answers[i]['dato_unico']"  label="TEXTO" />
+                        </div>
+                         <div v-if="question['TIPO_3']== 'año'">
+                            <b>Año {{year}}</b>
+                        </div>
+                        <div class="inline2" v-if="question['TIPO_3']== 'año editable'">
+                           <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                        </div>
+                        <br>
+                        <br v-if="question['TIPO_3'] != 'titulo'" >
+                    </div>
+                    <!--COL3 -->
+                    <!--COL4 -->
+                    <div class="col-c" v-if="question['TIPO_4'] != 'NA'">
+                         <div v-if="question['TIPO_4']== 'grafica'">
+                            <chartjs-line  :bind="true"></chartjs-line>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_4']== 'abierto'">
+                            <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                        </div>
+                        <div  class="inline" v-if="question['TIPO_4']== 'calculado'">
+                            <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                        </div>
+                        <div class="inline" v-if="question['TIPO_4']== 'referencia'">
+                            <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                        </div>
+                        <div v-if="question['TIPO_4']== 'selección multiple'">
+                            <b-form-checkbox
+                            v-for="(item, j) in question['RESPUESTAS']"
+                            :key="j"
+                            :id="'checkbox'+i+j"
+                            v-model="answers[i][item['COLUMNA']]"
+                            :name="'checkbox'+i+j"
+                            :value="1"
+                            :unchecked-value="0"
+                            :disabled="ifActive(answers[i],3) && answers[i][item['COLUMNA']] == 0"
+                            >
+                            {{item['TEXTO']}}
+                            </b-form-checkbox>
+                        </div>
+                        <div v-if="question['TIPO_4']== 'selección unica'">
+                            <v-select :options="question['RESPUESTAS']" v-model="answers[i]['dato_unico']"  label="TEXTO" />
+                        </div>
+                        <div v-if="question['TIPO_4']== 'año'">
+                            <b>Año {{year}}</b>
+                        </div>
+                        <div class="inline2" v-if="question['TIPO_4']== 'año editable'">
+                           <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                        </div>
+                        <br>
+                        <br v-if="question['TIPO_4'] != 'titulo'" >
+                    </div>
+                    <!--COL4 -->
+                </div>
+
+            </div>
+        </div>
+        <div style="text-align: center" v-show="questions.length>0">
+            <b-button variant="outline-warning" @click="validAnswers"><i class="far fa-save"></i> {{$t('spda.save')}}</b-button>
+        </div>
     </div>
 
 </template>
 
 <script>
 export default {
-    
+    name:'SPDA',
+    data(){
+        return{
+            wizard: 1,
+            questions: [],
+            answers:[],
+            isLoad: false,
+            year: null,
+            yearOpt: [
+                2019,
+                2018,
+                2017,
+                2016,
+                2015,
+                2014,
+                2013,
+                2012,
+                2011,
+                2010,
+                2009
+            ]
+        }
+    },
+    async mounted(){
+        this.year = this.idDes =  localStorage.getItem('year');
+        this.$store.dispatch('year')
+        this.isLoad=false
+        this.$store.dispatch('setLoading')
+        try {
+            
+            var val = await window.eel.getSPDAQuestions(this.wizard, 2)(val)
+            this.questions = JSON.parse(val)
+            console.log(this.questions)
+            for (let i = 0; i < this.questions.length; i++) {
+                setTimeout( async ()=>{ 
+                    try{
+                        var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
+                        if(val2 != undefined)
+                            if(val2.length>0){
+                                if(i == 7){ console.log(JSON.parse(val2))}
+                                this.questions[i]['RESPUESTAS'] = JSON.parse(val2)
+                            }
+                            else
+                                this.questions[i]['RESPUESTAS'] = []
+                        else
+                            this.questions[i]['RESPUESTAS'] = []
+                    }
+                    catch(error){
+                        console.log(error)
+                        console.log('in index '+ i)
+                        this.questions[i]['RESPUESTAS'] = []
+                    }
+                    this.answers.push(
+                        {
+                            id_pregunta: this.questions[i]['ID_PREGUNTA'],
+                            A: 0,
+                            B: 0,
+                            C: 0,
+                            D: 0,
+                            E: 0,
+                            F: 0,
+                            G: 0,
+                            H: 0,
+                            I: 0,
+                            J: 0,
+                            dato_num: '',
+                            dato_calc: '',
+                            anio: '',
+                            dato_tex: '',
+                            dato_unico: '',
+                            nombre_edita: '',
+                            correo_edita: '',
+                            entidad_edita: '',
+                            numero_edita: '',
+                            puntaje: ''
+                        }
+                    )
+                    if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
+                        this.answers[i].anio = 2019
+                    }
+                }, 500);
+                setTimeout( async ()=>{ 
+                    try{
+                        var val2 = await window.eel.getTables(this.questions[i]['ID_PREGUNTA'])(val2)
+                        if(val2 != undefined)
+                            if(val2.length>0){
+                                if(i == 7){ console.log(JSON.parse(val2))}
+                                this.questions[i]['TABLES'] = JSON.parse(val2)
+                            }
+                            else
+                                this.questions[i]['TABLES'] = []
+                        else
+                            this.questions[i]['TABLES'] = []
+                    }
+                    catch(error){
+                        console.log(error)
+                        console.log('in index '+ i)
+                        this.questions[i]['TABLES'] = []
+                    }
+                }, 500);
+            }
+            this.isLoad=true
+            this.$store.dispatch('clearLoading')
+        } catch (error) {
+            console.log(error)
+            this.isLoad=true
+            this.$store.dispatch('clearLoading')
+        }
+    },
+    methods: {
+        addTableAnswer(i){
+            this.questions[i]['TANSWERS'].push(
+                {
+                    1: '',
+                    2: '',
+                    3: '',
+                    4: '',
+                    5: '',
+                    6: '',
+                    7: '',
+                    8: '',
+                    9: '',
+                    10: '',
+                }
+            )
+            this.$forceUpdate();
+        },
+        getRes(order, i){
+            return this.questions[i]['RESPUESTAS'].filter((e)=>{return parseInt(e['COLUMNA']) == parseInt(order)})
+        },
+        ifActive(item, cant){
+            var count = 0
+            if(item['A'] == 1) count++
+            if(item['B'] == 1) count++
+            if(item['C'] == 1) count++
+            if(item['D'] == 1) count++
+            if(item['E'] == 1) count++
+            if(item['F'] == 1) count++
+            if(item['G'] == 1) count++
+            if(item['H'] == 1) count++
+            if(item['I'] == 1) count++
+            if(item['J'] == 1) count++
+            if(cant <= count) return true
+            else return false
+        },
+        async updateQuestions(wizard){
+            this.answers = []
+            this.$store.dispatch('setLoading')
+            try {
+                var val = await window.eel.getSPDAQuestions(wizard, 2)(val)
+                this.questions = JSON.parse(val)
+                for (let i = 0; i < this.questions.length; i++) {
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['RESPUESTAS'] = JSON.parse(val2)
+                                }
+                                else
+                                    this.questions[i]['RESPUESTAS'] = []
+                            else
+                                this.questions[i]['RESPUESTAS'] = []
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['RESPUESTAS'] = []
+                        }
+                        this.answers.push(
+                            {
+                                id_pregunta: this.questions[i]['ID_PREGUNTA'],
+                                A: 0,
+                                B: 0,
+                                C: 0,
+                                D: 0,
+                                E: 0,
+                                F: 0,
+                                G: 0,
+                                H: 0,
+                                I: 0,
+                                J: 0,
+                                dato_num: '',
+                                dato_calc: '',
+                                anio: '',
+                                dato_tex: '',
+                                dato_unico: '', 
+                                nombre_edita: '',
+                                correo_edita: '',
+                                entidad_edita: '',
+                                numero_edita: '',
+                                puntaje: ''
+                            }
+                        )
+                        if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
+                            this.answers[i].anio = 2019
+                        }
+                        
+                    }, 500);
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getTables(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['TABLES'] = JSON.parse(val2)
+                                }
+                                else
+                                    this.questions[i]['TABLES'] = []
+                            else
+                                this.questions[i]['TABLES'] = []
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['TABLES'] = []
+                        }
+                    }, 500);
+                }
+                this.isLoad=true
+                this.$store.dispatch('clearLoading')
+            } catch (error) {
+                console.log(error)
+                this.isLoad=true
+                this.$store.dispatch('clearLoading')
+            }
+        },
+        validAnswers(){
+            var error = false
+            for (let i = 0; i < this.questions.length; i++) {
+                if (this.questions[i]['TIPO_1']== 'abierto' || this.questions[i]['TIPO_2']== 'abierto' || this.questions[i]['TIPO_3']== 'abierto' || this.questions[i]['TIPO_4']== 'abierto') {
+                    if(this.answers[i]['dato_text'] == "" || this.answers[i]['dato_text'] == null){
+                        error = true
+                        console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'selección multiple' || this.questions[i]['TIPO_2']== 'selección multiple' || this.questions[i]['TIPO_3']== 'selección multiple' || this.questions[i]['TIPO_4']== 'selección multiple') {
+                    var count = 0
+                    if(this.answers[i]['A'] == 1) count++
+                    if(this.answers[i]['B'] == 1) count++
+                    if(this.answers[i]['C'] == 1) count++
+                    if(this.answers[i]['D'] == 1) count++
+                    if(this.answers[i]['E'] == 1) count++
+                    if(this.answers[i]['F'] == 1) count++
+                    if(this.answers[i]['G'] == 1) count++
+                    if(this.answers[i]['H'] == 1) count++
+                    if(this.answers[i]['I'] == 1) count++
+                    if(this.answers[i]['J'] == 1) count++
+                    if(count == 0){
+                        error = true
+                        console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
+                    if(this.answers[i]['dato_unico']['TEXTO'] == undefined){
+                        error = true
+                        console.log(i)
+                    }
+                    else{
+                        this.answers[i][this.answers[i]['dato_unico']['COLUMNA']] = 1
+                        this.answers[i]['dato_unico'] = ""
+                        
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'año editable' || this.questions[i]['TIPO_2']== 'año editable' || this.questions[i]['TIPO_3']== 'año editable' || this.questions[i]['TIPO_4']== 'año editable') {
+                    if(this.answers[i]['anio'] == "" || this.answers[i]['anio'] == null){
+                        error = true
+                        console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
+                    
+                    for (let j = 0; j < this.questions[i]['TANSWERS'].length; j++) {
+                        
+                        for (let k = 0; k <  this.questions[i]['TABLES'].length; k++) {
+
+                            if (this.questions[i]['TABLES'][k]['TIPO'] == 'abierto') {
+                                if(this.questions[i]['TANSWERS'][j][k+1] == "" || this.questions[i]['TANSWERS'][j][k+1] == null){
+                                    error = true
+                                    console.log(i)
+                                }
+                                else{
+                                    let alphabet = String.fromCharCode(96 + k+1);
+                                    this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1] + ';'
+                                }
+
+                            }
+                            if (this.questions[i]['TABLES'][k]['TIPO']== 'selección unica') {
+                                if(this.questions[i]['TANSWERS'][j][k+1] == undefined){
+                                    error = true
+                                    console.log(i)
+                                }
+                                else{
+                                    let alphabet = String.fromCharCode(96 + k+1);
+                                    this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1]['TEXTO'] + ';'
+                                }
+
+
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            if(!error){
+                this.saveAnswers()
+            }
+            
+        },
+        async saveAnswers(){
+            console.log(this.answers)
+        },
+        async loadAnswers(){
+
+        }
+    }
 }
 </script>
 
@@ -67,4 +580,26 @@ export default {
     .active
         background-color: #007bff
         color: #fff
+.questions
+    width: 90%
+    margin: 0 auto
+.help
+    color: #007bff
+    cursor: pointer
+.cols-c
+    display: flex
+    align-items: center
+.col-c
+    margin: 0 5px
+    min-width: 213px
+    .inline
+        display: grid
+        grid-template-columns: 8fr 4fr
+        gap: 5px
+        align-items: center
+    .inline2
+        display: grid
+        grid-template-columns: 4fr 8fr
+        gap: 5px
+        align-items: center
 </style>

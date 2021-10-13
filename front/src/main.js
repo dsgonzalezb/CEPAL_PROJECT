@@ -15,7 +15,10 @@ import 'chart.js';
 import 'hchs-vue-charts';
 import ChartJSPluginDatalabels from "chartjs-plugin-labels";
 import store from './store/index'
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css';
 
+Vue.component('v-select', vSelect)
 Vue.config.productionTip = false
 Vue.config.devtools = true
 

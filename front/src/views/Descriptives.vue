@@ -2,7 +2,12 @@
     <div class="descript">
         <div class="side">
             <div class="tag" :class="{'active': $route.name == 'Des1'}" @click="$router.push({name:'Des1'})"><i class="fas fa-chart-line"></i> {{$t('descriptive.name')}}</div>
-            <div class="tag" :class="{'active': $route.name == 'SPDA'}" @click="$router.push({name:'SPDA'})"><i class="fas fa-poll-h"></i> {{$t('spda.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'SPDA'}" @click="$router.push({name:'SPDA'})" v-b-tooltip.hover :title="$t('spda.full_name')"><i class="fas fa-poll-h"></i> {{$t('spda.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'Manager'}" @click="$router.push({name:'Manager'})" v-b-tooltip.hover :title="$t('manager.full_name')"><i class="fas fa-cog"></i> {{$t('manager.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'REP'}" @click="$router.push({name:'REP'})" v-b-tooltip.hover :title="$t('rep.full_name')"><i class="fas fa-project-diagram"></i> {{$t('rep.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'OtherProfiles'}" @click="$router.push({name:'OtherProfiles'})" v-b-tooltip.hover :title="$t('other_profiles.full_name')"><i class="fas fa-infinity"></i> {{$t('other_profiles.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'Graphs'}" @click="$router.push({name:'Graphs'})" v-b-tooltip.hover :title="$t('graphics.name')"><i class="fas fa-chart-pie"></i> {{$t('graphics.name')}}</div>
+            <div class="tag" :class="{'active': $route.name == 'Excel'}" @click="$router.push({name:'Excel'})" v-b-tooltip.hover :title="$t('excel.name')"><i class="far fa-file-excel"></i> {{$t('excel.name')}}</div>
         </div>
         <div class="content-c scroll1">
             <router-view/>

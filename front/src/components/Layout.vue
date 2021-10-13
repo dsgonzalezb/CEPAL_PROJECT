@@ -4,11 +4,28 @@
         <div class=".loader-c">
             <router-view/>
         </div>
-        <div class="loader" v-if="isLoading">
-            <div class="container">
-                <div class="box1"></div>
-                <div class="box2"></div>
-                <div class="box3"></div>
+        <div class="loader" v-if="isLoading" >
+            <div class="infinity-loader">
+              <div class="bg">
+                <!--background circles-->
+                <div class="left-bg"></div>
+                <div class="right-bg"></div>
+              </div>
+              <div class="fg">
+                <!--foreground circles-->
+                <div class="top-left-rect">
+                  <div></div>
+                </div>
+                <div class="bottom-right-rect">
+                  <div></div>
+                </div>
+                <div class="top-right-rect">
+                  <div></div>
+                </div>
+                <div class="bottom-left-rect">
+                  <div></div>
+                </div>
+              </div>
             </div>
         </div>
         
@@ -23,7 +40,6 @@ export default {
         'header-c' : HeaderC
     },
     beforeCreate: function() {
-        console.log(this.$loading)
     },
     computed: {
         isLoading() {
@@ -46,377 +62,78 @@ export default {
     padding: 0px;
     margin: 0px;
 }
-.loader .container {
-  width: 112px;
-  height: 112px;
+.infinity-loader {
+  position: fixed; /*We have to use it as we are using absolute positioning on its children and we will align it in the center of the page*/
+  /*left: 50%;
+  top: 50%;*/
+  transform: rotateX(60deg);
+  /*yes, we have to define width and height, otherwise transformation won't work*/
+  width: 190px; /* 2 x width - border-width */
+  height: 100px; /* width */
 }
-.loader .container .box1,
-.loader .container .box2,
-.loader .container .box3 {
-  border: 16px solid #007bff;
-  box-sizing: border-box;
+
+.infinity-loader .bg div,
+.infinity-loader > .fg > div > div {
+  width: 100px; /* width */
+  height: 100px; /* width */
+  border: 10px solid #aaa; /* border-width solid #aaa */
+  box-sizing: border-box; /* so that its border won't increase its width*/
+  border-radius: 50%; /* to make the div round*/
   position: absolute;
-  display: block;
 }
-.loader .container .box1 {
-  width: 112px;
-  height: 48px;
-  margin-top: 64px;
-  margin-left: 0px;
-  -webkit-animation: anime1 4s 0s forwards ease-in-out infinite;
-          animation: anime1 4s 0s forwards ease-in-out infinite;
+
+.infinity-loader .right-bg {
+  transform: translate(100%, 0);
+  left: -10px; /* -border-width */
 }
-.loader .container .box2 {
-  width: 48px;
-  height: 48px;
-  margin-top: 0px;
-  margin-left: 0px;
-  -webkit-animation: anime2 4s 0s forwards ease-in-out infinite;
-          animation: anime2 4s 0s forwards ease-in-out infinite;
+
+.infinity-loader > .fg > div > div {
+  border-color: #007bff #007bff transparent transparent;
+  transform: rotate(135deg);
+  animation: spin 1s linear infinite; /* spin time linear infinite */
+  position: static; /*add this otherwise transformation in its parent won't work as expect*/
 }
-.loader .container .box3 {
-  width: 48px;
-  height: 48px;
-  margin-top: 0px;
-  margin-left: 64px;
-  -webkit-animation: anime3 4s 0s forwards ease-in-out infinite;
-          animation: anime3 4s 0s forwards ease-in-out infinite;
+
+.infinity-loader > .fg > div {
+  clip: rect(0, 100px, 50px, 0); /* 0, width, width/2, 0*/
+  position: absolute; /* required for using clip: rect() */
 }
-@-webkit-keyframes anime1 {
-  0% {
-    width: 112px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  25% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  50% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  75% {
-    width: 48px;
-    height: 112px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
+
+.infinity-loader > .fg > .bottom-right-rect {
+  left: -10px; /* -border-width */
+  transform: translateX(100%) scale(1, -1);
+}
+
+.infinity-loader > .fg > .bottom-right-rect > div {
+  animation-delay: 0.25s; /* time/4 */
+}
+
+.infinity-loader > .fg > .top-right-rect {
+  left: -10px; /* -border-width */
+  transform: translateX(100%) scale(-1, 1);
+}
+
+.infinity-loader > .fg > .top-right-rect > div {
+  animation-delay: 0.5s; /* (2 x time)/4 */
+}
+
+.infinity-loader > .fg > .bottom-left-rect {
+  transform: scale(-1);
+}
+
+.infinity-loader > .fg > .bottom-left-rect > div {
+  animation-delay: 0.75s; /* (3 x time)/4 */
+}
+
+.infinity-loader > .fg {
+  filter: drop-shadow(0 0 6px #007bff);
+}
+
+@keyframes spin {
+  50%,
   100% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-}
-@keyframes anime1 {
-  0% {
-    width: 112px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  25% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  50% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-  75% {
-    width: 48px;
-    height: 112px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  100% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-}
-@-webkit-keyframes anime2 {
-  0% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  25% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  50% {
-    width: 112px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  75% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  100% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-}
-@keyframes anime2 {
-  0% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  25% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  50% {
-    width: 112px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 0px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  75% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  100% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-}
-@-webkit-keyframes anime3 {
-  0% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  25% {
-    width: 48px;
-    height: 112px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  50% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  75% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  100% {
-    width: 112px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
-}
-@keyframes anime3 {
-  0% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  12.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  25% {
-    width: 48px;
-    height: 112px;
-    margin-top: 0px;
-    margin-left: 64px;
-  }
-  37.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  50% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  62.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  75% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  87.5% {
-    width: 48px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 64px;
-  }
-  100% {
-    width: 112px;
-    height: 48px;
-    margin-top: 64px;
-    margin-left: 0px;
-  }
+    transform: rotate(495deg);
+  } /* (360 + 135)deg*/
 }
 </style>
 

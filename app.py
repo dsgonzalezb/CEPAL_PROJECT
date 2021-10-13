@@ -1,3 +1,4 @@
+from os import error
 from typing import List
 import pandas as pd
 import eel
@@ -31,7 +32,15 @@ def encrypt(str, filename):
 @eel.expose
 def find_territory(value):
     data = decrypt('data/territorio')
-    dframe = pd.DataFrame(data)
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return 
     dframe['CODIGO'] = dframe['CODIGO'].astype('string')
     dfilter = dframe.loc[dframe['SUB_DIVI_POL'].str.contains(value) | dframe['CODIGO'].str.contains(str(value))]
     
@@ -39,8 +48,16 @@ def find_territory(value):
   
 @eel.expose
 def find_descriptive(value):
-    data = json.dumps(decrypt('data/descriptiva'))
-    dframe = pd.DataFrame(eval(data))
+    data = decrypt('data/descriptiva')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return 
     dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(value)) & (dframe['ANIO'] < 2020)]
     dfilter = dfilter.sort_values(by=['ANIO'])
     #print(dfilter['PGIRS_APROVADO'])
@@ -182,29 +199,86 @@ def find_descriptive(value):
 @eel.expose
 def save_population(dataA):
     data = decrypt('data/descriptiva')
-    dframe = pd.DataFrame(eval(data))
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return 
     dfilter = dframe.loc[dframe['ID_DESCRIPTIVA'] == dataA['id']].index
     #print(dfilter)
     dframe.at[dfilter,"ANIO"] = int(dataA['anio'])
     dframe.at[dfilter,"POBLACION_TOTAL"] =  int(dataA['pTotal'])
     dframe.at[dfilter,"POBLACION_CABECERA"] =  int(dataA['pCabecera'])
     dframe.at[dfilter,"POBLACION_RESTO"] =  int(dataA['pResto'])
+    dframe.at[dfilter,"EMPRESAS"] = int(dataA['empresas'])
+    dframe.at[dfilter,"AREA"] =  int(dataA['area'])
+    dframe.at[dfilter,"COD_DANE"] =  int(dataA['cod_dane'])
+    dframe.at[dfilter,"INGRESOS"] =  int(dataA['ingresos'])
+    dframe.at[dfilter,"CAPACIDAD_ECA"] = int(dataA['capacidad_eca'])
+    dframe.at[dfilter,"VALOR_AGREGADO"] =  int(dataA['valor_agregado'])
+    dframe.at[dfilter,"TONELADAS DISPUESTAS"] =  int(dataA['ton_dis'])
+    dframe.at[dfilter,"PGIRS_APROVADO"] =  dataA['pgris_ap']
+    dframe.at[dfilter,"CARACTERIZACION_DE_RESIDUO"] =  int(dataA['car_residuo'])
     data = dframe.to_json(orient="records")
     encrypt(json.dumps(data), 'data/descriptiva')
     return 'true'
 
+
 @eel.expose
-def save_density(dataA):
-    data = decrypt('data/descriptiva')
-    dframe = pd.DataFrame(eval(data))
-    dfilter = dframe.loc[dframe['ID_DESCRIPTIVA'] == dataA['id']].index
-    #print(dfilter)
-    dframe.at[dfilter,"ANIO"] = int(dataA['anio'])
-    dframe.at[dfilter,"POBLACION_TOTAL"] =  int(dataA['pTotal'])
-    dframe.at[dfilter,"AREA"] =  int(dataA['area'])
-    data = dframe.to_json( orient="records")
-    encrypt(json.dumps(data), 'data/descriptiva')
-    return 'true'
+def getSPDAQuestions(page, section):
+    data = decrypt('data/pregunta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[(dframe['PAGINA'] == int(page)) & (dframe['SECCION'] == int(section))]
+    dfilter = dfilter.sort_values(by=['ID_PREGUNTA'])
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+@eel.expose
+def getSPDAAnswers(question):
+    data = decrypt('data/respuesta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
+    dfilter = dfilter.sort_values(by=['COLUMNA'])
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+@eel.expose
+def getTables(question):
+    data = decrypt('data/tabla')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
+    dfilter = dfilter.sort_values(by=['ORDEN'])
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+    
     
 eel.init('gui') # or the name of your directory
 eel.start('index.html', size=(1366, 768), cmdline_args=['--start-fullscreen'])

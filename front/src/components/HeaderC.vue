@@ -4,6 +4,7 @@
             <div class="logos" @click="$router.push({name: 'Home'})">
                 <img src="@/assets/cepal.png" alt="CEPAL">
                 <img src="@/assets/dnp.jpg" alt="DNP">
+                MC-GERM
             </div>
             <div class="buttons">
                 <b-button variant="outline-primary" @click="$router.push({name: 'Home'})" v-if="$route.name != 'Home'"><i class="fas fa-arrow-circle-left"></i> {{$t('header.home')}}</b-button>
@@ -27,8 +28,8 @@
                     ></vue-bootstrap-typeahead>
                     <!--<b-button variant="outline-primary"><i class="fas fa-search"></i> {{$t('header.start')}}</b-button>-->
                 </div>
-                <div class="sub-location" v-if="($route.name == 'Des1' || $route.name == 'SPDA' ) && searchData['CODIGO'] != undefined">
-                    {{searchData['CODIGO']}} - {{searchData['SUB_DIVI_POL']}} - {{searchData['DIVI_POL']}} - {{searchData['PAIS'].toUpperCase()}}
+                <div class="sub-location" v-if="($route.name == 'Des1' || $route.name == 'SPDA' || $route.name == 'Manager' || $route.name == 'REP' || $route.name == 'OtherProfiles' || $route.name == 'Graphs' || $route.name == 'Excel' ) && searchData['CODIGO'] != undefined">
+                    <span>{{searchData['CODIGO']}} - {{searchData['SUB_DIVI_POL']}} - {{searchData['DIVI_POL']}} - {{searchData['PAIS'].toUpperCase()}}</span> <span class="year-r"> AÑO {{year}}</span>
                 </div>
                 <div class="sub-location" v-else>
                     {{$t('header.sub_loc')}}
@@ -39,8 +40,13 @@
             </div>
         </div>
 
-        <b-modal id="yearSelection" size="sm" hide-footer :title="$t('descriptive.populationSeries')">
-
+        <b-modal ref="yearS" id="yearSelection" size="sm" hide-footer :title="$t('header.yearS')">
+            <div class="yearC">
+                {{$t('header.year_loc')}} <br><br>
+                <b-form-select v-model="year" :options="yearOpt"></b-form-select> <br><br>
+                <b-button variant="outline-primary" @click="goToDescriptive"><i class="fas fa-check"></i> {{$t('header.select')}}</b-button>
+            </div>
+            
         </b-modal>
     </div>
 </template>
@@ -53,7 +59,54 @@ export default {
             search: '',
             data: [],
             searcht: {},
-            searchData: {}
+            searchData: {},
+            year: 2020,
+            yearOpt: [
+                {
+                    value: 2020,
+                    text: '2020'
+                },
+                {
+                    value: 2021,
+                    text: '2021'
+                },
+                {
+                    value: 2022,
+                    text: '2022'
+                },
+                {
+                    value: 2023,
+                    text: '2023'
+                },
+                {
+                    value: 2024,
+                    text: '2024'
+                },
+                {
+                    value: 2025,
+                    text: '2025'
+                },
+                {
+                    value: 2026,
+                    text: '2026'
+                },
+                {
+                    value: 2027,
+                    text: '2027'
+                },
+                {
+                    value: 2028,
+                    text: '2028'
+                },
+                {
+                    value: 2029,
+                    text: '2029'
+                },
+                {
+                    value: 2030,
+                    text: '2030'
+                },
+            ]
         }
     },
     watch: {
@@ -67,7 +120,7 @@ export default {
             this.$refs['taSearch'].$data.inputValue  = search.toUpperCase() 
         }, 500),
         searcht : function(newValue){
-            newValue['ID_TERRITORIO'] != undefined ? this.goToDescriptive(): null
+            newValue['ID_TERRITORIO'] != undefined ?  this.$refs['yearS'].show(): null
         },
     },
     methods:{
@@ -77,12 +130,14 @@ export default {
             })
         },
         goToDescriptive(){
-            this.$router.push({name:'DesIndex', params:{id: this.searcht['ID_TERRITORIO']}})
+            this.$refs['yearS'].hide()
+            this.$router.push({name:'DesIndex', params:{id: this.searcht['ID_TERRITORIO'], year: this.year}})
             this.searchData = this.searcht
             this.searcht = {}
             this.$refs['taSearch'].$data.inputValue = ""
             this.search = ''
-        }
+        },
+
     }
 }
 </script>
@@ -140,5 +195,12 @@ export default {
             display: grid
             align-items: center
             justify-items: center
-            
+            grid-auto-flow: column
+.yearC
+    text-align: center
+.year-r
+    padding: 3px
+    background-color: #007bff
+    color: #fff
+    border-radius: 3px
 </style>

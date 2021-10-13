@@ -7,6 +7,11 @@ const Settings = () => import( '../views/Settings.vue')
 const Descriptives = () => import( '../views/Descriptives.vue')
 const Des1 = () => import( '../views/Des1.vue')
 const SPDA = () => import('../views/SPDA.vue')
+const Manager = () => import('../views/Manager.vue')
+const REP = () => import('../views/REP.vue')
+const OtherProfiles = () => import('../views/OtherProfiles.vue')
+const Graphs = () => import('../views/Graphs.vue')
+const Excel = () => import('../views/Excel.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -42,6 +47,31 @@ const routes = [
             path: 'd2',
             name: 'SPDA',
             component: SPDA,
+          },
+          {
+            path: 'd3',
+            name: 'Manager',
+            component: Manager,
+          },
+          {
+            path: 'd4',
+            name: 'REP',
+            component: REP,
+          },
+          {
+            path: 'd5',
+            name: 'OtherProfiles',
+            component: OtherProfiles,
+          },
+          {
+            path: 'd6',
+            name: 'Graphs',
+            component: Graphs,
+          },
+          {
+            path: 'd7',
+            name: 'Excel',
+            component: Excel,
           },
         ]
       },
