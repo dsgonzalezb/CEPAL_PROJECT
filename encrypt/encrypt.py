@@ -13,7 +13,7 @@ def newKey():
 def decrypt():
     # using the key
     fernet = Fernet(key)
-    with open('../data/territorio', 'rb') as enc_file:
+    with open('../data/respuesta_usuario', 'rb') as enc_file:
         encrypted = enc_file.read()
     # decrypting the file
     decrypted = fernet.decrypt(encrypted)

@@ -234,6 +234,8 @@ export default {
     name:'SPDA',
     data(){
         return{
+            errorSave: false,
+            errorMessage: '',
             wizard: 1,
             questions: [],
             answers:[],
@@ -270,7 +272,7 @@ export default {
                         var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
                         if(val2 != undefined)
                             if(val2.length>0){
-                                if(i == 7){ console.log(JSON.parse(val2))}
+                                //if(i == 7){ console.log(JSON.parse(val2))}
                                 this.questions[i]['RESPUESTAS'] = JSON.parse(val2)
                             }
                             else
@@ -299,13 +301,14 @@ export default {
                             dato_num: '',
                             dato_calc: '',
                             anio: '',
-                            dato_tex: '',
+                            dato_text: '',
                             dato_unico: '',
                             nombre_edita: '',
                             correo_edita: '',
                             entidad_edita: '',
                             numero_edita: '',
-                            puntaje: ''
+                            puntaje: '',
+                            anio_actual: this.year
                         }
                     )
                     if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
@@ -317,7 +320,7 @@ export default {
                         var val2 = await window.eel.getTables(this.questions[i]['ID_PREGUNTA'])(val2)
                         if(val2 != undefined)
                             if(val2.length>0){
-                                if(i == 7){ console.log(JSON.parse(val2))}
+                                //if(i == 7){ console.log(JSON.parse(val2))}
                                 this.questions[i]['TABLES'] = JSON.parse(val2)
                             }
                             else
@@ -329,6 +332,44 @@ export default {
                         console.log(error)
                         console.log('in index '+ i)
                         this.questions[i]['TABLES'] = []
+                    }
+                }, 500);
+                setTimeout( async ()=>{ 
+                    try{
+                        var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year)(val2)
+                        console.log(val2)
+                        if(val2 != undefined)
+                            if(val2.length>0){
+                                var val3 = JSON.parse(val2)
+                                this.answers[i].id_pregunta = val3[0].id_pregunta
+                                this.answers[i].A = val3[0].A
+                                this.answers[i].B = val3[0].B
+                                this.answers[i].C = val3[0].C
+                                this.answers[i].D = val3[0].D
+                                this.answers[i].E = val3[0].E
+                                this.answers[i].F = val3[0].F
+                                this.answers[i].G = val3[0].G
+                                this.answers[i].H = val3[0].H
+                                this.answers[i].I = val3[0].I
+                                this.answers[i].J = val3[0].J
+                                this.answers[i].dato_num = val3[0].dato_num
+                                this.answers[i].dato_calc = val3[0].dato_calc
+                                this.answers[i].anio = val3[0].anio
+                                this.answers[i].dato_text = val3[0].dato_text
+                                this.answers[i].dato_unico = ''
+                                this.answers[i].nombre_edita = val3[0].nombre_edita
+                                this.answers[i].correo_edita = val3[0].correo_edita
+                                this.answers[i].entidad_edita = val3[0].entidad_edita
+                                this.answers[i].numero_edita = val3[0].numero_edita
+                                this.answers[i].puntaje = val3[0].puntaje
+                                this.answers[i].anio_actual = val3[0].anio_actual
+                                //this.answers[i].dato_unico = ""
+                                //console.log(JSON.parse(val2))
+                            }
+                    }
+                    catch(error){
+                        console.log(error)
+                        console.log('in index '+ i)
                     }
                 }, 500);
             }
@@ -417,13 +458,14 @@ export default {
                                 dato_num: '',
                                 dato_calc: '',
                                 anio: '',
-                                dato_tex: '',
+                                dato_text: '',
                                 dato_unico: '', 
                                 nombre_edita: '',
                                 correo_edita: '',
                                 entidad_edita: '',
                                 numero_edita: '',
-                                puntaje: ''
+                                puntaje: '',
+                                anio_actual: this.year
                             }
                         )
                         if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
@@ -450,6 +492,42 @@ export default {
                             this.questions[i]['TABLES'] = []
                         }
                     }, 500);
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year)(val2)
+                            console.log(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    var val3 = JSON.parse(val2)
+                                    this.answers[i].id_pregunta = val3[0].id_pregunta
+                                    this.answers[i].A = val3[0].A
+                                    this.answers[i].B = val3[0].B
+                                    this.answers[i].C = val3[0].C
+                                    this.answers[i].D = val3[0].D
+                                    this.answers[i].E = val3[0].E
+                                    this.answers[i].F = val3[0].F
+                                    this.answers[i].G = val3[0].G
+                                    this.answers[i].H = val3[0].H
+                                    this.answers[i].I = val3[0].I
+                                    this.answers[i].J = val3[0].J
+                                    this.answers[i].dato_num = val3[0].dato_num
+                                    this.answers[i].dato_calc = val3[0].dato_calc
+                                    this.answers[i].anio = val3[0].anio
+                                    this.answers[i].dato_text = val3[0].dato_text
+                                    this.answers[i].dato_unico = ''
+                                    this.answers[i].nombre_edita = val3[0].nombre_edita
+                                    this.answers[i].correo_edita = val3[0].correo_edita
+                                    this.answers[i].entidad_edita = val3[0].entidad_edita
+                                    this.answers[i].numero_edita = val3[0].numero_edita
+                                    this.answers[i].puntaje = val3[0].puntaje
+                                    this.answers[i].anio_actual = val3[0].anio_actual
+                                }
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                        }
+                    }, 500);
                 }
                 this.isLoad=true
                 this.$store.dispatch('clearLoading')
@@ -460,12 +538,14 @@ export default {
             }
         },
         validAnswers(){
-            var error = false
+            this.error = false
+            this.errorMessage = "Verifica las preguntas: <br>"
             for (let i = 0; i < this.questions.length; i++) {
                 if (this.questions[i]['TIPO_1']== 'abierto' || this.questions[i]['TIPO_2']== 'abierto' || this.questions[i]['TIPO_3']== 'abierto' || this.questions[i]['TIPO_4']== 'abierto') {
                     if(this.answers[i]['dato_text'] == "" || this.answers[i]['dato_text'] == null){
-                        error = true
-                        console.log(i)
+                        this.error = true
+                        this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'selección multiple' || this.questions[i]['TIPO_2']== 'selección multiple' || this.questions[i]['TIPO_3']== 'selección multiple' || this.questions[i]['TIPO_4']== 'selección multiple') {
@@ -481,25 +561,38 @@ export default {
                     if(this.answers[i]['I'] == 1) count++
                     if(this.answers[i]['J'] == 1) count++
                     if(count == 0){
-                        error = true
-                        console.log(i)
+                        this.error = true
+                        this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
                     if(this.answers[i]['dato_unico']['TEXTO'] == undefined){
-                        error = true
-                        console.log(i)
+                        this.error = true
+                        this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
                     }
                     else{
+                        this.answers[i]['A'] = 0
+                        this.answers[i]['B'] = 0 
+                        this.answers[i]['C'] = 0
+                        this.answers[i]['D'] = 0
+                        this.answers[i]['E'] = 0
+                        this.answers[i]['F'] = 0
+                        this.answers[i]['G'] = 0
+                        this.answers[i]['H'] = 0
+                        this.answers[i]['I'] = 0
+                        this.answers[i]['J'] = 0
                         this.answers[i][this.answers[i]['dato_unico']['COLUMNA']] = 1
-                        this.answers[i]['dato_unico'] = ""
+                        //this.answers[i]['dato_unico'] = ""
                         
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'año editable' || this.questions[i]['TIPO_2']== 'año editable' || this.questions[i]['TIPO_3']== 'año editable' || this.questions[i]['TIPO_4']== 'año editable') {
                     if(this.answers[i]['anio'] == "" || this.answers[i]['anio'] == null){
-                        error = true
-                        console.log(i)
+                        this.error = true
+                        this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
@@ -510,22 +603,24 @@ export default {
 
                             if (this.questions[i]['TABLES'][k]['TIPO'] == 'abierto') {
                                 if(this.questions[i]['TANSWERS'][j][k+1] == "" || this.questions[i]['TANSWERS'][j][k+1] == null){
-                                    error = true
-                                    console.log(i)
+                                    this.error = true
+                                    this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                                    //console.log(i)
                                 }
                                 else{
-                                    let alphabet = String.fromCharCode(96 + k+1);
+                                    let alphabet = String.fromCharCode(64 + k);
                                     this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1] + ';'
                                 }
 
                             }
                             if (this.questions[i]['TABLES'][k]['TIPO']== 'selección unica') {
                                 if(this.questions[i]['TANSWERS'][j][k+1] == undefined){
-                                    error = true
-                                    console.log(i)
+                                    this.error = true
+                                    this.errorMessage += this.questions[i]['COD_PREGUNTA'] + " " + this.questions[i]['PREGUNTA'] + "<br>"
+                                    //console.log(i)
                                 }
                                 else{
-                                    let alphabet = String.fromCharCode(96 + k+1);
+                                    let alphabet = String.fromCharCode(64 + k);
                                     this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1]['TEXTO'] + ';'
                                 }
 
@@ -536,17 +631,30 @@ export default {
                     }
                 }
             }
-            if(!error){
+            if(!this.error){
                 this.saveAnswers()
+            }
+            else{
+                console.log(this.errorMessage)
             }
             
         },
         async saveAnswers(){
-            console.log(this.answers)
+            var answerS =  JSON.stringify(this.answers)
+            var answ = JSON.parse(answerS)
+            for (let i = 0; i < answ.length; i++) {
+                delete answ[i].dato_unico
+            }
+            this.$store.dispatch('setLoading')
+            try{
+                var val2 = await window.eel.saveAnswers(JSON.stringify(answ))(val2)
+                this.$store.dispatch('clearLoading')
+            }
+            catch(error){
+                this.$store.dispatch('clearLoading')
+                console.log('Error')
+            }
         },
-        async loadAnswers(){
-
-        }
     }
 }
 </script>

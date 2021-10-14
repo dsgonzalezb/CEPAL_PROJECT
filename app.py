@@ -1,10 +1,13 @@
 from os import error
+import sys
+from os.path import exists
 from typing import List
 import pandas as pd
 import eel
 import json
 import datetime
 from cryptography.fernet import Fernet
+from pandas.core import frame
 
 key = 's439NtXWeX28815bJCsmRfhEeiTGvs1Xnr_zAduKUAU='
 
@@ -278,7 +281,117 @@ def getTables(question):
     dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
-    
+
+""" def update_answers_vals(row, data):
+    if (row.id_pregunta == data['id_pregunta']) and (row.anio_actual == data['anio_actual']):
+        row.id_pregunta = data['id_pregunta']
+        row.A = data['A']
+        row.B = data['B']
+        row.C = data['C']
+        row.D = data['D']
+        row.E = data['E']
+        row.F = data['F']
+        row.G = data['G']
+        row.H = data['H']
+        row.I = data['I'],
+        row.J= data['J']
+        row.dato_num = data['dato_num']
+        row.dato_calc = data['dato_calc']
+        row.anio = data['anio']
+        row.dato_tex = data['dato_tex']
+        row.nombre_edita = data['nombre_edita']
+        row.correo_edita = data['correo_edita']
+        row.entidad_edita = data['entidad_edita']
+        row.numero_edita = data['numero_edita']
+        row.puntaje = data['puntaje']
+        row.anio_actual = data['anio_actual']
+    return row """
+
+@eel.expose
+def saveAnswers(answers):
+    fernet = Fernet(key)
+    file_exists = exists('data/respuesta_usuario')
+    if file_exists:
+        data = decrypt('data/respuesta_usuario')
+        dataDumps = json.dumps(data)
+        ans = json.loads(answers)
+        
+        answerDumps = json.dumps(ans)
+        dframe = None
+        aframe = None
+        #print(answerDumps)
+        try:
+            dframe = pd.DataFrame(data)
+        except:
+            try:
+                dframe = pd.DataFrame(eval(data))
+            except:
+                try:
+                    dframe = pd.DataFrame(eval(dataDumps))
+                except:
+                    return
+        try:
+            aframe = pd.DataFrame(ans)
+        except:
+            try:
+                aframe = pd.DataFrame(eval(answerDumps))
+            except  Exception as e: 
+                print('Error - '+ str(e))
+                print('Error on line {}'.format(sys.exc_info()[-1].tb_lineno))
+                return
+        #print(dframe)
+        #dframe.set_index(['id_pregunta', 'anio_actual'], inplace=True, drop=False)
+        #aframe.set_index(['id_pregunta', 'anio_actual'], inplace=True, drop=False)
+        #combined_dataframe = dframe.set_index(['id_pregunta', 'anio_actual']).combine_first(aframe.set_index(['id_pregunta', 'anio_actual'])).reset_index()
+        #combined_dataframe = dframe.merge(aframe,on=['id_pregunta', 'anio_actual'],how='outer', indicator=True)
+        combined_dataframe = (pd.concat([dframe, aframe])
+                            .drop_duplicates(subset=['id_pregunta', 'anio_actual'] , keep='last')
+                            .sort_values('id_pregunta' , ascending=False)
+                            .reset_index(drop=True))
+        #dframe.reset_index()
+        jsonans = json.loads(combined_dataframe.to_json(orient="records"))
+        
+        answersUp = json.dumps(jsonans)
+        encrypted = fernet.encrypt(answersUp.encode('utf8'))
+        # opening the file in write mode and 
+        # writing the encrypted data
+        with open('data/respuesta_usuario', 'wb') as encrypted_file:
+            encrypted_file.write(encrypted) 
+
+    else:
+        encrypted = fernet.encrypt(answers.encode('utf8'))
+        # opening the file in write mode and 
+        # writing the encrypted data
+        with open('data/respuesta_usuario', 'wb') as encrypted_file:
+            encrypted_file.write(encrypted) 
+        
+@eel.expose
+def getUserAnswers(question, year):
+    #print(question)
+    #print(year)
+    file_exists = exists('data/respuesta_usuario')
+    if file_exists:
+        #print('Here')
+        data = decrypt('data/respuesta_usuario')
+        dataDumps = json.dumps(data)
+        dframe = None
+        try:
+            dframe = pd.DataFrame(data)
+        except:
+            try:
+                dframe = pd.DataFrame(eval(data))
+            except:
+                try:
+                    dframe = pd.DataFrame(eval(dataDumps))
+                except:
+                    return
+        #print(dframe)
+        dfilter = dframe.loc[(dframe['id_pregunta'] == question) & (dframe['anio_actual'] == year)]
+        #print(dfilter)
+        result = json.loads(dfilter.to_json(orient="records"))
+        return json.dumps(result)
+    else:
+        return None
     
 eel.init('gui') # or the name of your directory
 eel.start('index.html', size=(1366, 768), cmdline_args=['--start-fullscreen'])
