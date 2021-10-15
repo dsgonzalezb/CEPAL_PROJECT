@@ -63,7 +63,7 @@ const messages = {
             name: 'Tablero'
         },
         excel: {
-            name: 'Generar tablero consolidado'
+            name: 'Generar reporte consolidado'
         }
     }
 }

@@ -345,7 +345,7 @@ def saveAnswers(answers):
         #combined_dataframe = dframe.set_index(['id_pregunta', 'anio_actual']).combine_first(aframe.set_index(['id_pregunta', 'anio_actual'])).reset_index()
         #combined_dataframe = dframe.merge(aframe,on=['id_pregunta', 'anio_actual'],how='outer', indicator=True)
         combined_dataframe = (pd.concat([dframe, aframe])
-                            .drop_duplicates(subset=['id_pregunta', 'anio_actual'] , keep='last')
+                            .drop_duplicates(subset=['id_pregunta', 'anio_actual', 'id_territorio'] , keep='last')
                             .sort_values('id_pregunta' , ascending=False)
                             .reset_index(drop=True))
         #dframe.reset_index()
@@ -366,7 +366,7 @@ def saveAnswers(answers):
             encrypted_file.write(encrypted) 
         
 @eel.expose
-def getUserAnswers(question, year):
+def getUserAnswers(question, year, territorio):
     #print(question)
     #print(year)
     file_exists = exists('data/respuesta_usuario')
@@ -386,7 +386,7 @@ def getUserAnswers(question, year):
                 except:
                     return
         #print(dframe)
-        dfilter = dframe.loc[(dframe['id_pregunta'] == question) & (dframe['anio_actual'] == year)]
+        dfilter = dframe.loc[(dframe['id_pregunta'] == question) & (dframe['anio_actual'] == year) & (dframe['id_territorio'] == territorio)]
         #print(dfilter)
         result = json.loads(dfilter.to_json(orient="records"))
         return json.dumps(result)

@@ -241,6 +241,7 @@ export default {
             answers:[],
             isLoad: false,
             year: null,
+            idDes: null,
             yearOpt: [
                 2019,
                 2018,
@@ -257,7 +258,8 @@ export default {
         }
     },
     async mounted(){
-        this.year = this.idDes =  localStorage.getItem('year');
+        this.year =  localStorage.getItem('year');
+        this.idDes =  localStorage.getItem('id_territorio');
         this.$store.dispatch('year')
         this.isLoad=false
         this.$store.dispatch('setLoading')
@@ -308,7 +310,8 @@ export default {
                             entidad_edita: '',
                             numero_edita: '',
                             puntaje: '',
-                            anio_actual: this.year
+                            anio_actual: this.year,
+                            id_territorio: this.idDes
                         }
                     )
                     if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
@@ -333,11 +336,26 @@ export default {
                         console.log('in index '+ i)
                         this.questions[i]['TABLES'] = []
                     }
+                    this.questions[i]['TANSWERS'] =[]
+                    this.questions[i]['TANSWERS'].push(
+                        {
+                            1: '',
+                            2: '',
+                            3: '',
+                            4: '',
+                            5: '',
+                            6: '',
+                            7: '',
+                            8: '',
+                            9: '',
+                            10: '',
+                        }
+                    )
                 }, 500);
                 setTimeout( async ()=>{ 
                     try{
-                        var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year)(val2)
-                        console.log(val2)
+                        var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
+                        //console.log(val2)
                         if(val2 != undefined)
                             if(val2.length>0){
                                 var val3 = JSON.parse(val2)
@@ -363,8 +381,84 @@ export default {
                                 this.answers[i].numero_edita = val3[0].numero_edita
                                 this.answers[i].puntaje = val3[0].puntaje
                                 this.answers[i].anio_actual = val3[0].anio_actual
+                                this.answers[i].id_territorio = val3[0].id_territorio
                                 //this.answers[i].dato_unico = ""
                                 //console.log(JSON.parse(val2))
+                                if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
+                                    try {
+                                        if(this.answers[i]['A'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][0] 
+                                        }
+                                        if(this.answers[i]['B'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][1] 
+                                        } 
+                                        if(this.answers[i]['C'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][2] 
+                                        }
+                                        if(this.answers[i]['D'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][3] 
+                                        }
+                                        if(this.answers[i]['E'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][4] 
+                                        }
+                                        if(this.answers[i]['F'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][5] 
+                                        }
+                                        if(this.answers[i]['G'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][6] 
+                                        }
+                                        if(this.answers[i]['H'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][7] 
+                                        }
+                                        if(this.answers[i]['I'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][8] 
+                                        }
+                                        if(this.answers[i]['J'] == 1){
+                                            this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][9] 
+                                        }
+                                        
+                                    } catch (error) {
+                                        console.log('fail load - ' + error)
+                                    }
+                                }
+                                if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
+                                    this.questions[i]['TANSWERS'] =[]
+                                    var columA = [], columB = [], columC = [], columD = [], columE = [], columF = [], columG = [], columH = [], columI = [], columJ = []
+                                    
+                                    
+                                    columA = this.answers[i]['A'].split(';')
+                                    columB = this.answers[i]['B'].split(';')
+                                    columC = this.answers[i]['C'].split(';')
+                                    columD = this.answers[i]['D'].split(';')
+                                    columE = this.answers[i]['E'].split(';')
+                                    columF = this.answers[i]['F'].split(';')
+                                    columG = this.answers[i]['G'].split(';')
+                                    columH = this.answers[i]['H'].split(';')
+                                    columI = this.answers[i]['I'].split(';')
+                                    columJ = this.answers[i]['J'].split(';')
+                                    console.log(columA)
+                                    console.log(columG)
+                                    for (let n = 0; n < columA.length-1; n++) {
+                                        this.questions[i]['TANSWERS'].push(
+                                            {
+                                                1: this.questions[i]['TABLES'][0] == undefined ? "" : this.questions[i]['TABLES'][0]['TIPO'] == 'selección unica' ? columA[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '1' && e['TEXTO'] == columA[n]})[0] : ""  :columA[n] != undefined ? columA[n].length > 0 ? columA[n] : "" : "",
+                                                2: this.questions[i]['TABLES'][1] == undefined ? "" : this.questions[i]['TABLES'][1]['TIPO'] == 'selección unica' ? columB[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '2' && e['TEXTO'] == columB[n]})[0] : ""  :columB[n] != undefined ? columB[n].length > 0 ? columB[n] : "" : "",
+                                                3: this.questions[i]['TABLES'][2] == undefined ? "" : this.questions[i]['TABLES'][2]['TIPO'] == 'selección unica' ? columC[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '3' && e['TEXTO'] == columC[n]})[0] : ""  :columC[n] != undefined ? columC[n].length > 0 ? columC[n] : "" : "",
+                                                4: this.questions[i]['TABLES'][3] == undefined ? "" : this.questions[i]['TABLES'][3]['TIPO'] == 'selección unica' ? columD[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '4' && e['TEXTO'] == columD[n]})[0] : ""  :columD[n] != undefined ? columD[n].length > 0 ? columD[n] : "" : "",
+                                                5: this.questions[i]['TABLES'][4] == undefined ? "" : this.questions[i]['TABLES'][4]['TIPO'] == 'selección unica' ? columE[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '5' && e['TEXTO'] == columE[n]})[0] : ""  :columE[n] != undefined ? columE[n].length > 0 ? columE[n] : "" : "",
+                                                6: this.questions[i]['TABLES'][5] == undefined ? "" : this.questions[i]['TABLES'][5]['TIPO'] == 'selección unica' ? columF[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '6' && e['TEXTO'] == columF[n]})[0] : ""  :columF[n] != undefined ? columF[n].length > 0 ? columF[n] : "" : "",
+                                                7: this.questions[i]['TABLES'][6] == undefined ? "" : this.questions[i]['TABLES'][6]['TIPO'] == 'selección unica' ? columG[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '7' && e['TEXTO'] == columG[n]})[0] : ""  :columG[n] != undefined ? columG[n].length > 0 ? columG[n] : "" : "",
+                                                8: this.questions[i]['TABLES'][7] == undefined ? "" : this.questions[i]['TABLES'][7]['TIPO'] == 'selección unica' ? columH[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '8' && e['TEXTO'] == columH[n]})[0] : ""  :columH[n] != undefined ? columH[n].length > 0 ? columH[n] : "" : "",
+                                                9: this.questions[i]['TABLES'][8] == undefined ? "" : this.questions[i]['TABLES'][8]['TIPO'] == 'selección unica' ? columI[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '9' && e['TEXTO'] == columI[n]})[0] : ""  :columI[n] != undefined ? columI[n].length > 0 ? columI[n] : "" : "",
+                                                10: this.questions[i]['TABLES'][9] == undefined ? "" : this.questions[i]['TABLES'][9]['TIPO'] == 'selección unica' ? columJ[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '10' && e['TEXTO'] == columJ[n]})[0] : ""  :columJ[n] != undefined ? columJ[n].length > 0 ? columJ[n] : "" : "",
+                                            }
+                                        )
+                                    
+                                    }
+
+                                }
+
+                                
                             }
                     }
                     catch(error){
@@ -465,7 +559,8 @@ export default {
                                 entidad_edita: '',
                                 numero_edita: '',
                                 puntaje: '',
-                                anio_actual: this.year
+                                anio_actual: this.year,
+                                id_territorio: this.idDes
                             }
                         )
                         if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
@@ -494,8 +589,8 @@ export default {
                     }, 500);
                     setTimeout( async ()=>{ 
                         try{
-                            var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year)(val2)
-                            console.log(val2)
+                            var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
+                            //console.log(val2)
                             if(val2 != undefined)
                                 if(val2.length>0){
                                     var val3 = JSON.parse(val2)
@@ -521,6 +616,83 @@ export default {
                                     this.answers[i].numero_edita = val3[0].numero_edita
                                     this.answers[i].puntaje = val3[0].puntaje
                                     this.answers[i].anio_actual = val3[0].anio_actual
+                                    this.answers[i].id_territorio = val3[0].id_territorio
+
+                                    if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
+                                        console.log(i)
+                                        try {
+                                            if(this.answers[i]['A'] == 1){
+                                                console.log(i + ' S')
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][0] 
+                                            }
+                                            if(this.answers[i]['B'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][1] 
+                                            } 
+                                            if(this.answers[i]['C'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][2] 
+                                            }
+                                            if(this.answers[i]['D'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][3] 
+                                            }
+                                            if(this.answers[i]['E'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][4] 
+                                            }
+                                            if(this.answers[i]['F'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][5] 
+                                            }
+                                            if(this.answers[i]['G'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][6] 
+                                            }
+                                            if(this.answers[i]['H'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][7] 
+                                            }
+                                            if(this.answers[i]['I'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][8] 
+                                            }
+                                            if(this.answers[i]['J'] == 1){
+                                                this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][9] 
+                                            }
+                                            
+                                        } catch (error) {
+                                            console.log('fail load - ' + error)
+                                        }
+                                    }
+                                    if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
+                                        this.questions[i]['TANSWERS'] =[]
+                                        var columA = [], columB = [], columC = [], columD = [], columE = [], columF = [], columG = [], columH = [], columI = [], columJ = []
+                                        
+                                        
+                                        columA = this.answers[i]['A'].split(';')
+                                        columB = this.answers[i]['B'].split(';')
+                                        columC = this.answers[i]['C'].split(';')
+                                        columD = this.answers[i]['D'].split(';')
+                                        columE = this.answers[i]['E'].split(';')
+                                        columF = this.answers[i]['F'].split(';')
+                                        columG = this.answers[i]['G'].split(';')
+                                        columH = this.answers[i]['H'].split(';')
+                                        columI = this.answers[i]['I'].split(';')
+                                        columJ = this.answers[i]['J'].split(';')
+                                        console.log(columA)
+                                        console.log(columG)
+                                        for (let n = 0; n < columA.length-1; n++) {
+                                            this.questions[i]['TANSWERS'].push(
+                                                {
+                                                    1: this.questions[i]['TABLES'][0] == undefined ? "" : this.questions[i]['TABLES'][0]['TIPO'] == 'selección unica' ? columA[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '1' && e['TEXTO'] == columA[n]})[0] : ""  :columA[n] != undefined ? columA[n].length > 0 ? columA[n] : "" : "",
+                                                    2: this.questions[i]['TABLES'][1] == undefined ? "" : this.questions[i]['TABLES'][1]['TIPO'] == 'selección unica' ? columB[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '2' && e['TEXTO'] == columB[n]})[0] : ""  :columB[n] != undefined ? columB[n].length > 0 ? columB[n] : "" : "",
+                                                    3: this.questions[i]['TABLES'][2] == undefined ? "" : this.questions[i]['TABLES'][2]['TIPO'] == 'selección unica' ? columC[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '3' && e['TEXTO'] == columC[n]})[0] : ""  :columC[n] != undefined ? columC[n].length > 0 ? columC[n] : "" : "",
+                                                    4: this.questions[i]['TABLES'][3] == undefined ? "" : this.questions[i]['TABLES'][3]['TIPO'] == 'selección unica' ? columD[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '4' && e['TEXTO'] == columD[n]})[0] : ""  :columD[n] != undefined ? columD[n].length > 0 ? columD[n] : "" : "",
+                                                    5: this.questions[i]['TABLES'][4] == undefined ? "" : this.questions[i]['TABLES'][4]['TIPO'] == 'selección unica' ? columE[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '5' && e['TEXTO'] == columE[n]})[0] : ""  :columE[n] != undefined ? columE[n].length > 0 ? columE[n] : "" : "",
+                                                    6: this.questions[i]['TABLES'][5] == undefined ? "" : this.questions[i]['TABLES'][5]['TIPO'] == 'selección unica' ? columF[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '6' && e['TEXTO'] == columF[n]})[0] : ""  :columF[n] != undefined ? columF[n].length > 0 ? columF[n] : "" : "",
+                                                    7: this.questions[i]['TABLES'][6] == undefined ? "" : this.questions[i]['TABLES'][6]['TIPO'] == 'selección unica' ? columG[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '7' && e['TEXTO'] == columG[n]})[0] : ""  :columG[n] != undefined ? columG[n].length > 0 ? columG[n] : "" : "",
+                                                    8: this.questions[i]['TABLES'][7] == undefined ? "" : this.questions[i]['TABLES'][7]['TIPO'] == 'selección unica' ? columH[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '8' && e['TEXTO'] == columH[n]})[0] : ""  :columH[n] != undefined ? columH[n].length > 0 ? columH[n] : "" : "",
+                                                    9: this.questions[i]['TABLES'][8] == undefined ? "" : this.questions[i]['TABLES'][8]['TIPO'] == 'selección unica' ? columI[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '9' && e['TEXTO'] == columI[n]})[0] : ""  :columI[n] != undefined ? columI[n].length > 0 ? columI[n] : "" : "",
+                                                    10: this.questions[i]['TABLES'][9] == undefined ? "" : this.questions[i]['TABLES'][9]['TIPO'] == 'selección unica' ? columJ[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '10' && e['TEXTO'] == columJ[n]})[0] : ""  :columJ[n] != undefined ? columJ[n].length > 0 ? columJ[n] : "" : "",
+                                                }
+                                            )
+                                        
+                                        }
+
+                                    }
                                 }
                         }
                         catch(error){
@@ -596,7 +768,16 @@ export default {
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
-                    
+                    this.answers[i]['A'] = ""
+                    this.answers[i]['B'] = ""
+                    this.answers[i]['C'] = ""
+                    this.answers[i]['D'] = ""
+                    this.answers[i]['E'] = ""
+                    this.answers[i]['F'] = ""
+                    this.answers[i]['G'] = ""
+                    this.answers[i]['H'] = ""
+                    this.answers[i]['I'] = ""
+                    this.answers[i]['J'] = ""
                     for (let j = 0; j < this.questions[i]['TANSWERS'].length; j++) {
                         
                         for (let k = 0; k <  this.questions[i]['TABLES'].length; k++) {
@@ -608,7 +789,7 @@ export default {
                                     //console.log(i)
                                 }
                                 else{
-                                    let alphabet = String.fromCharCode(64 + k);
+                                    let alphabet = String.fromCharCode(64 + k+1);
                                     this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1] + ';'
                                 }
 
@@ -620,7 +801,7 @@ export default {
                                     //console.log(i)
                                 }
                                 else{
-                                    let alphabet = String.fromCharCode(64 + k);
+                                    let alphabet = String.fromCharCode(64 + k+1);
                                     this.answers[i][alphabet] += this.questions[i]['TANSWERS'][j][k+1]['TEXTO'] + ';'
                                 }
 
@@ -648,12 +829,23 @@ export default {
             this.$store.dispatch('setLoading')
             try{
                 var val2 = await window.eel.saveAnswers(JSON.stringify(answ))(val2)
+                this.makeToast('success', this.$t('descriptive.data_save'))
+
                 this.$store.dispatch('clearLoading')
             }
             catch(error){
                 this.$store.dispatch('clearLoading')
                 console.log('Error')
             }
+        },
+        makeToast(variant = null, message) {
+            this.$bvToast.toast( message, {
+                title: message,
+                variant: variant,
+                solid: true,
+                autoHideDelay: 2000,
+                toaster: 'b-toaster-bottom-right'
+            })
         },
     }
 }

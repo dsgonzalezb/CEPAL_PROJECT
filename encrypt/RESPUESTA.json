@@ -1183,5 +1183,365 @@
    "ID_PREGUNTA": 261,
    "COLUMNA": "K",
    "TEXTO": "gal/año"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 275,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 288,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 302,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 315,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 328,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 341,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 354,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 367,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/año"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/mes"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/día"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "Ton/hora"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "m3/año"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "m3/mes"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "m3/día"
+ },
+ {
+   "ID_PREGUNTA": 380,
+   "COLUMNA": "4",
+   "TEXTO": "m3/hora"
  }
 ]

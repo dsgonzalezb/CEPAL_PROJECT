@@ -4,7 +4,8 @@
             <div class="logos" @click="$router.push({name: 'Home'})">
                 <img src="@/assets/cepal.png" alt="CEPAL">
                 <img src="@/assets/dnp.jpg" alt="DNP">
-                MC-GERM
+                <div class="title"><i class="fas fa-infinity"></i> <br> MC-GERM</div>
+                
             </div>
             <div class="buttons">
                 <b-button variant="outline-primary" @click="$router.push({name: 'Home'})" v-if="$route.name != 'Home'"><i class="fas fa-arrow-circle-left"></i> {{$t('header.home')}}</b-button>
@@ -143,6 +144,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.title
+    font-weight: bold
+    font-size: 1.5rem
+    text-align: center
 .head-b
     border-bottom: 1px solid #007bff
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
@@ -150,7 +155,7 @@ export default {
     width: 100%
     overflow:  hidden
     display: grid
-    grid-template-columns: 50% 50%
+    grid-template-columns: 60% 40%
     .logos
         height: 100px
         display: flex
