@@ -36,8 +36,9 @@
                     {{$t('header.sub_loc')}}
                 </div>
             </div>
-            <div>
-                <!-- TODO -->
+            <div class="category" v-if="descriptive.length>0">
+                
+                Categoria: {{descriptive[0]['CATEGORIA']}}
             </div>
         </div>
 
@@ -62,6 +63,7 @@ export default {
             searcht: {},
             searchData: {},
             year: 2020,
+            descriptive: [],
             yearOpt: [
                 {
                     value: 2020,
@@ -121,7 +123,7 @@ export default {
             this.$refs['taSearch'].$data.inputValue  = search.toUpperCase() 
         }, 500),
         searcht : function(newValue){
-            newValue['ID_TERRITORIO'] != undefined ?  this.$refs['yearS'].show(): null
+            newValue['ID_TERRITORIO'] != undefined ?  this.getCategory() : null
         },
     },
     methods:{
@@ -129,6 +131,20 @@ export default {
             window.eel.find_territory(search)((val) => {
                 this.data = JSON.parse(val)
             })
+        },
+        async getCategory(){
+            this.$store.dispatch('setLoading')
+            try{
+                var val = await window.eel.getCategory(this.searcht['ID_TERRITORIO'])(val)
+                this.descriptive = JSON.parse(val)
+
+               
+                this.$store.dispatch('clearLoading')
+            }
+            catch{
+                this.$store.dispatch('clearLoading')
+            }
+            this.$refs['yearS'].show()
         },
         goToDescriptive(){
             this.$refs['yearS'].hide()
@@ -178,6 +194,18 @@ export default {
     grid-template-columns: 1fr 1fr
     gap: 15px
     height: 100px
+    .category
+        border: 1px solid #007bff
+        border-radius: 5px
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+        padding: 10px
+        display: grid
+        grid-template-rows: 100%
+        text-align: center
+        align-items: center
+        justify-items: center
+        font-size: 2.2rem
+        font-weight: bold
     .searcher
         border: 1px solid #007bff
         border-radius: 5px

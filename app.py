@@ -393,5 +393,20 @@ def getUserAnswers(question, year, territorio):
     else:
         return None
     
+@eel.expose
+def getCategory(id_territory):
+    data = decrypt('data/descriptiva')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return 
+    dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(id_territory)) & (dframe['ANIO'] < 2020)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+    
 eel.init('gui') # or the name of your directory
 eel.start('index.html', size=(1366, 768), cmdline_args=['--start-fullscreen'])

@@ -26,7 +26,7 @@ const messages = {
             eca: 'Capacidad ECA (Ton/mes)',
             pgris: 'PGRIS Aprobado',
             res: 'Caracterización de residuos (en disposición final)',
-            name: 'Descriptiva',
+            name: 'Capacidades',
             des1: 'Capacidades poblacionales',
             des2: 'Capacidades economicas y financieras',
             des3: 'Capacidades manejo residuos',
