@@ -79,6 +79,28 @@ div::-webkit-scrollbar-thumb
   .vs__dropdown-toggle
     background-color: #fff
 
+.calculado
+  position: relative
+  input
+    border-color: orange !important
+  &:after
+    position: absolute
+    bottom: -15px
+    content: 'Dato calculado'
+    color: orange
+    font-size: 0.7rem
+
+.referencia
+  position: relative
+  input
+    border-color: green !important
+  &:after
+    position: absolute
+    bottom: -15px
+    content: 'Dato referencia'
+    color: green
+    font-size: 0.7rem
+
 @media (min-width: 1200px)
   .modal-xl
       max-width: 90% !important

@@ -86,10 +86,10 @@
                         <div class="inline" v-if="question['TIPO_1']== 'abierto'">
                             <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_1']== 'calculado'">
+                        <div class="inline calculado" v-if="question['TIPO_1']== 'calculado'">
                             <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
                         </div> 
-                        <div class="inline" v-if="question['TIPO_1']== 'referencia'">
+                        <div class="inline referencia" v-if="question['TIPO_1']== 'referencia'">
                             <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
                         </div>
                         <div v-if="question['TIPO_1']== 'selección multiple'">
@@ -127,10 +127,10 @@
                         <div class="inline" v-if="question['TIPO_2']== 'abierto'">
                             <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_2']== 'calculado'">
+                        <div class="inline calculado" v-if="question['TIPO_2']== 'calculado'">
                             <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_2']== 'referencia'">
+                        <div class="inline referencia" v-if="question['TIPO_2']== 'referencia'">
                             <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
                         </div>
                         <div v-if="question['TIPO_2']== 'selección multiple'">
@@ -168,10 +168,10 @@
                         <div class="inline" v-if="question['TIPO_3']== 'abierto'">
                             <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_3']== 'calculado'">
+                        <div class="inline calculado" v-if="question['TIPO_3']== 'calculado'">
                             <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_3']== 'referencia'">
+                        <div class="inline referencia" v-if="question['TIPO_3']== 'referencia'">
                             <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
                         </div>
                         <div v-if="question['TIPO_3']== 'selección multiple'">
@@ -209,10 +209,10 @@
                         <div class="inline" v-if="question['TIPO_4']== 'abierto'">
                             <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
                         </div>
-                        <div  class="inline" v-if="question['TIPO_4']== 'calculado'">
+                        <div  class="inline calculado" v-if="question['TIPO_4']== 'calculado'">
                             <b-input v-model="answers[i]['dato_calc']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
                         </div>
-                        <div class="inline" v-if="question['TIPO_4']== 'referencia'">
+                        <div class="inline referencia" v-if="question['TIPO_4']== 'referencia'">
                             <b-input v-model="answers[i]['dato_num']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
                         </div>
                         <div v-if="question['TIPO_4']== 'selección multiple'">
@@ -249,6 +249,10 @@
         <div style="text-align: center" v-show="questions.length>0">
             <b-button variant="outline-warning" @click="validAnswers"><i class="far fa-save"></i> {{$t('spda.save')}}</b-button>
         </div>
+
+        <b-modal ref="error" id="error" size="md" :ok-only="true" :title="$t('descriptive.valid_data')">
+            <div v-html="this.errorMessage"></div>
+        </b-modal>
     </div>
 
 </template>
@@ -858,7 +862,7 @@ export default {
                 this.saveAnswers()
             }
             else{
-                console.log(this.errorMessage)
+                this.$refs['error'].show()
             }
             
         },
