@@ -244,7 +244,7 @@ def getSPDAQuestions(page, section):
         except:
             return
     dfilter = dframe.loc[(dframe['PAGINA'] == int(page)) & (dframe['SECCION'] == int(section))]
-    dfilter = dfilter.sort_values(by=['ID_PREGUNTA'])
+    dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
@@ -281,31 +281,6 @@ def getTables(question):
     dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
-
-""" def update_answers_vals(row, data):
-    if (row.id_pregunta == data['id_pregunta']) and (row.anio_actual == data['anio_actual']):
-        row.id_pregunta = data['id_pregunta']
-        row.A = data['A']
-        row.B = data['B']
-        row.C = data['C']
-        row.D = data['D']
-        row.E = data['E']
-        row.F = data['F']
-        row.G = data['G']
-        row.H = data['H']
-        row.I = data['I'],
-        row.J= data['J']
-        row.dato_num = data['dato_num']
-        row.dato_calc = data['dato_calc']
-        row.anio = data['anio']
-        row.dato_tex = data['dato_tex']
-        row.nombre_edita = data['nombre_edita']
-        row.correo_edita = data['correo_edita']
-        row.entidad_edita = data['entidad_edita']
-        row.numero_edita = data['numero_edita']
-        row.puntaje = data['puntaje']
-        row.anio_actual = data['anio_actual']
-    return row """
 
 @eel.expose
 def saveAnswers(answers):
@@ -406,6 +381,21 @@ def getCategory(id_territory):
         except:
             return 
     dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(id_territory)) & (dframe['ANIO'] < 2020)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+@eel.expose
+def getFormula(id_question):
+    data = decrypt('data/formula')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['CPD'] == '&'+str(id_question)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
     
 eel.init('gui') # or the name of your directory

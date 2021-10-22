@@ -1,0 +1,245 @@
+[
+ {
+   "id_cal": 1,
+   "tipo": "REG_TAB",
+   "CPO": "&175",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&176",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 2,
+   "tipo": "REG_TAB",
+   "CPO": "&178",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&179",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 3,
+   "tipo": "REG_TAB",
+   "CPO": "&184",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&185",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 4,
+   "tipo": "REG_TAB",
+   "CPO": "&190",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&191",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 5,
+   "tipo": "REG_TAB",
+   "CPO": "&214",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&215",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 6,
+   "tipo": "REG_TAB",
+   "CPO": "&216",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&217",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 7,
+   "tipo": "REG_TAB",
+   "CPO": "&231",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&232",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 8,
+   "tipo": "REG_TAB",
+   "CPO": "&233",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&234",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 9,
+   "tipo": "REG_TAB",
+   "CPO": "&236",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&237",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 10,
+   "tipo": "REG_TAB",
+   "CPO": "&238",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&239",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 11,
+   "tipo": "REG_TAB",
+   "CPO": "&240",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&241",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 12,
+   "tipo": "REG_TAB",
+   "CPO": "&258",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&259",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 13,
+   "tipo": "REG_TAB",
+   "CPO": "&274",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&275",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 14,
+   "tipo": "REG_TAB",
+   "CPO": "&287",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&288",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 15,
+   "tipo": "REG_TAB",
+   "CPO": "&301",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&302",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 16,
+   "tipo": "REG_TAB",
+   "CPO": "&314",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&315",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 17,
+   "tipo": "REG_TAB",
+   "CPO": "&327",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&328",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 18,
+   "tipo": "REG_TAB",
+   "CPO": "&340",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&341",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 19,
+   "tipo": "REG_TAB",
+   "CPO": "&353",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&354",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 20,
+   "tipo": "REG_TAB",
+   "CPO": "&366",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&367",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 21,
+   "tipo": "REG_TAB",
+   "CPO": "&379",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&380",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 22,
+   "tipo": "REG_TAB",
+   "CPO": "&389",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&390",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 23,
+   "tipo": "REG_TAB",
+   "CPO": "&393",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&394",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 24,
+   "tipo": "REG_TAB",
+   "CPO": "&391",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&392",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 25,
+   "tipo": "REG_TAB",
+   "CPO": "&395",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&396",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 26,
+   "tipo": "REG_TAB",
+   "CPO": "&421",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&422",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 27,
+   "tipo": "REG_TAB",
+   "CPO": "&410",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&411",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ }
+]

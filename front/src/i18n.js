@@ -58,7 +58,7 @@ const messages = {
             full_name: 'GESTIÓN REALIZADA EN LA IMPLEMENTACION DE ESQUEMAS DE RESPONSABILIDAD EXTENDIDA DEL PRODUCTOR (REP) - PLANES Y SISTEMAS POSCONSUMO',
         },
         other_profiles:{
-            name: 'Otros Perfiles',
+            name: 'Dinamicas administrativas',
             full_name: 'PERFIL MUNICIPAL HACIA LA TRANCISION DE UN MODELO CIRCULAR EN LA GESTION DE RESIDUOS',
         },
         graphics:{

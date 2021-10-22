@@ -1,0 +1,476 @@
+[
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 176,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 179,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 185,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 191,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 215,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 217,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 232,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 234,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 237,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 241,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Nombre planta/sitio",
+   "TIPO": "abierto",
+   "ORDEN": 1
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Ubicación",
+   "TIPO": "abierto",
+   "ORDEN": 2
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Capacidad",
+   "TIPO": "abierto",
+   "ORDEN": 3
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "dominio",
+   "TIPO": "selección unica",
+   "ORDEN": 4
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Materiales obtenidos",
+   "TIPO": "selección unica",
+   "ORDEN": 5
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Nombre de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 6
+ },
+ {
+   "ID_PREGUNTA": 259,
+   "COLUMNA": "Telefono de contacto",
+   "TIPO": "abierto",
+   "ORDEN": 7
+ }
+]
