@@ -1,0 +1,476 @@
+[
+ {
+   "id_pregunta": 176,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 176,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 176,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 176,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 176,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 176,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 179,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 185,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 191,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 215,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 217,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 232,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 234,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 237,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 239,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 241,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Nombre planta/sitio",
+   "tipo": "abierto",
+   "orden": 1
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Ubicación",
+   "tipo": "abierto",
+   "orden": 2
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Capacidad",
+   "tipo": "abierto",
+   "orden": 3
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "dominio",
+   "tipo": "selección multiple",
+   "orden": 4
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Materiales obtenidos",
+   "tipo": "selección multiple",
+   "orden": 5
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Nombre de contacto",
+   "tipo": "abierto",
+   "orden": 6
+ },
+ {
+   "id_pregunta": 259,
+   "columna": "Telefono de contacto",
+   "tipo": "abierto",
+   "orden": 7
+ }
+]
