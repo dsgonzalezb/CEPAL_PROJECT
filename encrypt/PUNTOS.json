@@ -1,0 +1,2162 @@
+[
+ {
+   "ID_PREGUNTA": 1,
+   "CODIGO": "ER_1A",
+   "OPERADOR_1": "AND",
+   "VALOR_1": "A;B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 1,
+   "CODIGO": "ER_1A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 1,
+   "CODIGO": "ER_1A",
+   "OPERADOR_1": "OR",
+   "VALOR_1": "C;D;E;F",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 3,
+   "CODIGO": "ER_2A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "b",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 3,
+   "CODIGO": "ER_2A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "c",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 3,
+   "CODIGO": "ER_2A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "a",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 7,
+   "CODIGO": "ER_3A",
+   "OPERADOR_1": "<=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "FECHA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 7,
+   "CODIGO": "ER_3A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "FECHA",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 34,
+   "CODIGO": "ER_4A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,52",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 34,
+   "CODIGO": "ER_4A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,52",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,64",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 34,
+   "CODIGO": "ER_4A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,64",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 45,
+   "CODIGO": "ER_5A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 45,
+   "CODIGO": "ER_5A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 45,
+   "CODIGO": "ER_5A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 46,
+   "CODIGO": "ER_6A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "70",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 46,
+   "CODIGO": "ER_6A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "<",
+   "VALOR_2": "70",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 46,
+   "CODIGO": "ER_6A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 47,
+   "CODIGO": "ER_7A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 47,
+   "CODIGO": "ER_7A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 47,
+   "CODIGO": "ER_7A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 63,
+   "CODIGO": "ER_8A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 63,
+   "CODIGO": "ER_8A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 67,
+   "CODIGO": "ER_9A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "90",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 67,
+   "CODIGO": "ER_9A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "50",
+   "OPERADOR_2": "<",
+   "VALOR_2": "90",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 67,
+   "CODIGO": "ER_9A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "50",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 68,
+   "CODIGO": "ER_10A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "50",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 68,
+   "CODIGO": "ER_10A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "50",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 68,
+   "CODIGO": "ER_10A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 75,
+   "CODIGO": "ER_11A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "b",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 75,
+   "CODIGO": "ER_11A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "c",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 75,
+   "CODIGO": "ER_11A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "a",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 75,
+   "CODIGO": "ER_11A",
+   "OPERADOR_1": "=",
+   "VALOR_1": "d",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "MULTIPLE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 405,
+   "CODIGO": "ER_12A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 405,
+   "CODIGO": "ER_12A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "<",
+   "VALOR_2": "50",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 405,
+   "CODIGO": "ER_12A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "50",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 116,
+   "CODIGO": "ER_13A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "53",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 116,
+   "CODIGO": "ER_13A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "<",
+   "VALOR_2": "53",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 116,
+   "CODIGO": "ER_13A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 117,
+   "CODIGO": "ER_14A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 117,
+   "CODIGO": "ER_14A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 117,
+   "CODIGO": "ER_14A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 130,
+   "CODIGO": "ER_15A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,34",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 130,
+   "CODIGO": "ER_15A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,1",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,34",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 130,
+   "CODIGO": "ER_15A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,1",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 131,
+   "CODIGO": "ER_16A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,11",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 131,
+   "CODIGO": "ER_16A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,05",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,11",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 131,
+   "CODIGO": "ER_16A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,5",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 136,
+   "CODIGO": "ER_17A",
+   "OPERADOR_1": "<",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 136,
+   "CODIGO": "ER_17A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "50",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 136,
+   "CODIGO": "ER_17A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "50",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 151,
+   "CODIGO": "ER_18A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "7",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 151,
+   "CODIGO": "ER_18A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "5",
+   "OPERADOR_2": "<",
+   "VALOR_2": "7",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 151,
+   "CODIGO": "ER_18A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 155,
+   "CODIGO": "ER_19A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,048",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 155,
+   "CODIGO": "ER_19A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,01",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,048",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 155,
+   "CODIGO": "ER_19A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,05",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 156,
+   "CODIGO": "ER_20A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,11",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 156,
+   "CODIGO": "ER_20A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,05",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,11",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 156,
+   "CODIGO": "ER_20A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,5",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 167,
+   "CODIGO": "ER_21A",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 167,
+   "CODIGO": "ER_21A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "5",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 167,
+   "CODIGO": "ER_21A",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 186,
+   "CODIGO": "ER_1B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 186,
+   "CODIGO": "ER_1B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 184,
+   "CODIGO": "ER_2B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "3",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 184,
+   "CODIGO": "ER_2B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "<",
+   "VALOR_2": "3",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 184,
+   "CODIGO": "ER_2B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 189,
+   "CODIGO": "ER_3B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 189,
+   "CODIGO": "ER_3B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 190,
+   "CODIGO": "ER_4B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "3",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 190,
+   "CODIGO": "ER_4B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "<",
+   "VALOR_2": "3",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 190,
+   "CODIGO": "ER_4B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 198,
+   "CODIGO": "ER_5B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 198,
+   "CODIGO": "ER_5B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 205,
+   "CODIGO": "ER_6B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 205,
+   "CODIGO": "ER_6B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "5",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 205,
+   "CODIGO": "ER_6B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 214,
+   "CODIGO": "ER_7B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "3",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 214,
+   "CODIGO": "ER_7B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "<",
+   "VALOR_2": "3",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 214,
+   "CODIGO": "ER_7B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 216,
+   "CODIGO": "ER_8B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "3",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 216,
+   "CODIGO": "ER_8B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "<",
+   "VALOR_2": "3",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 216,
+   "CODIGO": "ER_8B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 221,
+   "CODIGO": "ER_9B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 221,
+   "CODIGO": "ER_9B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 226,
+   "CODIGO": "ER_10B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "2,6",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 226,
+   "CODIGO": "ER_10B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,5",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "2,6",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 226,
+   "CODIGO": "ER_10B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,5",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 238,
+   "CODIGO": "ER_11B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 238,
+   "CODIGO": "ER_11B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "CODIGO": "ER_12B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 239,
+   "CODIGO": "ER_12B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 240,
+   "CODIGO": "ER_13B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 240,
+   "CODIGO": "ER_13B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 245,
+   "CODIGO": "ER_14B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 245,
+   "CODIGO": "ER_14B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 247,
+   "CODIGO": "ER_15B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 247,
+   "CODIGO": "ER_15B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 247,
+   "CODIGO": "ER_15B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 258,
+   "CODIGO": "ER_16B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 258,
+   "CODIGO": "ER_16B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 263,
+   "CODIGO": "ER_17B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 263,
+   "CODIGO": "ER_17B",
+   "OPERADOR_1": "<",
+   "VALOR_1": "100",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 264,
+   "CODIGO": "ER_18B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "17,9",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 264,
+   "CODIGO": "ER_18B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "17,9",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 264,
+   "CODIGO": "ER_18B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 421,
+   "CODIGO": "ER_19B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 421,
+   "CODIGO": "ER_19B",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_20B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,048",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_20B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,01",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,048",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_20B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,05",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_21B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0,11",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_21B",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,05",
+   "OPERADOR_2": "<=",
+   "VALOR_2": "0,11",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 0,
+   "CODIGO": "ER_21B",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,5",
+   "TIPO": "VALOR",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 273,
+   "CODIGO": "ER_1C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1,066",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 273,
+   "CODIGO": "ER_1C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "1,066",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 273,
+   "CODIGO": "ER_1C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 274,
+   "CODIGO": "ER_2C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 274,
+   "CODIGO": "ER_2C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 286,
+   "CODIGO": "ER_3C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1,047",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 286,
+   "CODIGO": "ER_3C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "1,047",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 286,
+   "CODIGO": "ER_3C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 287,
+   "CODIGO": "ER_4C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 287,
+   "CODIGO": "ER_4C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 300,
+   "CODIGO": "ER_5C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1,3158",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 300,
+   "CODIGO": "ER_5C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "1,315",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 300,
+   "CODIGO": "ER_5C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 301,
+   "CODIGO": "ER_6C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 301,
+   "CODIGO": "ER_6C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 313,
+   "CODIGO": "ER_7C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "16,318",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 313,
+   "CODIGO": "ER_7C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "16,318",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 313,
+   "CODIGO": "ER_7C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 314,
+   "CODIGO": "ER_8C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 314,
+   "CODIGO": "ER_8C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 326,
+   "CODIGO": "ER_9C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,871",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 326,
+   "CODIGO": "ER_9C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,871",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 326,
+   "CODIGO": "ER_9C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 327,
+   "CODIGO": "ER_10C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 327,
+   "CODIGO": "ER_10C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 339,
+   "CODIGO": "ER_11C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1,131",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 339,
+   "CODIGO": "ER_11C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "1,131",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 339,
+   "CODIGO": "ER_11C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 340,
+   "CODIGO": "ER_12C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 340,
+   "CODIGO": "ER_12C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 352,
+   "CODIGO": "ER_13C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "2,519",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 352,
+   "CODIGO": "ER_13C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "2,519",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 352,
+   "CODIGO": "ER_13C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 353,
+   "CODIGO": "ER_14C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 353,
+   "CODIGO": "ER_14C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 365,
+   "CODIGO": "ER_15C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,252",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 365,
+   "CODIGO": "ER_15C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,252",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 365,
+   "CODIGO": "ER_15C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 366,
+   "CODIGO": "ER_16C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 366,
+   "CODIGO": "ER_16C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 378,
+   "CODIGO": "ER_17C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,306",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 378,
+   "CODIGO": "ER_17C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,306",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 378,
+   "CODIGO": "ER_17C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 379,
+   "CODIGO": "ER_18C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 379,
+   "CODIGO": "ER_18C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 409,
+   "CODIGO": "ER_19C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "5,023",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 409,
+   "CODIGO": "ER_19C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "5,023",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 409,
+   "CODIGO": "ER_19C",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 410,
+   "CODIGO": "ER_20C",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "1",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 410,
+   "CODIGO": "ER_20C",
+   "OPERADOR_1": "=",
+   "VALOR_1": "0",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 441,
+   "CODIGO": "ER_1D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 441,
+   "CODIGO": "ER_1D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "5",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 441,
+   "CODIGO": "ER_1D",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 445,
+   "CODIGO": "ER_2D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 445,
+   "CODIGO": "ER_2D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "5",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 445,
+   "CODIGO": "ER_2D",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 449,
+   "CODIGO": "ER_3D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "20",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 449,
+   "CODIGO": "ER_3D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "20",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 449,
+   "CODIGO": "ER_3D",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 453,
+   "CODIGO": "ER_4D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "17,5",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 30
+ },
+ {
+   "ID_PREGUNTA": 453,
+   "CODIGO": "ER_4D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "10",
+   "OPERADOR_2": "<",
+   "VALOR_2": "17,5",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 453,
+   "CODIGO": "ER_4D",
+   "OPERADOR_1": ">",
+   "VALOR_1": "0",
+   "OPERADOR_2": "<",
+   "VALOR_2": "10",
+   "TIPO": "PORCENTAJE",
+   "PUNTOS": 5
+ },
+ {
+   "ID_PREGUNTA": 456,
+   "CODIGO": "ER_5D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,784",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 456,
+   "CODIGO": "ER_5D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,784",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 456,
+   "CODIGO": "ER_5D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 459,
+   "CODIGO": "ER_6D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,191",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 459,
+   "CODIGO": "ER_6D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,191",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 459,
+   "CODIGO": "ER_6D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 462,
+   "CODIGO": "ER_7D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,191",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 462,
+   "CODIGO": "ER_7D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,191",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 462,
+   "CODIGO": "ER_7D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 465,
+   "CODIGO": "ER_8D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,191",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 465,
+   "CODIGO": "ER_8D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,191",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 465,
+   "CODIGO": "ER_8D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 468,
+   "CODIGO": "ER_9D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,008",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 468,
+   "CODIGO": "ER_9D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,008",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 468,
+   "CODIGO": "ER_9D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 471,
+   "CODIGO": "ER_10D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,008",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 471,
+   "CODIGO": "ER_10D",
+   "OPERADOR_1": ">=",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "<",
+   "VALOR_2": "0,008",
+   "TIPO": "VALOR",
+   "PUNTOS": 10
+ },
+ {
+   "ID_PREGUNTA": 471,
+   "CODIGO": "ER_10D",
+   "OPERADOR_1": "<",
+   "VALOR_1": "0,004",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "VALOR",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 475,
+   "CODIGO": "ER_11D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 475,
+   "CODIGO": "ER_11D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 477,
+   "CODIGO": "ER_12D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 477,
+   "CODIGO": "ER_12D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 479,
+   "CODIGO": "ER_13D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 479,
+   "CODIGO": "ER_13D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 481,
+   "CODIGO": "ER_14D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 481,
+   "CODIGO": "ER_14D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 483,
+   "CODIGO": "ER_15D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 483,
+   "CODIGO": "ER_15D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 485,
+   "CODIGO": "ER_16D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 485,
+   "CODIGO": "ER_16D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 487,
+   "CODIGO": "ER_17D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 487,
+   "CODIGO": "ER_17D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 489,
+   "CODIGO": "ER_18D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 489,
+   "CODIGO": "ER_18D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 491,
+   "CODIGO": "ER_19D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 491,
+   "CODIGO": "ER_19D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 493,
+   "CODIGO": "ER_20D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 493,
+   "CODIGO": "ER_20D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ },
+ {
+   "ID_PREGUNTA": 495,
+   "CODIGO": "ER_21D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "A",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 15
+ },
+ {
+   "ID_PREGUNTA": 495,
+   "CODIGO": "ER_21D",
+   "OPERADOR_1": "=",
+   "VALOR_1": "B",
+   "OPERADOR_2": "NA",
+   "VALOR_2": "NA",
+   "TIPO": "UNICA",
+   "PUNTOS": 0
+ }
+]

@@ -6,6 +6,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&176",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -15,6 +16,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&179",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -24,6 +26,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&185",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -33,6 +36,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&191",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -42,6 +46,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&215",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -51,6 +56,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&217",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -60,6 +66,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&232",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -69,6 +76,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&234",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -78,6 +86,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&237",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -87,6 +96,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&239",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -96,6 +106,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&241",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -105,6 +116,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&259",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -114,6 +126,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&275",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -123,6 +136,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&288",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -132,6 +146,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&302",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -141,6 +156,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&315",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -150,6 +166,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&328",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -159,6 +176,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&341",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -168,6 +186,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&354",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -177,6 +196,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&367",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -186,6 +206,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&380",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -195,6 +216,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&390",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -204,6 +226,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&394",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -213,6 +236,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&392",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -222,6 +246,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&396",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -231,6 +256,7 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&422",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  },
  {
@@ -240,6 +266,987 @@
    "OP": "=",
    "CPO2": "NA",
    "CPD": "&411",
+   "alias": "NA",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 28,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&4",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "&5",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 29,
+   "tipo": "SUMATORIA",
+   "CPO": "&9;&10;&11;&12;&13;&14;&15;&16;&17;&18;&19;&20;&21;&22",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&23",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 30,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&23",
+   "OP": "/",
+   "CPO2": "#MES",
+   "CPD": "&24",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 31,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&23",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "&25",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 32,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&28",
+   "OP": "*",
+   "CPO2": "&29",
+   "CPD": "&30",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 33,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&4",
+   "OP": "*",
+   "CPO2": "[0,907185]",
+   "CPD": "NA",
+   "alias": "!33",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 34,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!33",
+   "OP": "*",
+   "CPO2": "[0,31]",
+   "CPD": "&31",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 35,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&23",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "NA",
+   "alias": "!35",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 36,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!35",
+   "OP": "*",
+   "CPO2": "[1000]",
+   "CPD": "NA",
+   "alias": "!36",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 37,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!36",
+   "OP": "/",
+   "CPO2": "&28",
+   "CPD": "&34",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 38,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&39",
+   "OP": "+",
+   "CPO2": "&38",
+   "CPD": "&41",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 39,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&38",
+   "OP": "*",
+   "CPO2": "&39",
+   "CPD": "NA",
+   "alias": "!39",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 40,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!39",
+   "OP": "*",
+   "CPO2": "#SEGXDIA",
+   "CPD": "&42",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 41,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&42",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&43",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 42,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&42",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&44",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 43,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&37",
+   "OP": "/",
+   "CPO2": "&36",
+   "CPD": "&45",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 44,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&38",
+   "OP": "/",
+   "CPO2": "&36",
+   "CPD": "&46",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 45,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&39",
+   "OP": "/",
+   "CPO2": "&36",
+   "CPD": "&47",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 46,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&50",
+   "OP": "*",
+   "CPO2": "#SEGXDIA",
+   "CPD": "&51",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 47,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&51",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&52",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 48,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&52",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&53",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 49,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&56",
+   "OP": "+",
+   "CPO2": "&57",
+   "CPD": "NA",
+   "alias": "!49",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 50,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!49",
+   "OP": "/",
+   "CPO2": "&55",
+   "CPD": "&58",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 51,
+   "tipo": "SUMATORIA",
+   "CPO": "&60;&61;&62",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&63",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 52,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&63",
+   "OP": "*",
+   "CPO2": "#HORAXDIA",
+   "CPD": "&64",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 53,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&63",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&65",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 54,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&63",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&66",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 55,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&56",
+   "OP": "/",
+   "CPO2": "&55",
+   "CPD": "&67",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 56,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&57",
+   "OP": "/",
+   "CPO2": "&55",
+   "CPD": "&68",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 57,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&70",
+   "OP": "*",
+   "CPO2": "#HORAXDIA",
+   "CPD": "&71",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 58,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&71",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&72",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 59,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&71",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&73",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 60,
+   "tipo": "SUMATORIA",
+   "CPO": "&82;&83;&84",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&85",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 61,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&85",
+   "OP": "*",
+   "CPO2": "#HORAXDIA",
+   "CPD": "&86",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 62,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&85",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&87",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 63,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&85",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&88",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 64,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&89",
+   "OP": "*",
+   "CPO2": "#HORAXDIA",
+   "CPD": "&90",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 65,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&89",
+   "OP": "*",
+   "CPO2": "#MES",
+   "CPD": "&91",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 66,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&89",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&92",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 67,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&94",
+   "OP": "*",
+   "CPO2": "#MESXAÑO",
+   "CPD": "&95",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 68,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&94",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&96",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 69,
+   "tipo": "SUMATORIA",
+   "CPO": "&100;&101;&102;&103;&104;&105;&106;&107",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&108",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 70,
+   "tipo": "SUMATORIA",
+   "CPO": "&79;&93;&97;&98:&108;&109;&110;&111",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&112",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 71,
+   "tipo": "SUMATORIA",
+   "CPO": "&404;&403;&402;&401;&400;&399",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&113",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 72,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&112",
+   "OP": "*",
+   "CPO2": "#MESXAÑO",
+   "CPD": "&114",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 73,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&112",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&115",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 74,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&111",
+   "OP": "/",
+   "CPO2": "76%",
+   "CPD": "&405",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 75,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&395",
+   "OP": "-",
+   "CPO2": "&97",
+   "CPD": "NA",
+   "alias": "!75",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 76,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&112",
+   "OP": "-",
+   "CPO2": "&111",
+   "CPD": "NA",
+   "alias": "!76",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 77,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&23",
+   "OP": "+",
+   "CPO2": "&111",
+   "CPD": "NA",
+   "alias": "!77",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 78,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&77",
+   "OP": "+",
+   "CPO2": "!76",
+   "CPD": "NA",
+   "alias": "!78",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 79,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&75",
+   "OP": "/",
+   "CPO2": "!78",
+   "CPD": "&116",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 80,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&113",
+   "OP": "+",
+   "CPO2": "&9",
+   "CPD": "NA",
+   "alias": "!80",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 81,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!80",
+   "OP": "+",
+   "CPO2": "&21",
+   "CPD": "NA",
+   "alias": "!81",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 82,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&113",
+   "OP": "/",
+   "CPO2": "!81",
+   "CPD": "&117",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 83,
+   "tipo": "SUMATORIA",
+   "CPO": "&119;&120;&121;&122;&123;&124;&125;&126;&127",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&128",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 84,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&112",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "NA",
+   "alias": "!84",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 85,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!84",
+   "OP": "*",
+   "CPO2": "[1000]",
+   "CPD": "NA",
+   "alias": "!85",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 86,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!85",
+   "OP": "/",
+   "CPO2": "&28",
+   "CPD": "&130",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 87,
+   "tipo": "SUMATORIA",
+   "CPO": "&139;&140;&141;&142;&143;&144;&145;&146;&406",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&147",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 88,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&147",
+   "OP": "*",
+   "CPO2": "#MESXAÑO",
+   "CPD": "&148",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 89,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&147",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&149",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 90,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&147",
+   "OP": "/",
+   "CPO2": "&137",
+   "CPD": "&150",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 91,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&137",
+   "OP": "-",
+   "CPO2": "&149",
+   "CPD": "NA",
+   "alias": "!91",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 92,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&137",
+   "OP": "-",
+   "CPO2": "&149",
+   "CPD": "NA",
+   "alias": "!92",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 93,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&395",
+   "OP": "-",
+   "CPO2": "&111",
+   "CPD": "NA",
+   "alias": "!93",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 94,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&23",
+   "OP": "+",
+   "CPO2": "&111",
+   "CPD": "NA",
+   "alias": "!94",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 95,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!94",
+   "OP": "+",
+   "CPO2": "&149",
+   "CPD": "NA",
+   "alias": "!95",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 96,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!95",
+   "OP": "+",
+   "CPO2": "!92",
+   "CPD": "NA",
+   "alias": "!96",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 97,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!93",
+   "OP": "+",
+   "CPO2": "!96",
+   "CPD": "NA",
+   "alias": "!97",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 98,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!91",
+   "OP": "/",
+   "CPO2": "!97",
+   "CPD": "&151",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 99,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&147",
+   "OP": "-",
+   "CPO2": "&146",
+   "CPD": "NA",
+   "alias": "!99",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 100,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!99",
+   "OP": "*",
+   "CPO2": "[0,907185]",
+   "CPD": "NA",
+   "alias": "!100",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 101,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!100",
+   "OP": "*",
+   "CPO2": "[-2,85]",
+   "CPD": "&154",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 102,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&137",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "NA",
+   "alias": "!102",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 103,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!102",
+   "OP": "*",
+   "CPO2": "[1000]",
+   "CPD": "NA",
+   "alias": "!103",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 104,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!103",
+   "OP": "/",
+   "CPO2": "&28",
+   "CPD": "&155",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 105,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&137",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "NA",
+   "alias": "!105",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 106,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!105",
+   "OP": "*",
+   "CPO2": "[1000]",
+   "CPD": "NA",
+   "alias": "!106",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 107,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&152",
+   "OP": "/",
+   "CPO2": "#AÑO",
+   "CPD": "NA",
+   "alias": "!107",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 108,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!106",
+   "OP": "*",
+   "CPO2": "[1000]",
+   "CPD": "NA",
+   "alias": "!108",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 109,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!106",
+   "OP": "-",
+   "CPO2": "!108",
+   "CPD": "NA",
+   "alias": "!109",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 110,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!108",
+   "OP": "/",
+   "CPO2": "&28",
+   "CPD": "&156",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 111,
+   "tipo": "SUMATORIA",
+   "CPO": "&159;&160;&161",
+   "OP": "SUM",
+   "CPO2": "NA",
+   "CPD": "&163",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 112,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&164",
+   "OP": "+",
+   "CPO2": "&165",
+   "CPD": "&166",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 113,
+   "tipo": "CALC_SIMPLE",
+   "CPO": "&165",
+   "OP": "/",
+   "CPO2": "&158",
+   "CPD": "&167",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 114,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "&34",
+   "OP": "+",
+   "CPO2": "&130",
+   "CPD": "NA",
+   "alias": "!114",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 115,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!114",
+   "OP": "+",
+   "CPO2": "&155",
+   "CPD": "NA",
+   "alias": "!115",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 116,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!115",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&170",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 117,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!131",
+   "OP": "+",
+   "CPO2": "&156",
+   "CPD": "NA",
+   "alias": "!117",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "CALC_COMPUESTO",
+   "CPO": "!117",
+   "OP": "*",
+   "CPO2": "#AÑO",
+   "CPD": "&171",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&4",
+   "OP": "=",
+   "CPO2": "&23",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&41",
+   "OP": "=",
+   "CPO2": "&37",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&58",
+   "OP": "=",
+   "CPO2": "&57",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&80",
+   "OP": "=",
+   "CPO2": "&83",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&108",
+   "OP": "=",
+   "CPO2": "&99",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&137",
+   "OP": "=",
+   "CPO2": "&147",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
+ },
+ {
+   "id_cal": 118,
+   "tipo": "VALIDACION",
+   "CPO": "&158",
+   "OP": "=",
+   "CPO2": "&163",
+   "CPD": "NA",
+   "alias": "NA",
+   "detalle": "EN ESPERA"
  }
 ]

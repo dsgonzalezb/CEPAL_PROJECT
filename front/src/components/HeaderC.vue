@@ -4,7 +4,7 @@
             <div class="logos" @click="$router.push({name: 'Home'})">
                 <img src="@/assets/cepal.png" alt="CEPAL">
                 <img src="@/assets/dnp.jpg" alt="DNP">
-                <div class="title"><i class="fas fa-infinity"></i> <br> MC-GERM</div>
+                <div class="title"><i class="fas fa-infinity"></i> <br> MC-GRM</div>
                 
             </div>
             <div class="buttons">

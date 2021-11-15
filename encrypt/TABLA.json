@@ -19,7 +19,7 @@
  },
  {
    "ID_PREGUNTA": 176,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -55,7 +55,7 @@
  },
  {
    "ID_PREGUNTA": 179,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -91,7 +91,7 @@
  },
  {
    "ID_PREGUNTA": 185,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -133,7 +133,7 @@
  },
  {
    "ID_PREGUNTA": 191,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -169,7 +169,7 @@
  },
  {
    "ID_PREGUNTA": 215,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -211,7 +211,7 @@
  },
  {
    "ID_PREGUNTA": 217,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -253,7 +253,7 @@
  },
  {
    "ID_PREGUNTA": 232,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -289,7 +289,7 @@
  },
  {
    "ID_PREGUNTA": 234,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -325,7 +325,7 @@
  },
  {
    "ID_PREGUNTA": 237,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -367,7 +367,7 @@
  },
  {
    "ID_PREGUNTA": 239,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -409,7 +409,7 @@
  },
  {
    "ID_PREGUNTA": 241,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -451,7 +451,7 @@
  },
  {
    "ID_PREGUNTA": 259,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -493,7 +493,7 @@
  },
  {
    "ID_PREGUNTA": 275,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -535,7 +535,7 @@
  },
  {
    "ID_PREGUNTA": 288,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -571,7 +571,7 @@
  },
  {
    "ID_PREGUNTA": 302,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -607,7 +607,7 @@
  },
  {
    "ID_PREGUNTA": 315,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -643,7 +643,7 @@
  },
  {
    "ID_PREGUNTA": 328,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -679,7 +679,7 @@
  },
  {
    "ID_PREGUNTA": 341,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -715,7 +715,7 @@
  },
  {
    "ID_PREGUNTA": 354,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -751,7 +751,7 @@
  },
  {
    "ID_PREGUNTA": 367,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -787,7 +787,7 @@
  },
  {
    "ID_PREGUNTA": 380,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -859,7 +859,7 @@
  },
  {
    "ID_PREGUNTA": 411,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },
@@ -895,7 +895,7 @@
  },
  {
    "ID_PREGUNTA": 422,
-   "COLUMNA": "dominio",
+   "COLUMNA": "Unidad de medida",
    "TIPO": "selección unica",
    "ORDEN": 4
  },

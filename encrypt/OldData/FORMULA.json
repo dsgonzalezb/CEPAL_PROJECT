@@ -223,5 +223,23 @@
    "CPO2": "NA",
    "CPD": "&396",
    "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 26,
+   "tipo": "REG_TAB",
+   "CPO": "&421",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&422",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
+ },
+ {
+   "id_cal": 27,
+   "tipo": "REG_TAB",
+   "CPO": "&410",
+   "OP": "=",
+   "CPO2": "NA",
+   "CPD": "&411",
+   "detalle": "La pregunta CPD debe contener # OP de registros que se ingresaron en CPO"
  }
 ]

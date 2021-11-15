@@ -7,10 +7,12 @@
                 <div>
                     <div class="label">{{$t('descriptive.populationSeries')}}</div>
                     <chartjs-line :labels="labels" :datasets="datasets" :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.populationDensity')}}</div>
                     <chartjs-line :labels="labels" :datasets="dDatasets"  :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
             </div>
         </div>
@@ -22,20 +24,24 @@
                 <div>
                     <div class="label">{{$t('descriptive.bussinessDesnsity')}}</div>
                     <chartjs-line :labels="labels" :datasets="bDatasets" :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.agregateValue')}}</div>
                     <chartjs-line :labels="vLabesl" :datasets="vDatasets"  :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                  <div>
                     <div class="label">{{$t('descriptive.economy')}}</div>
                     <div class="big-number">
                         {{economy}}
                     </div>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.money')}}</div>
                     <chartjs-line :labels="labels" :datasets="iDatasets"  :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
             </div>
         </div>
@@ -47,14 +53,17 @@
                 <div>
                     <div class="label">{{$t('descriptive.eca')}}</div>
                     <chartjs-line :labels="labels" :datasets="eDatasets" :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.pgris')}}</div>
                     <chartjs-doughnut :labels="pLabels" :data="pgDatasets" :bind="true" :option="dougRoundOption"></chartjs-doughnut>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
                 <div>
                     <div class="label">{{$t('descriptive.res')}}</div>
                     <chartjs-line :labels="labels" :datasets="resDatasets" :bind="true"></chartjs-line>
+                    {{$t('descriptive.source')}} DNP - 2019
                 </div>
             </div>
         </div>
@@ -258,7 +267,7 @@ export default {
         }
     },
     beforeCreate: function() {
-        console.log('Des 1 '+this.$loading)
+        //console.log('Des 1 '+this.$loading)
     },
     async mounted(){
         if(this.$route.params.id != null){

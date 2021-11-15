@@ -1,0 +1,1104 @@
+<template>
+    <div>
+        <div class="questions" v-if="isLoad == false">
+            En Construcción
+        </div>
+        <div class="questions" v-if="isLoad" @mouseover="$forceUpdate()">
+            <div class="question" v-for="(question, i) in selectedQuestions" :key="i">
+                <!-- {{question['VISIBLE'] == 1}}
+                {{getCalculated(i)}} -->
+                <div v-if="selectedQuestions[i]['ANSWERS']">
+                    <div v-show="question['VISIBLE'] == 1 && getCalculated(i)">
+                        <b>{{question['COD_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
+                        <div class="cols-c" v-if="selectedQuestions[i]['ANSWERS'].id_pregunta != undefined ">
+                            <!--COL1 -->
+                            
+                            <div class="col-c" v-if="question['TIPO_1'] != 'NA'">
+                                <div v-if="question['TIPO_1'] == 'grafica'">
+                                    <chartjs-line  :bind="true"></chartjs-line>
+                                </div>
+                                <div v-if="question['TIPO_1'] == 'tabla' && question['TABLES'] != undefined && question['TANSWERS'] != undefined ">
+                                    <div class="header">
+                                        <div class="item-h" v-for="(item, j) in question['TABLES']" :key="j">
+                                            {{item['COLUMNA']}}
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="body"  v-for="(tanswers, k) in question['TANSWERS']" :key="k+question['TANSWERS'].length" >
+                                        <div class="item" v-for="(item, j) in question['TABLES']" :key="j">
+                                            <div v-if="item['TIPO']== 'abierto numero'">
+                                                <b-input v-model="question['TANSWERS'][k][j+1]" @paste.prevent @keypress="validNumber($event)"></b-input>
+                                            </div>
+                                            <div v-if="item['TIPO']== 'abierto texto'">
+                                                <b-input v-model="question['TANSWERS'][k][j+1]"></b-input>
+                                            </div>
+                                            <div v-if="item['TIPO']== 'abierto fecha'">
+                                                <b-form-datepicker :id="'datepicker-T-'+k+'-'+j" locale="es" v-bind="labels['es'] || {}" v-model="question['TANSWERS'][k][j+1]"></b-form-datepicker>
+                                            </div>
+                                            <div v-if="item['TIPO']== 'selección unica'">
+                                                <v-select :options="getRes(item['ORDEN'],i)" v-model="question['TANSWERS'][k][j+1]"  label="TEXTO" />
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <!-- <b-button variant="outline-primary" style="width: 100%" @click="addTableAnswer(i)"><i class="far fa-plus-square"></i> {{$t('manager.add_table')}}</b-button> -->
+                                    
+                                </div>
+                                <div class="inline" v-if="question['TIPO_1']== 'abierto numero'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_1']== 'abierto texto'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_1']== 'abierto fecha'">
+                                    <b-form-datepicker :id="'datepicker-Q1-'+i" locale="es" v-bind="labels['es'] || {}" v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-form-datepicker> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                </div>
+                                <div class="inline calculado" v-if="question['TIPO_1']== 'calculado'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_calc1']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                </div> 
+                                <div class="inline referencia" v-if="question['TIPO_1']== 'referencia'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_ref']" :disabled="true"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                </div>
+                                <div v-if="question['TIPO_1']== 'selección multiple'">
+                                    <b-form-checkbox
+                                    v-for="(item, j) in question['RESPUESTAS']"
+                                    :key="j"
+                                    :id="'checkbox'+i+j"
+                                    v-model="selectedQuestions[i]['ANSWERS'][item['COLUMNA']]"
+                                    :name="'checkbox'+i+j"
+                                    :value="1"
+                                    :unchecked-value="0"
+                                    :disabled="ifActive(selectedQuestions[i]['ANSWERS'],5) && selectedQuestions[i]['ANSWERS'][item['COLUMNA']] == 0"
+                                    >
+                                    {{item['TEXTO']}}
+                                    </b-form-checkbox>
+                                </div>
+                                <div v-if="question['TIPO_1']== 'selección unica'">
+                                    <v-select :options="question['RESPUESTAS']" v-model="selectedQuestions[i]['ANSWERS']['dato_unico']"  label="TEXTO" />
+                                </div>
+                                <div v-if="question['TIPO_1']== 'año'">
+                                    <b>Año {{year}}</b>
+                                </div>
+                                <div class="inline2" v-if="question['TIPO_1']== 'año editable'">
+                                <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span> <v-select v-model="selectedQuestions[i]['ANSWERS']['anio']" :options="yearOpt"></v-select>
+                                </div>
+                                <br>
+                                <br v-if="question['TIPO_1'] != 'titulo'" >
+                            </div>
+                            <!--COL1 -->
+                            <!--COL2 -->
+                            <div class="col-c" v-if="question['TIPO_2'] != 'NA'">
+                                <div v-if="question['TIPO_2']== 'grafica'">
+                                    <chartjs-line  :bind="true"></chartjs-line>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_2']== 'abierto numero'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_2']== 'abierto texto'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_2']== 'abierto fecha'">
+                                    <b-form-datepicker :id="'datepicker-Q2-'+i" locale="es" v-bind="labels['es'] || {}" v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-form-datepicker> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                </div>
+                                <div class="inline calculado" v-if="question['TIPO_2']== 'calculado'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_calc2']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                </div>
+                                <div class="inline referencia" v-if="question['TIPO_2']== 'referencia'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_ref']" :disabled="true"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                </div>
+                                <div v-if="question['TIPO_2']== 'selección multiple'">
+                                    <b-form-checkbox
+                                    v-for="(item, j) in question['RESPUESTAS']"
+                                    :key="j"
+                                    :id="'checkbox'+i+j"
+                                    v-model="selectedQuestions[i]['ANSWERS'][item['COLUMNA']]"
+                                    :name="'checkbox'+i+j"
+                                    :value="1"
+                                    :unchecked-value="0"
+                                    :disabled="ifActive(selectedQuestions[i]['ANSWERS'],5) && questions[i]['ANSWERS'][item['COLUMNA']] == 0"
+                                    >
+                                    {{item['TEXTO']}}
+                                    </b-form-checkbox>
+                                </div>
+                                <div v-if="question['TIPO_2']== 'selección unica'">
+                                    <v-select :options="question['RESPUESTAS']" v-model="selectedQuestions[i]['ANSWERS']['dato_unico']"  label="TEXTO" />
+                                </div>
+                                <div v-if="question['TIPO_2']== 'año'">
+                                    <b>Año {{year}}</b>
+                                </div>
+                                <div class="inline2" v-if="question['TIPO_2']== 'año editable'">
+                                <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span> <v-select v-model="selectedQuestions[i]['ANSWERS']['anio']" :options="yearOpt"></v-select>
+                                </div>
+                                <br>
+                                <br v-if="question['TIPO_2'] != 'titulo'" >
+                            </div>
+                            <!--COL2 -->
+                            <!--COL3 -->
+                            <div class="col-c" v-if="question['TIPO_3'] != 'NA'">
+                                <div v-if="question['TIPO_3']== 'grafica'">
+                                    <chartjs-line  :bind="true"></chartjs-line>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_3']== 'abierto numero'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_3']== 'abierto texto'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_3']== 'abierto fecha'">
+                                    <b-form-datepicker :id="'datepicker-Q3-'+i" locale="es" v-bind="labels['es'] || {}" v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-form-datepicker> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                </div>
+                                <div class="inline calculado" v-if="question['TIPO_3']== 'calculado'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_calc3']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                </div>
+                                <div class="inline referencia" v-if="question['TIPO_3']== 'referencia'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_ref']" :disabled="true"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                </div>
+                                <div v-if="question['TIPO_3']== 'selección multiple'">
+                                    <b-form-checkbox
+                                    v-for="(item, j) in question['RESPUESTAS']"
+                                    :key="j"
+                                    :id="'checkbox'+i+j"
+                                    v-model="selectedQuestions[i]['ANSWERS'][item['COLUMNA']]"
+                                    :name="'checkbox'+i+j"
+                                    :value="1"
+                                    :unchecked-value="0"
+                                    :disabled="ifActive(selectedQuestions[i]['ANSWERS'],5) && selectedQuestions[i]['ANSWERS'][item['COLUMNA']] == 0"
+                                    >
+                                    {{item['TEXTO']}}
+                                    </b-form-checkbox>
+                                </div>
+                                <div v-if="question['TIPO_3']== 'selección unica'">
+                                    <v-select :options="question['RESPUESTAS']" v-model="selectedQuestions[i]['ANSWERS']['dato_unico']"  label="TEXTO" />
+                                </div>
+                                <div v-if="question['TIPO_3']== 'año'">
+                                    <b>Año {{year}}</b>
+                                </div>
+                                <div class="inline2" v-if="question['TIPO_3']== 'año editable'">
+                                <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span> <v-select v-model="selectedQuestions[i]['ANSWERS']['anio']" :options="yearOpt"></v-select>
+                                </div>
+                                <br>
+                                <br v-if="question['TIPO_3'] != 'titulo'" >
+                            </div>
+                            <!--COL3 -->
+                            <!--COL4 -->
+                            <div class="col-c" v-if="question['TIPO_4'] != 'NA'">
+                                <div v-if="question['TIPO_4']== 'grafica'">
+                                    <chartjs-line  :bind="true"></chartjs-line>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_4']== 'abierto numero'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_4']== 'abierto texto'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                </div>
+                                <div class="inline" v-if="question['TIPO_4']== 'abierto fecha'">
+                                    <b-form-datepicker :id="'datepicker-Q4-'+i" locale="es" v-bind="labels['es'] || {}" v-model="selectedQuestions[i]['ANSWERS']['dato_text']"></b-form-datepicker> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                </div>
+                                <div  class="inline calculado" v-if="question['TIPO_4']== 'calculado'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_calc4']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                </div>
+                                <div class="inline referencia" v-if="question['TIPO_4']== 'referencia'">
+                                    <b-input v-model="selectedQuestions[i]['ANSWERS']['dato_ref']" :disabled="true"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                </div>
+                                <div v-if="question['TIPO_4']== 'selección multiple'">
+                                    <b-form-checkbox
+                                    v-for="(item, j) in question['RESPUESTAS']"
+                                    :key="j"
+                                    :id="'checkbox'+i+j"
+                                    v-model="selectedQuestions[i]['ANSWERS'][item['COLUMNA']]"
+                                    :name="'checkbox'+i+j"
+                                    :value="1"
+                                    :unchecked-value="0"
+                                    :disabled="ifActive(selectedQuestions[i]['ANSWERS'],5) && selectedQuestions[i]['ANSWERS'][item['COLUMNA']] == 0"
+                                    >
+                                    {{item['TEXTO']}}
+                                    </b-form-checkbox>
+                                </div>
+                                <div v-if="question['TIPO_4']== 'selección unica'">
+                                    <v-select :options="question['RESPUESTAS']" v-model="selectedQuestions[i]['ANSWERS']['dato_unico']"  label="TEXTO" />
+                                </div>
+                                <div v-if="question['TIPO_4']== 'año'">
+                                    <b>Año {{year}}</b>
+                                </div>
+                                <div class="inline2" v-if="question['TIPO_4']== 'año editable'">
+                                <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span> <v-select v-model="selectedQuestions[i]['ANSWERS']['anio']" :options="yearOpt"></v-select>
+                                </div>
+                                <br>
+                                <br v-if="question['TIPO_4'] != 'titulo'" >
+                            </div>
+                            <!--COL4 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center" v-show="selectedQuestions.length>0">
+            <b-button variant="outline-warning" @click="validAnswers"><i class="far fa-save"></i> {{$t('spda.save')}}</b-button>
+        </div>
+
+        <b-modal ref="error" id="error" size="md" :ok-only="true" :title="$t('descriptive.valid_data')">
+            <div v-html="this.errorMessage"></div>
+        </b-modal>
+    </div>
+</template>
+
+<script>
+export default {
+    name:'Question',
+    props:{
+        wizard:{
+            type: Number,
+            default: 1
+        },
+        section:{
+            type: Number,
+            default: 2
+        }
+    },
+    data(){
+        return{
+            errorSave: false,
+            errorMessage: '',
+            questions: [],
+            selectedQuestions: [],
+            //answers:[],
+            variables: [],
+            formulaAlias: [],
+            isLoad: false,
+            year: null,
+            idDes: null,
+            yearOpt: [
+                2019,
+                2018,
+                2017,
+                2016,
+                2015,
+                2014,
+                2013,
+                2012,
+                2011,
+                2010,
+                2009
+            ],
+            regN: /^[0-9]+$/,
+            labels: {
+                es: {
+                    labelPrevDecade: 'Década anterior',
+                    labelPrevYear: 'Año anterior',
+                    labelPrevMonth: 'Mes anterior',
+                    labelCurrentMonth: 'Mes actual',
+                    labelNextMonth: 'Mes siguiente',
+                    labelNextYear: 'Año siquiente',
+                    labelNextDecade: 'Década siguiente',
+                    labelToday: 'Hoy',
+                    labelSelected: 'Fecha seleccionada',
+                    labelNoDateSelected: 'Sin fecha elegida',
+                    labelCalendar: 'Calendario',
+                    labelNav: 'Navegación de calendario ',
+                    labelHelp: 'Utilice las teclas de flecha para navegar por el calendario'
+                },
+            },
+            constants_calculated: {
+                table: 'REG_TAB',
+                sum: 'SUMATORIA',
+                simple: 'CALC_SIMPLE',
+                compose: 'CALC_COMPUESTO',
+                equal:  'IGUAL'
+            }
+        }
+    },
+    async mounted(){
+        this.year =  localStorage.getItem('year');
+        this.idDes =  localStorage.getItem('id_territorio');
+        this.$store.dispatch('year')
+        this.isLoad=false
+        this.updateQuestions()
+    },
+    methods: {
+        getCalculated(i){
+            console.log(this.selectedQuestions[i])
+            console.log(this.selectedQuestions[i]['FORMULA'])
+            if(this.selectedQuestions.length < 1 ) return false
+            if(this.selectedQuestions[i]['FORMULA'] == undefined) return false
+            if(this.selectedQuestions[i]['FORMULA'].length<1){
+                return true
+            }
+            else{
+                //console.log(this.questions[i]['FORMULA'][0].tipo)
+                if(this.selectedQuestions[i]['FORMULA'][0].tipo == this.constants_calculated.table){
+                    let idO = this.selectedQuestions[i]['FORMULA'][0]['CPO'].split("&")[1]
+                    console.log(idO)
+                    if(this.selectedQuestions[i]['FORMULA'][0]['OP'] == '='){
+                        let answer = this.getAnswerValues(parseInt(idO))
+                        console.log(answer)
+                        if(parseInt(answer['dato_text']) == 0 || answer['dato_text'] == null || answer['dato_text'] == undefined || answer['dato_text'] == '' ){
+                            return false
+                        }
+                        else if(parseInt(answer['dato_text']) < 11 ){
+                            this.setRowsTables(i, parseInt(answer['dato_text']))
+                            return true
+                        }
+                        else if(parseInt(answer['dato_text']) > 10 ){
+                            this.setAnswerValueTable(parseInt(idO))
+                            this.setRowsTables(i, 10)
+                            return true
+                        }
+                        else{
+                           return false 
+                        }
+                    }
+                }
+                if(this.selectedQuestions[i]['FORMULA'][0].tipo == this.constants_calculated.sum){
+                    if(this.selectedQuestions[i]['FORMULA'][0] == undefined) return true
+                    let idOList = this.questions[i]['FORMULA'][0]['CPO'].split(";")
+                    let values =[]
+                    
+                    for (let i = 0; i < idOList.length; i++) {
+                        let idO = idOList[i].split("&")[1]
+                        let answer = this.getAnswerValues(parseInt(idO))
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                                values.push(parseInt(answer['dato_text']))
+                            }
+                            else{
+                                values.push(0)
+                            }
+                        }
+                        
+                    }
+                    let sum = values.reduce((a, b) => a + b, 0)
+                    this.setCalculatedValue(i, 1, sum)
+                    return true
+                }
+                if(this.selectedQuestions[i]['FORMULA'][0].tipo == this.constants_calculated.simple){
+                    let value = this.simpleCalculated(this.selectedQuestions[i]['FORMULA'][0])
+                    this.setCalculatedValue(i, 1, value)
+                    return true
+                }
+                if(this.selectedQuestions[i]['FORMULA'][0].tipo == this.constants_calculated.compose){
+                    let value = this.simpleCalculated(this.selectedQuestions[i]['FORMULA'][0])
+                    this.setCalculatedValue(i, 1, value)
+                    return true
+                }
+                if(this.selectedQuestions[i]['FORMULA'][0].tipo == this.constants_calculated.equal){
+                    let value = this.simpleCalculated(this.selectedQuestions[i]['FORMULA'][0])
+                    this.setCalculatedValue(i, 1, value)
+                    return true
+                }
+            }
+        },
+
+        simpleCalculated(formula){
+            var CPOType = "NA"
+            var CPO2Type = "NA"
+            console.log(formula)
+            if(formula['CPO'].indexOf("&") != -1)  CPOType = "ID"
+            if(formula['CPO'].indexOf("#") != -1)  CPOType = "VAR"
+            if(formula['CPO'].indexOf("!") != -1)  CPOType = "ALIAS"
+            if(formula['CPO'].indexOf("[") != -1)  CPOType = "CONST"
+
+            if(formula['CPO2'].indexOf("&") != -1)  CPO2Type = "ID"
+            if(formula['CPO2'].indexOf("#") != -1)  CPO2Type = "VAR"
+            if(formula['CPO2'].indexOf("!") != -1)  CPO2Type = "ALIAS"
+            if(formula['CPO2'].indexOf("[") != -1)  CPO2Type = "CONST"
+
+            let val1, val2
+            var operators = {
+                '+': function(a, b) { return a + b },
+                '-': function(a, b) { return a - b },
+                '/': function(a, b) { return a / b },
+                '*': function(a, b) { return a * b },
+                'IGUAL': function(a, b) { 
+                    let dumi = b
+                    dumi = 0
+                    return a + dumi }
+            };
+
+            //get Val1 CPO
+            
+            if(CPOType == "ID") {
+                let idO = formula['CPO'].split("&")[1]
+                let answer = this.getAnswerValues(parseInt(idO))
+                let questionType1 = this.getQuestions(parseInt(idO))
+               /*  console.log(answer)
+                console.log(questionType1) */
+                if(questionType1 != undefined){
+                    if(questionType1['TIPO_1'] == 'abierto numero'){
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                                val1 = parseInt(answer['dato_text'])
+                            }
+                            else{
+                                val1 = 0
+                            }
+                        }
+                    }
+                    else if(questionType1['TIPO_1'] == 'calculado'){
+                        if(answer != undefined) {
+                            if(answer['dato_calc1'] != null || answer['dato_calc1'] != undefined || answer['dato_calc1'] != '' ){
+                                val1 = parseFloat(answer['dato_calc1'])
+                            }
+                            else{
+                                val1 = 0
+                            }
+                        }
+                    }
+                }
+            }
+            else if(CPOType == "VAR") {
+                let varO = this.variables.filter(e=>{return e['NOMBRE'] == formula['CPO']})[0]
+                if(varO != undefined) {
+                    val1 = varO['VALOR']
+                }
+                else{
+                   val1 = varO['VALOR']
+                }   
+            }
+            else if(CPOType == "ALIAS") {
+                let formulaX = this.getAliasFormula(formula['CPO'])
+                if(formulaX != undefined)
+                    val1 = this.simpleCalculated(formulaX)
+            }
+            else if(CPOType == "CONST") {
+                let idO = formula['CPO'].split("[")[1]
+                let idO3 = idO.split("]")[0]
+                val1 = parseFloat(idO3)
+            }
+
+            //get Val2 CPO2
+
+            if(CPO2Type == "ID") {
+                let idO2 = formula['CPO2'].split("&")[1]
+                let answer = this.getAnswerValues(parseInt(idO2))
+                let questionType1 = this.getQuestions(parseInt(idO2))
+                /* console.log(answer)
+                console.log(questionType1) */
+                if(questionType1 != undefined){
+                    if(questionType1['TIPO_1'] == 'abierto numero'){
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                                val2 = parseInt(answer['dato_text'])
+                            }
+                            else{
+                                val2 = 0
+                            }
+                        }
+                    }
+                    else if(questionType1['TIPO_1'] == 'calculado'){
+                        if(answer != undefined) {
+                            if(answer['dato_calc1'] != null || answer['dato_calc1'] != undefined || answer['dato_calc1'] != '' ){
+                                val2 = parseFloat(answer['dato_calc1'])
+                            }
+                            else{
+                                val2 = 0
+                            }
+                        }
+                    }
+                }
+            }
+            else if(CPO2Type == "VAR") {
+                console.log(formula['CPO2'])
+                console.log(this.variables)
+                let varO2 = this.variables.filter(e=>{return e['NOMBRE'] == formula['CPO2']})[0]
+                console.log(varO2)
+                if(varO2 != undefined) {
+                    val2 = varO2['VALOR']
+                }
+                else{
+                   val2 = varO2['VALOR']
+                }
+            }
+            else if(CPO2Type == "ALIAS") {
+                let formulaX = this.getAliasFormula(formula['CPO2'])
+                if(formulaX != undefined)
+                    val2 = this.simpleCalculated(formulaX)
+            }
+            else if(CPO2Type == "CONST") {
+                let idO2 = formula['CPO2'].split("[")[1]
+                let idO23 = idO2.split("]")[0]
+                val2 = parseFloat(idO23)
+            }
+            //console.log(this.questions[i]['COD_PREGUNTA'])
+            console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
+            return operators[formula['OP']](val1,val2)
+
+        },
+        getAliasFormula(alias){
+            return this.formulaAlias.filter(e=>{
+                return e.alias == alias
+            })[0]
+        },
+        setCalculatedValue(i, j, value){
+            this.selectedQuestions[i]['ANSWERS']['dato_calc'+j] = value
+        },
+        getCalculatedValue(i, j){
+            return this.selectedQuestions[i]['ANSWERS']['dato_calc'+j]
+        },
+        getQuestions(id){
+            return this.selectedQuestions.filter(e=>{
+                return e['ID_PREGUNTA'] == parseInt(id)
+            })[0]
+        },
+        getAnswerValues(id){
+            let index = this.selectedQuestions.findIndex( x => x['ID_PREGUNTA'] == parseInt(id) );
+            return this.selectedQuestions[index]['ANSWERS']
+        },
+        setAnswerValueTable(id){
+            let index = this.selectedQuestions.findIndex( x => x['ID_PREGUNTA'] == parseInt(id) );
+            this.selectedQuestions[index]['ANSWERS']['dato_text'] = '10'
+        },
+        setRowsTables(i , maxr){
+            let currentLen = this.selectedQuestions[i]['TANSWERS'].length
+            let diference = maxr - currentLen
+            if(diference<0){
+                for (let index = 0; index < diference*-1; index++) {
+                    this.removeTableAnswer(i)
+                }
+            }
+            if(diference>0){
+                for (let index = 0; index < diference; index++) {
+                    this.addTableAnswer(i)
+                }
+            }
+
+        },
+        addTableAnswer(i){
+            this.selectedQuestions[i]['TANSWERS'].push(
+                {
+                    1: '',
+                    2: '',
+                    3: '',
+                    4: '',
+                    5: '',
+                    6: '',
+                    7: '',
+                    8: '',
+                    9: '',
+                    10: '',
+                }
+            )
+            this.$forceUpdate();
+        },
+        removeTableAnswer(i){
+            this.selectedQuestions[i]['TANSWERS'].pop()
+            this.$forceUpdate();
+        },
+        getRes(order, i){
+            return this.selectedQuestions[i]['RESPUESTAS'].filter((e)=>{return parseInt(e['COLUMNA']) == parseInt(order)})
+        },
+        ifActive(item, cant){
+            var count = 0
+            if(item['A'] == 1) count++
+            if(item['B'] == 1) count++
+            if(item['C'] == 1) count++
+            if(item['D'] == 1) count++
+            if(item['E'] == 1) count++
+            if(item['F'] == 1) count++
+            if(item['G'] == 1) count++
+            if(item['H'] == 1) count++
+            if(item['I'] == 1) count++
+            if(item['J'] == 1) count++
+            if(cant <= count) return true
+            else return false
+        },
+        async updateQuestions(){
+            this.isLoad = false
+            
+            this.$store.dispatch('setLoading')
+            try {
+                var val = await window.eel.getSPDAQuestions(this.section)(val)
+                this.questions = JSON.parse(val)
+                for (let i = 0; i < this.questions.length; i++) {
+                    this.questions[i]['ANSWERS'] = []
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['RESPUESTAS'] = JSON.parse(val2)
+                                    this.isLoad = true
+                                }
+                                else{
+                                    this.questions[i]['RESPUESTAS'] = []
+                                    this.isLoad = false
+                                }
+                            else{
+                                this.questions[i]['RESPUESTAS'] = []
+                                this.isLoad = false
+                            }
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['RESPUESTAS'] = []
+                        }
+                        this.questions[i]['ANSWERS'] = {
+                            id_pregunta: this.questions[i]['ID_PREGUNTA'],
+                            A: 0,
+                            B: 0,
+                            C: 0,
+                            D: 0,
+                            E: 0,
+                            F: 0,
+                            G: 0,
+                            H: 0,
+                            I: 0,
+                            J: 0,
+                            dato_ref: '',
+                            dato_calc1: '',
+                            dato_calc2: '',
+                            dato_calc3: '',
+                            dato_calc4: '',
+                            anio: '',
+                            dato_text: '',
+                            dato_unico: '', 
+                            nombre_edita: '',
+                            correo_edita: '',
+                            entidad_edita: '',
+                            numero_telefono_edita: '',
+                            notas_edita: '',
+                            fuentes_edita: '',
+                            puntaje: '',
+                            anio_actual: this.year,
+                            id_territorio: this.idDes
+                        }
+                        if(this.questions[i]['TIPO_4'] == 'año editable' || this.questions[i]['TIPO_3'] == 'año editable'){
+                            this.questions[i]['ANSWERS'].anio = 2019
+                        }
+                        
+                    }, 500);
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getTables(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['TABLES'] = JSON.parse(val2)
+                                    this.questions[i]['TANSWERS'] = []
+                                }
+                                else{
+                                    this.questions[i]['TABLES'] = []
+                                    this.questions[i]['TANSWERS'] = []
+                                }
+                            else{
+                                this.questions[i]['TABLES'] = []
+                                this.questions[i]['TANSWERS'] = []
+                            }
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['TABLES'] = []
+                            this.questions[i]['TANSWERS'] = []
+                        }
+                    }, 500);
+
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getFormula(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['FORMULA'] = JSON.parse(val2)
+                                }
+                                else
+                                    this.questions[i]['FORMULA'] = []
+                            else
+                                this.questions[i]['FORMULA'] = []
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['FORMULA'] = []
+                        }
+                    }, 500);
+                    if(this.questions[i]['FORMULA'] == undefined) this.questions[i]['FORMULA'] = []
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getPoints(this.questions[i]['ID_PREGUNTA'])(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    this.questions[i]['PUNTOS'] = JSON.parse(val2)
+                                }
+                                else{
+                                    this.questions[i]['PUNTOS'] = []
+                                }
+                            else{
+                                this.questions[i]['PUNTOS'] = []
+                            }
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                            this.questions[i]['PUNTOS'] = []
+                        }
+                    }, 500);
+
+                    setTimeout( async ()=>{ 
+                        try{
+                            var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
+                            //console.log(val2)
+                            if(val2 != undefined)
+                                if(val2.length>0){
+                                    var val3 = JSON.parse(val2)
+                                    this.questions[i]['ANSWERS'].id_pregunta = val3[0].id_pregunta
+                                    this.questions[i]['ANSWERS'].A = val3[0].A
+                                    this.questions[i]['ANSWERS'].B = val3[0].B
+                                    this.questions[i]['ANSWERS'].C = val3[0].C
+                                    this.questions[i]['ANSWERS'].D = val3[0].D
+                                    this.questions[i]['ANSWERS'].E = val3[0].E
+                                    this.questions[i]['ANSWERS'].F = val3[0].F
+                                    this.questions[i]['ANSWERS'].G = val3[0].G
+                                    this.questions[i]['ANSWERS'].H = val3[0].H
+                                    this.questions[i]['ANSWERS'].I = val3[0].I
+                                    this.questions[i]['ANSWERS'].J = val3[0].J
+                                    this.questions[i]['ANSWERS'].dato_ref = val3[0].dato_ref
+                                    this.questions[i]['ANSWERS'].dato_calc1 = val3[0].dato_calc1
+                                    this.questions[i]['ANSWERS'].dato_calc2 = val3[0].dato_calc2
+                                    this.questions[i]['ANSWERS'].dato_calc3 = val3[0].dato_calc3
+                                    this.questions[i]['ANSWERS'].dato_calc4 = val3[0].dato_calc4
+                                    this.questions[i]['ANSWERS'].anio = val3[0].anio
+                                    this.questions[i]['ANSWERS'].dato_text = val3[0].dato_text
+                                    this.questions[i]['ANSWERS'].dato_unico = ''
+                                    this.questions[i]['ANSWERS'].nombre_edita = val3[0].nombre_edita
+                                    this.questions[i]['ANSWERS'].correo_edita = val3[0].correo_edita
+                                    this.questions[i]['ANSWERS'].entidad_edita = val3[0].entidad_edita
+                                    this.questions[i]['ANSWERS'].numero_telefono_edita = val3[0].numero_telefono_edita
+                                    this.questions[i]['ANSWERS'].fuentes_edita = val3[0].fuentes_edita
+                                    this.questions[i]['ANSWERS'].notas_edita = val3[0].notas_edita
+                                    this.questions[i]['ANSWERS'].puntaje = val3[0].puntaje
+                                    this.questions[i]['ANSWERS'].anio_actual = val3[0].anio_actual
+                                    this.questions[i]['ANSWERS'].id_territorio = val3[0].id_territorio
+
+                                    if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
+                                        //console.log(i)
+                                        try {
+                                            if(this.questions[i]['ANSWERS']['A'] == 1){
+                                                //console.log(i + ' S')
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][0] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['B'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][1] 
+                                            } 
+                                            if(this.questions[i]['ANSWERS']['C'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][2] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['D'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][3] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['E'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][4] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['F'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][5] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['G'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][6] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['H'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][7] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['I'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][8] 
+                                            }
+                                            if(this.questions[i]['ANSWERS']['J'] == 1){
+                                                this.questions[i]['ANSWERS']['dato_unico'] =  this.questions[i]['RESPUESTAS'][9] 
+                                            }
+                                            
+                                        } catch (error) {
+                                            console.log('fail load - ' + error)
+                                        }
+                                    }
+                                    if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
+                                        this.questions[i]['TANSWERS'] =[]
+                                        var columA = [], columB = [], columC = [], columD = [], columE = [], columF = [], columG = [], columH = [], columI = [], columJ = []
+                                        
+                                        columA = this.questions[i]['ANSWERS']['A'].split(';')
+                                        columB = this.questions[i]['ANSWERS']['B'].split(';')
+                                        columC = this.questions[i]['ANSWERS']['C'].split(';')
+                                        columD = this.questions[i]['ANSWERS']['D'].split(';')
+                                        columE = this.questions[i]['ANSWERS']['E'].split(';')
+                                        columF = this.questions[i]['ANSWERS']['F'].split(';')
+                                        columG = this.questions[i]['ANSWERS']['G'].split(';')
+                                        columH = this.questions[i]['ANSWERS']['H'].split(';')
+                                        columI = this.questions[i]['ANSWERS']['I'].split(';')
+                                        columJ = this.questions[i]['ANSWERS']['J'].split(';')
+                                        //console.log(columA)
+                                        //console.log(columG)
+                                        for (let n = 0; n < columA.length-1; n++) {
+                                            this.questions[i]['TANSWERS'].push(
+                                                {
+                                                    1: this.questions[i]['TABLES'][0] == undefined ? "" : this.questions[i]['TABLES'][0]['TIPO'] == 'selección unica' ? columA[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '1' && e['TEXTO'] == columA[n]})[0] : ""  :columA[n] != undefined ? columA[n].length > 0 ? columA[n] : "" : "",
+                                                    2: this.questions[i]['TABLES'][1] == undefined ? "" : this.questions[i]['TABLES'][1]['TIPO'] == 'selección unica' ? columB[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '2' && e['TEXTO'] == columB[n]})[0] : ""  :columB[n] != undefined ? columB[n].length > 0 ? columB[n] : "" : "",
+                                                    3: this.questions[i]['TABLES'][2] == undefined ? "" : this.questions[i]['TABLES'][2]['TIPO'] == 'selección unica' ? columC[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '3' && e['TEXTO'] == columC[n]})[0] : ""  :columC[n] != undefined ? columC[n].length > 0 ? columC[n] : "" : "",
+                                                    4: this.questions[i]['TABLES'][3] == undefined ? "" : this.questions[i]['TABLES'][3]['TIPO'] == 'selección unica' ? columD[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '4' && e['TEXTO'] == columD[n]})[0] : ""  :columD[n] != undefined ? columD[n].length > 0 ? columD[n] : "" : "",
+                                                    5: this.questions[i]['TABLES'][4] == undefined ? "" : this.questions[i]['TABLES'][4]['TIPO'] == 'selección unica' ? columE[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '5' && e['TEXTO'] == columE[n]})[0] : ""  :columE[n] != undefined ? columE[n].length > 0 ? columE[n] : "" : "",
+                                                    6: this.questions[i]['TABLES'][5] == undefined ? "" : this.questions[i]['TABLES'][5]['TIPO'] == 'selección unica' ? columF[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '6' && e['TEXTO'] == columF[n]})[0] : ""  :columF[n] != undefined ? columF[n].length > 0 ? columF[n] : "" : "",
+                                                    7: this.questions[i]['TABLES'][6] == undefined ? "" : this.questions[i]['TABLES'][6]['TIPO'] == 'selección unica' ? columG[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '7' && e['TEXTO'] == columG[n]})[0] : ""  :columG[n] != undefined ? columG[n].length > 0 ? columG[n] : "" : "",
+                                                    8: this.questions[i]['TABLES'][7] == undefined ? "" : this.questions[i]['TABLES'][7]['TIPO'] == 'selección unica' ? columH[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '8' && e['TEXTO'] == columH[n]})[0] : ""  :columH[n] != undefined ? columH[n].length > 0 ? columH[n] : "" : "",
+                                                    9: this.questions[i]['TABLES'][8] == undefined ? "" : this.questions[i]['TABLES'][8]['TIPO'] == 'selección unica' ? columI[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '9' && e['TEXTO'] == columI[n]})[0] : ""  :columI[n] != undefined ? columI[n].length > 0 ? columI[n] : "" : "",
+                                                    10: this.questions[i]['TABLES'][9] == undefined ? "" : this.questions[i]['TABLES'][9]['TIPO'] == 'selección unica' ? columJ[n] != undefined ?  this.questions[i]['RESPUESTAS'].filter((e)=>{ return e['COLUMNA'] == '10' && e['TEXTO'] == columJ[n]})[0] : ""  :columJ[n] != undefined ? columJ[n].length > 0 ? columJ[n] : "" : "",
+                                                }
+                                            )
+                                        
+                                        }
+
+                                    }
+                                }
+                        }
+                        catch(error){
+                            console.log(error)
+                            console.log('in index '+ i)
+                        }
+                    }, 500);
+                }
+                this.isLoad=true
+                this.$store.dispatch('clearLoading')
+            } catch (error) {
+                console.log(error)
+                this.isLoad=true
+                this.$store.dispatch('clearLoading')
+            }
+
+            this.$store.dispatch('setLoading')
+            try{
+                var val5 = await window.eel.getVariables()(val5)
+                this.variables = JSON.parse(val5)
+                this.$store.dispatch('clearLoading')
+            } catch (error) {
+                console.log(error)
+                this.isLoad=true
+                this.$store.dispatch('clearLoading')
+            }
+
+            this.$store.dispatch('setLoading')
+            try{
+                var val2 = await window.eel.getFormulaByAlias()(val2)
+                this.formulaAlias = JSON.parse(val2)
+                this.$store.dispatch('clearLoading')
+            }
+            catch(error){
+                console.log(error)
+                this.$store.dispatch('clearLoading')
+            }
+            this.selectedQuestions = await this.questions.filter(e=> { return parseInt(e['PAGINA']) == parseInt(this.wizard)})
+            
+        },
+        validAnswers(){
+            this.error = false
+            this.errorMessage = "Verifica las preguntas: <br>"
+            for (let i = 0; i < this.questions.length; i++) {
+                if (this.questions[i]['TIPO_1']== 'abierto fecha' || this.questions[i]['TIPO_1']== 'abierto texto' || this.questions[i]['TIPO_1']== 'abierto numero' || 
+                    this.questions[i]['TIPO_2']== 'abierto fecha' || this.questions[i]['TIPO_2']== 'abierto texto' || this.questions[i]['TIPO_2']== 'abierto numero' ||
+                    this.questions[i]['TIPO_3']== 'abierto fecha' || this.questions[i]['TIPO_3']== 'abierto texto' || this.questions[i]['TIPO_3']== 'abierto numero' ||
+                    this.questions[i]['TIPO_4']== 'abierto fecha' || this.questions[i]['TIPO_4']== 'abierto texto' || this.questions[i]['TIPO_4']== 'abierto numero') {
+                    if(this.questions[i]['ANSWERS']['dato_text'] == "" || this.questions[i]['ANSWERS']['dato_text'] == null){
+                        this.error = true
+                        this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'selección multiple' || this.questions[i]['TIPO_2']== 'selección multiple' || this.questions[i]['TIPO_3']== 'selección multiple' || this.questions[i]['TIPO_4']== 'selección multiple') {
+                    var count = 0
+                    if(this.questions[i]['ANSWERS']['A'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['B'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['C'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['D'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['E'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['F'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['G'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['H'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['I'] == 1) count++
+                    if(this.questions[i]['ANSWERS']['J'] == 1) count++
+                    if(count == 0){
+                        this.error = true
+                        this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
+                    if(this.questions[i]['ANSWERS']['dato_unico']['TEXTO'] == undefined){
+                        this.error = true
+                        this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
+                    }
+                    else{
+                        this.questions[i]['ANSWERS']['A'] = 0
+                        this.questions[i]['ANSWERS']['B'] = 0 
+                        this.questions[i]['ANSWERS']['C'] = 0
+                        this.questions[i]['ANSWERS']['D'] = 0
+                        this.questions[i]['ANSWERS']['E'] = 0
+                        this.questions[i]['ANSWERS']['F'] = 0
+                        this.questions[i]['ANSWERS']['G'] = 0
+                        this.questions[i]['ANSWERS']['H'] = 0
+                        this.questions[i]['ANSWERS']['I'] = 0
+                        this.questions[i]['ANSWERS']['J'] = 0
+                        this.questions[i]['ANSWERS'][this.questions[i]['ANSWERS']['dato_unico']['COLUMNA']] = 1
+                        //this.questions[i]['ANSWERS']['dato_unico'] = ""
+                        
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'año editable' || this.questions[i]['TIPO_2']== 'año editable' || this.questions[i]['TIPO_3']== 'año editable' || this.questions[i]['TIPO_4']== 'año editable') {
+                    if(this.questions[i]['ANSWERS']['anio'] == "" || this.questions[i]['ANSWERS']['anio'] == null){
+                        this.error = true
+                        this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                        //console.log(i)
+                    }
+                }
+                if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
+                    this.questions[i]['ANSWERS']['A'] = ""
+                    this.questions[i]['ANSWERS']['B'] = ""
+                    this.questions[i]['ANSWERS']['C'] = ""
+                    this.questions[i]['ANSWERS']['D'] = ""
+                    this.questions[i]['ANSWERS']['E'] = ""
+                    this.questions[i]['ANSWERS']['F'] = ""
+                    this.questions[i]['ANSWERS']['G'] = ""
+                    this.questions[i]['ANSWERS']['H'] = ""
+                    this.questions[i]['ANSWERS']['I'] = ""
+                    this.questions[i]['ANSWERS']['J'] = ""
+                    for (let j = 0; j < this.questions[i]['TANSWERS'].length; j++) {
+                        
+                        for (let k = 0; k <  this.questions[i]['TABLES'].length; k++) {
+
+                            if (this.questions[i]['TABLES'][k]['TIPO'] == 'abierto numero' || this.questions[i]['TABLES'][k]['TIPO'] == 'abierto texto' || this.questions[i]['TABLES'][k]['TIPO'] == 'abierto fecha') {
+                                if(this.questions[i]['TANSWERS'][j][k+1] == "" || this.questions[i]['TANSWERS'][j][k+1] == null){
+                                    this.error = true
+                                    this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                                    //console.log(i)
+                                }
+                                else{
+                                    let alphabet = String.fromCharCode(64 + k+1);
+                                    this.questions[i]['ANSWERS'][alphabet] += this.questions[i]['TANSWERS'][j][k+1] + ';'
+                                }
+
+                            }
+                            if (this.questions[i]['TABLES'][k]['TIPO']== 'selección unica') {
+                                if(this.questions[i]['TANSWERS'][j][k+1] == undefined){
+                                    this.error = true
+                                    this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
+                                    //console.log(i)
+                                }
+                                else{
+                                    let alphabet = String.fromCharCode(64 + k+1);
+                                    this.questions[i]['ANSWERS'][alphabet] += this.questions[i]['TANSWERS'][j][k+1]['TEXTO'] + ';'
+                                }
+
+
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            if(!this.error){
+                this.saveAnswers()
+            }
+            else{
+                this.$refs['error'].show()
+            }
+            
+        },
+        async saveAnswers(){
+            var answerS = '['
+            for (let i = 0; i < this.questions.length; i++) {
+                answerS += JSON.stringify(this.questions[i]['ANSWERS']) + ','
+                
+            }
+            answerS +=  ']'
+            var answ = JSON.parse(answerS)
+            //console.log(answ)
+            for (let i = 0; i < answ.length; i++) {
+                delete answ[i].dato_unico
+            }
+            this.$store.dispatch('setLoading')
+            try{
+                var val2 = await window.eel.saveAnswers(JSON.stringify(answ))(val2)
+                this.makeToast('success', this.$t('descriptive.data_save'))
+
+                this.$store.dispatch('clearLoading')
+            }
+            catch(error){
+                this.$store.dispatch('clearLoading')
+                console.log('Error')
+            }
+        },
+        makeToast(variant = null, message) {
+            this.$bvToast.toast( message, {
+                title: message,
+                variant: variant,
+                solid: true,
+                autoHideDelay: 2000,
+                toaster: 'b-toaster-bottom-right'
+            })
+        },
+        validNumber(event){
+            
+            if(event.charCode === 0 || this.regN.test(String.fromCharCode(event.charCode))){
+                //console.log(event.charCode)
+                return true
+            } else {
+                event.preventDefault();
+            }
+        },
+    }
+}
+</script>
+
+<style lang="sass" scoped>
+.questions
+    width: 90%
+    margin: 0 auto
+.help
+    color: #007bff
+    cursor: pointer
+.cols-c
+    display: flex
+    align-items: center
+.col-c
+    margin: 0 5px
+    min-width: 213px
+    .inline
+        display: grid
+        grid-template-columns: 8fr 4fr
+        gap: 5px
+        align-items: center
+    .inline2
+        display: grid
+        grid-template-columns: 4fr 8fr
+        gap: 5px
+        align-items: center
+
+    .item-h
+        flex: 1 1 20%
+        text-align: center
+        padding: 5px
+        border-bottom: solid 1px #007bff
+        border-top: solid 1px #007bff
+        border-left: solid 1px #007bff
+        &:last-child
+            border-right: solid 1px #007bff 
+
+    .item
+        flex: 1 1 20%
+        text-align: center
+        padding: 5px
+        border-bottom: solid 1px #007bff
+        border-top: solid 1px #007bff
+        border-left: solid 1px #007bff
+        &:last-child
+            border-right: solid 1px #007bff  
+</style>
+
+<style scoped>
+.header, .body{
+        display: flex;
+        gap: 5px;
+        width: 100%;
+        background: #007bff;
+        padding: ((24px/2) * 1.5) 5px;
+        align-items: center;
+        justify-content: center;
+        color: #fff
+}
+</style>

@@ -1623,5 +1623,175 @@
    "ID_PREGUNTA": 422,
    "COLUMNA": "4",
    "TEXTO": "m3/hora"
+ },
+ {
+   "ID_PREGUNTA": 457,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 457,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 460,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 460,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 463,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 463,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 466,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 466,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 469,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 469,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 472,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 472,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 475,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 475,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 477,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 477,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 479,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 479,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 481,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 481,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 483,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 483,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 485,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 485,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 487,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 487,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 489,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 489,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 491,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 491,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 493,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 493,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
+ },
+ {
+   "ID_PREGUNTA": 495,
+   "COLUMNA": "A",
+   "TEXTO": "SÍ"
+ },
+ {
+   "ID_PREGUNTA": 495,
+   "COLUMNA": "B",
+   "TEXTO": "NO"
  }
 ]

@@ -4,6 +4,9 @@ from os.path import exists
 from typing import List
 import pandas as pd
 import eel
+import tkinter as tk
+import re
+from tkinter import filedialog
 import json
 import datetime
 from cryptography.fernet import Fernet
@@ -230,6 +233,122 @@ def save_population(dataA):
     encrypt(json.dumps(data), 'data/descriptiva')
     return 'true'
 
+def getReferenceData(file, field, anio, territory):
+    #print('data/'+file)
+    data = decrypt('data/'+file)
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    if(file == 'descriptiva'):
+        #print(dframe)
+        dfilter = dframe.loc[(dframe['ANIO'] == int(anio)) & (dframe['ID_TERRITORIO'] == int(territory))]
+        value = 0
+        for i in dfilter.index:
+            value = dfilter[field][i]
+           #print(dfilter[field])
+        #print(value)
+        return value
+    else: 
+        return 0
+
+@eel.expose
+def getReferences(anio, territory):
+    data = decrypt('data/referencia')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dat = []
+    for i in dframe.index:
+        dat.append(getReferenceData(dframe['ARCHIVO'][i], dframe['COLUMNA'][i], anio, territory))
+    dframe['DATA'] = dat
+    #print(dframe)
+    result = json.loads(dframe.to_json(orient="records"))
+    return json.dumps(result)
+
+@eel.expose
+def getReferencesQuestion(question, anio, territory):
+    #print(anio)
+    data = decrypt('data/referencia')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
+    dat = []
+    for i in dfilter.index:
+        dat.append(getReferenceData(dfilter['ARCHIVO'][i], dfilter['COLUMNA'][i], anio, territory))
+    dfilter['DATA'] = dat
+    #print(dfilter)
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+@eel.expose
+def getSubsections(section):
+    data = decrypt('data/subseccion')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['SECCION'] == int(section)]
+    dfilter = dfilter.sort_values(by=['PAGINA'])
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+
+@eel.expose
+def getQuestion():
+    data = decrypt('data/pregunta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    result = json.loads(dframe.to_json(orient="records"))
+    return json.dumps(result)
+
+@eel.expose
+def getAnswerUserD():
+    data = decrypt('data/respuesta_usuario')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    result = json.loads(dframe.to_json(orient="records"))
+    return json.dumps(result)
 
 @eel.expose
 def getSPDAQuestions(page, section):
@@ -397,6 +516,99 @@ def getFormula(id_question):
             return
     dfilter = dframe.loc[dframe['CPD'] == '&'+str(id_question)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+@eel.expose
+def getValidationFormula():
+    data = decrypt('data/formula')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['tipo'] == "VALIDACION"]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+@eel.expose
+def getFormulaByAlias():
+    data = decrypt('data/formula')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['alias'] != "NA"]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+@eel.expose
+def getVariables():
+    data = decrypt('data/variables')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    return json.dumps(json.loads(dframe.to_json(orient="records")))
+
+@eel.expose
+def getPoints(id_question):
+    data = decrypt('data/puntos')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(eval(data))
+    except:
+        try:
+            dframe = pd.DataFrame(eval(dataDumps))
+        except:
+            return
+    dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(id_question)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+
+@eel.expose
+def getFolder(wildcard=[("archivos JSON", "*.json")]):
+    root = tk.Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    folder = filedialog.askopenfilename(filetypes=wildcard)
+    return folder
+
+@eel.expose
+def save_file(file, name):
+    fernet = Fernet(key)
+    if name == 'descriptiva':
+        f = open(file, encoding="utf8")
+        data = json.load(f)
+        str = json.dumps(data)
+        val = re.sub(r'"(\d+),(\d+)"', r'\1.\2', str)
+        val = val.replace("", 0)
+        encrypted = fernet.encrypt(val.encode('utf8'))
+        # opening the file in write mode and 
+        # writing the encrypted data
+        with open('./data/'+name, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted)
+    else:
+        f = open(file, encoding="utf8")
+        data = json.load(f)
+        str = json.dumps(data)
+        encrypted = fernet.encrypt(str.encode('utf8'))
+        # opening the file in write mode and 
+        # writing the encrypted data
+        with open('./data/'+name, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted)
+        
     
 eel.init('gui') # or the name of your directory
 eel.start('index.html', size=(1366, 768), cmdline_args=['--start-fullscreen'])

@@ -1,6 +1,6 @@
 <template>
     <div>
-        En Construcción
+        Sección en espera de la implementación piloto con los municipios
         <div style="width: 60%">
             <chartjs-line  :bind="true"></chartjs-line>
             <chartjs-doughnut  :bind="true" :option="dougRoundOption"></chartjs-doughnut>

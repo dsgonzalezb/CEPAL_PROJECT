@@ -1,0 +1,27 @@
+[
+ {
+   "ID_VARIABLE": 1,
+   "NOMBRE": "#AÑO",
+   "VALOR": 365
+ },
+ {
+   "ID_VARIABLE": 2,
+   "NOMBRE": "#HORAXDIA",
+   "VALOR": 24
+ },
+ {
+   "ID_VARIABLE": 3,
+   "NOMBRE": "#MES",
+   "VALOR": 30
+ },
+ {
+   "ID_VARIABLE": 4,
+   "NOMBRE": "#MESXAÑO",
+   "VALOR": 12
+ },
+ {
+   "ID_VARIABLE": 5,
+   "NOMBRE": "#SEGXDIA",
+   "VALOR": 86400
+ }
+]
