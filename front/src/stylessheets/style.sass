@@ -34,9 +34,6 @@ html
 body
     font-family: "IBMPlex"
     height: 100%
-.btn
-    font-size: 1.3rem !important
-    fon
 
 .content-c
     position: relative
@@ -100,6 +97,28 @@ div::-webkit-scrollbar-thumb
     content: 'Dato referencia'
     color: green
     font-size: 0.7rem
+
+
+#chart
+  height: 500px
+
+.node 
+  rect 
+    cursor: move
+    fill-opacity: .9
+    shape-rendering: crispEdges
+
+.node 
+  text
+    pointer-events: none
+    text-shadow: 0 1px 0 #fff
+
+.link
+  fill: none
+  stroke: #000
+  stroke-opacity: .2
+  &:hover
+    stroke-opacity: .5
 
 @media (min-width: 1200px)
   .modal-xl

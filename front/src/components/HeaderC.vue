@@ -8,8 +8,8 @@
                 
             </div>
             <div class="buttons">
-                <b-button variant="outline-primary" @click="$router.push({name: 'Home'})" v-if="$route.name != 'Home'"><i class="fas fa-arrow-circle-left"></i> {{$t('header.home')}}</b-button>
-                <b-button variant="outline-primary" @click="$router.push({name: 'Settings'})"><i class="fas fa-cog"></i> {{$t('header.settings')}}</b-button>
+                <b-button variant="outline-primary" size="lg" @click="$router.push({name: 'Home'})" v-if="$route.name != 'Home'"><i class="fas fa-arrow-circle-left"></i> {{$t('header.home')}}</b-button>
+                <b-button variant="outline-primary" size="lg" @click="$router.push({name: 'Settings'})"><i class="fas fa-cog"></i> {{$t('header.settings')}}</b-button>
             </div>
         </div>
         <div class="sub-head">

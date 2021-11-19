@@ -1,48 +1,23 @@
 <template>
-    <div>
-        Sección en espera de la implementación piloto con los municipios
-        <div style="width: 60%">
-            <chartjs-line  :bind="true"></chartjs-line>
-            <chartjs-doughnut  :bind="true" :option="dougRoundOption"></chartjs-doughnut>
-            <chartjs-bar  :bind="true"></chartjs-bar>
-        </div>
+    <div >
+        <question :section="6" :key="6" />
+
+        <router-view :key="$route.fullPath"/>
         
     </div>
 </template>
 
 <script>
+import QuestionConsolidated from '../components/QuestionConsolidated.vue'
 export default {
+    name:'Graphs',
+    components: {
+        'question' : QuestionConsolidated
+    },
     data(){
         return{
-            dougRoundOption :{
-                responsive: true,
-                title: {
-                    display: true,
-                    position: "top",
-                    fontSize: 18,
-                    text: ''
-                },
-                maintainAspectRatio : true,
-                cutoutPercentage:50,
-                legend: {
-                        position: 'left',
-                        labels: {
-                            boxWidth: 20,
-                            padding: 20,
-                        }
-                },
-                plugins: {
-                    labels: {
-                        render: 'percentage',
-                        fontSize: 14,
-                        fontStyle: 'bold',
-                        fontColor: 'black',
-                        precision: 2
-                    }
-                }
-            },
         }
-    }
+    },
 }
 </script>
 

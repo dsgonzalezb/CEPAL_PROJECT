@@ -235,6 +235,62 @@
         <b-modal ref="error" id="error" size="md" :ok-only="true" :title="$t('descriptive.valid_data')">
             <div v-html="this.errorMessage"></div>
         </b-modal>
+
+        <b-modal ref="edito" id="edito" size="md" :hide-footer="true" :title="$t('descriptive.edito')">
+            <b-form-group
+                id="fieldset-1"
+                label="Nombre y apellido"
+                label-for="input-1"
+                >
+                <b-form-input id="input-1" v-model="edit_person.nombre_edita" trim></b-form-input>
+            </b-form-group>
+            <b-form-group
+                id="fieldset-1"
+                label="Correo"
+                label-for="input-1"
+                >
+                <b-form-input id="input-1" v-model="edit_person.correo_edita" trim></b-form-input>
+            </b-form-group>
+            <b-form-group
+                id="fieldset-1"
+                label="Entidad"
+                label-for="input-1"
+                >
+                <b-form-input id="input-1" v-model="edit_person.entidad_edita" trim></b-form-input>
+            </b-form-group>
+            <b-form-group
+                id="fieldset-1"
+                label="Numero de teléfono"
+                label-for="input-1"
+                >
+                <b-form-input id="input-1" v-model="edit_person.numerot_edita" trim></b-form-input>
+            </b-form-group>
+            <b-form-group
+                id="fieldset-1"
+                label="Notas"
+                label-for="input-1"
+                >
+                <b-form-textarea
+                id="textarea"
+                v-model="edit_person.notas_edita"
+                rows="3"
+                max-rows="6"
+                ></b-form-textarea>
+            </b-form-group>
+            <b-form-group
+                id="fieldset-1"
+                label="Fuentes"
+                label-for="input-1"
+                >
+                <b-form-textarea
+                id="textarea"
+                v-model="edit_person.fuentes_edita"
+                rows="3"
+                max-rows="6"
+                ></b-form-textarea>
+            </b-form-group>
+            <b-button variant="outline-warning" @click="saveAnswers"><i class="far fa-save"></i> {{$t('spda.save')}}</b-button>
+        </b-modal>
     </div>
 </template>
 
@@ -253,6 +309,14 @@ export default {
     },
     data(){
         return{
+            edit_person: {
+                nombre_edita: '',
+                correo_edita: '',
+                entidad_edita: '',
+                numerot_edita: '',
+                notas_edita: '',
+                fuentes_edita: '',
+            },
             ansd: [],
             ques: [],
             errorSave: false,
@@ -325,8 +389,9 @@ export default {
 
         this.$store.dispatch('setLoading')
         try{
-            var val6 = await window.eel.getAnswerUserD()(val6)
+            var val6 = await window.eel.getAnswerUserD( this.year, this.idDes)(val6)
             this.ansd = JSON.parse(val6)
+            if(this.ansd == null) this.ansd = []
             this.$store.dispatch('clearLoading')
         } catch (error) {
             console.log(error)
@@ -383,8 +448,11 @@ export default {
                         let idO = idOList[i].split("&")[1]
                         let answer = this.getAnswerValues(parseInt(idO))
                         if(answer != undefined) {
-                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                                 values.push(parseInt(answer['dato_text']))
+                            }
+                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                values.push(parseInt(answer['dato_calc1']))
                             }
                             else{
                                 values.push(0)
@@ -453,7 +521,7 @@ export default {
                 if(questionType1 != undefined){
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
-                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                                 val1 = parseInt(answer['dato_text'])
                             }
                             else{
@@ -463,7 +531,7 @@ export default {
                     }
                     else if(questionType1['TIPO_1'] == 'calculado'){
                         if(answer != undefined) {
-                            if(answer['dato_calc1'] != null || answer['dato_calc1'] != undefined || answer['dato_calc1'] != '' ){
+                            if(answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != '' ){
                                 val1 = parseFloat(answer['dato_calc1'])
                             }
                             else{
@@ -511,7 +579,7 @@ export default {
                 if(questionType1 != undefined){
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
-                            if(answer['dato_text'] != null || answer['dato_text'] != undefined || answer['dato_text'] != '' ){
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                                 val2 = parseInt(answer['dato_text'])
                             }
                             else{
@@ -521,7 +589,7 @@ export default {
                     }
                     else if(questionType1['TIPO_1'] == 'calculado'){
                         if(answer != undefined) {
-                            if(answer['dato_calc1'] != null || answer['dato_calc1'] != undefined || answer['dato_calc1'] != '' ){
+                            if(answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != '' ){
                                 val2 = parseFloat(answer['dato_calc1'])
                             }
                             else{
@@ -564,12 +632,12 @@ export default {
             }
             //console.log(this.questions[i]['COD_PREGUNTA'])
             if( formula.tipo == this.constants_calculated.compose){
-                console.log('___________________________________________________')
+                /* console.log('______________________________________________________________________')
                 console.log('CPD: '+formula['CPD'])
                 console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
                 console.log('CPO: '+formula['CPO']+' - '+CPOType)
                 console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
-                console.log('ALIAS: '+formula['alias'])
+                console.log('ALIAS: '+formula['alias']) */
             } 
             
             return operators[formula['OP']](val1,val2)
@@ -751,7 +819,7 @@ export default {
                                 numerot_edita: '',
                                 notas_edita: '',
                                 fuentes_edita: '',
-                                puntaje: '',
+                                puntaje: 0,
                                 anio_actual: this.year,
                                 id_territorio: this.idDes
                             }
@@ -890,7 +958,7 @@ export default {
                                     this.answers[i].numerot_edita = val3[0].numerot_edita
                                     this.answers[i].notas_edita = val3[0].notas_edita
                                     this.answers[i].fuentes_edita = val3[0].fuentes_edita
-                                    this.answers[i].puntaje = val3[0].puntaje
+                                    this.answers[i].puntaje = val3[0].puntaje == '' ? 0 : val3[0].puntaje
                                     this.answers[i].anio_actual = val3[0].anio_actual
                                     this.answers[i].id_territorio = val3[0].id_territorio
 
@@ -1124,6 +1192,122 @@ export default {
                         
                     }
                 }
+
+                //POINTS
+
+                var operators = {
+                    '=': function(a, b) { return a == b },
+                    '>': function(a, b) { return a > b },
+                    '<': function(a, b) { return a < b },
+                    '>=': function(a, b) { return a >= b },
+                    '<=': function(a, b) { return a <= b },
+                };
+
+                for (let j = 0; j < this.questions[i]['PUNTOS'].length; j++) {
+                    let op1 = this.questions[i]['PUNTOS'][j]['OPERADOR_1']
+                    let op2 = this.questions[i]['PUNTOS'][j]['OPERADOR_2']
+                    let val1 = this.questions[i]['PUNTOS'][j]['VALOR_1']
+                    let val2 = this.questions[i]['PUNTOS'][j]['VALOR_2']
+                    let type = this.questions[i]['PUNTOS'][j]['TIPO']
+                    let points =   this.questions[i]['PUNTOS'][j]['PUNTOS']
+
+                    if(type == "MULTIPLE"){
+                        let parsed_value1 = val1.toUpperCase()
+                        let parsed_value2 = val2.toUpperCase()
+                        parsed_value1 != 'NA' ? parsed_value1 = parsed_value1.split(";") : ''
+                        parsed_value2 != 'NA' ? parsed_value2 = parsed_value2.split(";") : ''
+                        let operation = []
+                        console.log(op1)
+                        console.log(this.questions[i]['PUNTOS'][j]['ID_PREGUNTA'])
+                        console.log(parsed_value1)
+                        console.log('____________________________________________')
+                        if(op1 == '='){
+                            
+                            for (let k = 0; k < parsed_value1.length; k++) {
+                                this.answers[i][parsed_value1[k]] == 1  ?  this.answers[i].puntaje =  points : this.answers[i].puntaje = 0  
+                            }
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                        else if(op1 == 'OR'){
+                            for (let k = 0; k < parsed_value1.length; k++) {
+                                this.answers[i][parsed_value1[k]] == 1  ?  operation.push(true)  : operation.push(false)      
+                            }
+                            operation.includes(true) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                        else if(op1 == 'AND'){
+                            var counted = 0
+                            if(this.answers[i]['A'] == 1) counted++
+                            if(this.answers[i]['B'] == 1) counted++
+                            if(this.answers[i]['C'] == 1) counted++
+                            if(this.answers[i]['D'] == 1) counted++
+                            if(this.answers[i]['E'] == 1) counted++
+                            if(this.answers[i]['F'] == 1) counted++
+                            if(this.answers[i]['G'] == 1) counted++
+                            if(this.answers[i]['H'] == 1) counted++
+                            if(this.answers[i]['I'] == 1) counted++
+                            if(this.answers[i]['J'] == 1) counted++
+                            
+                            for (let k = 0; k < parsed_value1.length; k++) {
+                                this.answers[i][parsed_value1[k]] == 1  ?  operation.push(true)  : operation.push(false)      
+                            }
+                            operation.every(e => e == true) && counted == parsed_value1.length ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                        
+                    }
+                    else if(type == "UNICA"){
+                        let parsed_value1 = val1.toUpperCase()
+                        //let parsed_value2 = val2.toUpperCase()
+                        //let operation = []
+                        if(op1 == '='){
+                            this.answers[i][parsed_value1] == 1  ?  this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                    }
+                    else if(type == "FECHA"){
+                        let parsed_value1 = val1 != 'NA' ? parseFloat(val1.replace(",", ".")) : 'NA'
+                        //let parsed_value2 = val2 != 'NA' ? parseFloat(val2.replace(",", ".")) : 'NA'
+                        let date = new Date(this.answers[i]['dato_text'])
+                        let comp = this.year - date.getFullYear()
+                        operators[op1](comp, parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                        this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+
+                    }
+                    else if(type == "PORCENTAJE"){
+                        let parsed_value1 = val1 != 'NA' ? parseFloat(val1.replace(",", ".")) : 'NA'
+                        let parsed_value2 = val2 != 'NA' ? parseFloat(val2.replace(",", ".")) : 'NA'
+                        if(op2 == 'NA'){
+                            operators[op1](this.answers[i]['dato_text'], parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                        else{
+                            let r_op1 = null , r_op2 = null;
+                            r_op1 = operators[op1](this.answers[i]['dato_text'], parsed_value1)
+                            r_op2 = operators[op2](this.answers[i]['dato_text'], parsed_value2)
+                            r_op1 && r_op2 ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                    }
+                    else if(type == "VALOR"){
+                        let parsed_value1 = val1 != 'NA' ? parseFloat(val1.replace(",", ".")) : 'NA'
+                        let parsed_value2 = val2 != 'NA' ? parseFloat(val2.replace(",", ".")) : 'NA'
+                        if(op2 == 'NA'){
+                            operators[op1](this.answers[i]['dato_text'], parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                        else{
+                            let r_op1 = null , r_op2 = null;
+                            r_op1 = operators[op1](this.answers[i]['dato_text'], parsed_value1)
+                            r_op2 = operators[op2](this.answers[i]['dato_text'], parsed_value2)
+                            r_op1 && r_op2 ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
+                        }
+                    }
+                    
+                }
+
+
             }
             for (let i = 0; i < this.validationF.length; i++) {
                 let val1, val2
@@ -1192,7 +1376,7 @@ export default {
             }
 
             if(!this.error){
-                this.saveAnswers()
+                this.$refs['edito'].show()
             }
             else{
                 this.$refs['error'].show()
@@ -1200,6 +1384,14 @@ export default {
             
         },
         async saveAnswers(){
+            for (let i = 0; i < this.answers.length; i++) {
+                this.answers[i].nombre_edita =  this.edit_person.nombre_edita
+                this.answers[i].correo_edita = this.edit_person.correo_edita
+                this.answers[i].entidad_edita = this.edit_person.entidad_edita
+                this.answers[i].numerot_edita = this.edit_person.numerot_edita
+                this.answers[i].notas_edita = this.edit_person.notas_edita
+                this.answers[i].fuentes_edita = this.edit_person.fuentes_edita
+            }
             var answerS =  JSON.stringify(this.answers)
             var answ = JSON.parse(answerS)
             //console.log(answ)
@@ -1212,6 +1404,7 @@ export default {
                 this.makeToast('success', this.$t('descriptive.data_save'))
 
                 this.$store.dispatch('clearLoading')
+                this.$refs['edito'].hide()
             }
             catch(error){
                 this.$store.dispatch('clearLoading')

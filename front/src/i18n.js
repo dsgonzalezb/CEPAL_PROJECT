@@ -24,7 +24,7 @@ const messages = {
             oldF: 'Selecciona el archivo a actualizar',
             update: 'Actualizar archivo',
             updated: 'Archivo actualizado',
-            fail_pass: 'Contreseña incorrecta.'
+            fail_pass: 'Contreseña incorrecta'
 
         },
         descriptive:{
@@ -48,7 +48,8 @@ const messages = {
             data_save: 'Datos Guardados',
             see_data_t: 'Datos descriptiva',
             valid_data: 'Validar datos',
-            source: 'Fuente oficial:'
+            source: 'Fuente oficial:',
+            edito: 'Persona que edita'
         },
         spda:{
             name: 'SPDA',
@@ -74,7 +75,12 @@ const messages = {
             full_name: 'PERFIL MUNICIPAL HACIA LA TRANCISION DE UN MODELO CIRCULAR EN LA GESTION DE RESIDUOS',
         },
         graphics:{
-            name: 'Tablero'
+            generate_consolidated: 'Generar Consolidados',
+            name: 'Tableros',
+            results: 'Tablero resultados',
+            actual: 'Escenario actual',
+            sankey: 'Diagrama sankey',
+            proyect: 'Escenarios'
         },
         excel: {
             name: 'Generar reporte consolidado'

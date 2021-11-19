@@ -12,6 +12,8 @@ import datetime
 from cryptography.fernet import Fernet
 from pandas.core import frame
 
+# ANCHOR Zona encrypt
+
 key = 's439NtXWeX28815bJCsmRfhEeiTGvs1Xnr_zAduKUAU='
 
 def decrypt(filename):
@@ -35,6 +37,9 @@ def encrypt(str, filename):
     with open(filename, 'wb') as encrypted_file:
         encrypted_file.write(encrypted) 
 
+
+# ANCHOR find_territory
+
 @eel.expose
 def find_territory(value):
     data = decrypt('data/territorio')
@@ -51,7 +56,8 @@ def find_territory(value):
     dfilter = dframe.loc[dframe['SUB_DIVI_POL'].str.contains(value) | dframe['CODIGO'].str.contains(str(value))]
     
     return dfilter.to_json(orient="records")
-  
+
+# ANCHOR find_descriptive
 @eel.expose
 def find_descriptive(value):
     data = decrypt('data/descriptiva')
@@ -201,7 +207,122 @@ def find_descriptive(value):
     #print(returnData)
     return json.dumps(returnData)
 
-
+# ANCHOR get_answered_questions validation
+@eel.expose
+def get_answered_questions():
+    section_list = []
+    data = decrypt('data/pregunta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    data2 = decrypt('data/subseccion')
+    dataDumps2 = json.dumps(data2)
+    dframe2 = None
+    try:
+        dframe2 = pd.DataFrame(data2)
+    except:
+        try:
+            dframe2 = pd.DataFrame(eval(data2))
+        except:
+            try:
+                dframe2 = pd.DataFrame(eval(dataDumps2))
+            except:
+                return
+    file_exists = exists('data/respuesta_usuario')
+    data3 = decrypt('data/respuesta_usuario')
+    dataDumps3 = None
+    dframe3=None
+    if file_exists:
+        data3 = decrypt('data/respuesta_usuario')
+        dataDumps3 = json.dumps(data3)
+        try:
+            dframe3 = pd.DataFrame(data3)
+        except:
+            try:
+                dframe3 = pd.DataFrame(eval(data3))
+            except:
+                try:
+                    dframe3 = pd.DataFrame(eval(dataDumps3))
+                except:
+                    return False
+    else:
+        return False
+    for i in dframe2.index:
+        dfilter = dframe.loc[(dframe['SECCION'] == dframe2['SECCION'][i]) & (dframe['PAGINA'] == dframe2['PAGINA'][i])]
+        #print(dfilter.index)
+        if not dfilter.empty:
+            dfilter2 = dframe3.loc[dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]]
+            #print(dfilter2)
+            #print(section_list)
+            if not dfilter2.empty:
+                section_list.append(True)
+            else:
+                section_list.append(False)
+    if False in section_list:
+        return False
+    else:
+        return True
+    
+# ANCHOR get_consolidated_answers validation
+def get_consolidated_answers():
+    section_list = []
+    data = decrypt('data/pregunta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    file_exists = exists('data/respuesta_usuario')
+    data3 = decrypt('data/respuesta_usuario')
+    dataDumps3 = None
+    dframe3=None
+    if file_exists:
+        data3 = decrypt('data/respuesta_usuario')
+        dataDumps3 = json.dumps(data3)
+        try:
+            dframe3 = pd.DataFrame(data3)
+        except:
+            try:
+                dframe3 = pd.DataFrame(eval(data3))
+            except:
+                try:
+                    dframe3 = pd.DataFrame(eval(dataDumps3))
+                except:
+                    return False
+    else:
+        return False
+    dfilter = dframe.loc[dframe['SECCION'] == 6]
+        #print(dfilter.index)
+    if not dfilter.empty:
+        dfilter2 = dframe3.loc[dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]]
+        #print(dfilter2)
+        #print(section_list)
+        if not dfilter2.empty:
+            section_list.append(True)
+        else:
+            section_list.append(False)
+    if False in section_list:
+        return False
+    else:
+        return True
+         
+# ANCHOR save_population
 @eel.expose
 def save_population(dataA):
     data = decrypt('data/descriptiva')
@@ -233,18 +354,23 @@ def save_population(dataA):
     encrypt(json.dumps(data), 'data/descriptiva')
     return 'true'
 
+
+# ANCHOR Reference
 def getReferenceData(file, field, anio, territory):
     #print('data/'+file)
     data = decrypt('data/'+file)
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     if(file == 'descriptiva'):
         #print(dframe)
         dfilter = dframe.loc[(dframe['ANIO'] == int(anio)) & (dframe['ID_TERRITORIO'] == int(territory))]
@@ -263,12 +389,15 @@ def getReferences(anio, territory):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dat = []
     for i in dframe.index:
         dat.append(getReferenceData(dframe['ARCHIVO'][i], dframe['COLUMNA'][i], anio, territory))
@@ -284,12 +413,15 @@ def getReferencesQuestion(question, anio, territory):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
     dat = []
     for i in dfilter.index:
@@ -299,42 +431,33 @@ def getReferencesQuestion(question, anio, territory):
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
+
+
+# ANCHOR Subsections
 @eel.expose
 def getSubsections(section):
     data = decrypt('data/subseccion')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['SECCION'] == int(section)]
     dfilter = dfilter.sort_values(by=['PAGINA'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
-
+# ANCHOR getQuestion sin parametros // TODOS
 @eel.expose
 def getQuestion():
     data = decrypt('data/pregunta')
-    dataDumps = json.dumps(data)
-    dframe = None
-    try:
-        dframe = pd.DataFrame(eval(data))
-    except:
-        try:
-            dframe = pd.DataFrame(eval(dataDumps))
-        except:
-            return
-    result = json.loads(dframe.to_json(orient="records"))
-    return json.dumps(result)
-
-@eel.expose
-def getAnswerUserD():
-    data = decrypt('data/respuesta_usuario')
     dataDumps = json.dumps(data)
     dframe = None
     try:
@@ -350,57 +473,116 @@ def getAnswerUserD():
     result = json.loads(dframe.to_json(orient="records"))
     return json.dumps(result)
 
+# ANCHOR getAnswerUser año y territorio // TODOS
+@eel.expose
+def getAnswerUserD(year, territorio):
+    file_exists = exists('data/respuesta_usuario')
+    if file_exists:
+        data = decrypt('data/respuesta_usuario')
+        dataDumps = json.dumps(data)
+        dframe = None
+        try:
+            dframe = pd.DataFrame(data)
+        except:
+            try:
+                dframe = pd.DataFrame(eval(data))
+            except:
+                try:
+                    dframe = pd.DataFrame(eval(dataDumps))
+                except:
+                    return
+        dfilter = dframe.loc[(dframe['anio_actual'] == year) & (dframe['id_territorio'] == territorio)]
+        #print(dfilter)
+        result = json.loads(dfilter.to_json(orient="records"))
+        return json.dumps(result)
+    else:
+        return None
+
+# ANCHOR getQuestion por seccion y pagina
 @eel.expose
 def getSPDAQuestions(page, section):
     data = decrypt('data/pregunta')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[(dframe['PAGINA'] == int(page)) & (dframe['SECCION'] == int(section))]
     dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
+# ANCHOR getQuestion por seccion
+@eel.expose
+def getSPDAQuestionsC(section):
+    data = decrypt('data/pregunta')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['SECCION'] == int(section)]
+    dfilter = dfilter.sort_values(by=['ORDEN'])
+    result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+# ANCHOR getAnswers por pregunta
 @eel.expose
 def getSPDAAnswers(question):
     data = decrypt('data/respuesta')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
     dfilter = dfilter.sort_values(by=['COLUMNA'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
+# ANCHOR getTables por pregunta
 @eel.expose
 def getTables(question):
     data = decrypt('data/tabla')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(question)]
     dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)
 
+# ANCHOR saveAnswers
 @eel.expose
 def saveAnswers(answers):
     fernet = Fernet(key)
@@ -458,7 +640,8 @@ def saveAnswers(answers):
         # writing the encrypted data
         with open('data/respuesta_usuario', 'wb') as encrypted_file:
             encrypted_file.write(encrypted) 
-        
+
+# ANCHOR getUserAnswers por pregunta año y territorio 
 @eel.expose
 def getUserAnswers(question, year, territorio):
     #print(question)
@@ -486,7 +669,8 @@ def getUserAnswers(question, year, territorio):
         return json.dumps(result)
     else:
         return None
-    
+
+# ANCHOR getCategory
 @eel.expose
 def getCategory(id_territory):
     data = decrypt('data/descriptiva')
@@ -502,21 +686,45 @@ def getCategory(id_territory):
     dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(id_territory)) & (dframe['ANIO'] < 2020)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getFormula por pregunta
 @eel.expose
 def getFormula(id_question):
     data = decrypt('data/formula')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['CPD'] == '&'+str(id_question)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getFormula por id_cal
+@eel.expose
+def getFormulaByIdCal(id):
+    data = decrypt('data/formula')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['id_cal'] == int(id)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+# ANCHOR getValidationFormula
 @eel.expose
 def getValidationFormula():
     data = decrypt('data/formula')
@@ -532,35 +740,44 @@ def getValidationFormula():
     dfilter = dframe.loc[dframe['tipo'] == "VALIDACION"]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getFormulaByAlias para formulas compuestas
 @eel.expose
 def getFormulaByAlias():
     data = decrypt('data/formula')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['alias'] != "NA"]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getVariables
 @eel.expose
 def getVariables():
     data = decrypt('data/variables')
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     return json.dumps(json.loads(dframe.to_json(orient="records")))
 
+# ANCHOR getPoints por pregunta
 @eel.expose
 def getPoints(id_question):
     data = decrypt('data/puntos')
@@ -576,7 +793,86 @@ def getPoints(id_question):
     dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(id_question)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getIndexBoard por pestaña
+@eel.expose
+def getIndexBoard(pestana):
+    data = decrypt('data/indice_tableros')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['ID_PESTAÑA'] == int(pestana)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
+# ANCHOR getSubIndexBoard por IndexBoard
+@eel.expose
+def getSubIndexBoard(index):
+    data = decrypt('data/tableros_seccion')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['ID_INDICE'] == int(index)]
+    dfilter = dfilter.sort_values(by=['ORDEN'])
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+
+# ANCHOR getTotalBoards por ID_SECCION
+@eel.expose
+def getTotalBoards(section):
+    data = decrypt('data/tablero')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['ID_SECCION'] == int(section)]
+    dfilter = dfilter.sort_values(by=['ORDEN'])
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+# ANCHOR getFigure por ID_TABLERO
+@eel.expose
+def getFigure(board):
+    data = decrypt('data/cifra')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    dfilter = dframe.loc[dframe['ID_TABLERO'] == int(board)]
+    return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+# ANCHOR getFolder
 @eel.expose
 def getFolder(wildcard=[("archivos JSON", "*.json")]):
     root = tk.Tk()
@@ -585,6 +881,7 @@ def getFolder(wildcard=[("archivos JSON", "*.json")]):
     folder = filedialog.askopenfilename(filetypes=wildcard)
     return folder
 
+# ANCHOR save_file; actualizacion de jsons
 @eel.expose
 def save_file(file, name):
     fernet = Fernet(key)

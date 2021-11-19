@@ -12,6 +12,11 @@ const REP = () => import('../views/REP.vue')
 const OtherProfiles = () => import('../views/OtherProfiles.vue')
 const Graphs = () => import('../views/Graphs.vue')
 const Excel = () => import('../views/Excel.vue')
+
+const Results = () => import('../views/Results.vue')
+const Actual = () => import('../views/Actual.vue')
+const Sankey = () => import('../views/Sankey.vue')
+const Proyect = () => import('../views/Proyect.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -65,8 +70,34 @@ const routes = [
           },
           {
             path: 'd6',
-            name: 'Graphs',
             component: Graphs,
+            children: [
+              {
+                path: '',
+                name: 'ResultsIndex',
+                redirect: { name: 'Results' }
+              },
+              {
+                path: 'tl1',
+                name: 'Results',
+                component: Results,
+              },
+              {
+                path: 'tl2',
+                name: 'Actual',
+                component: Actual,
+              },
+              {
+                path: 'tl3',
+                name: 'Sankey',
+                component: Sankey,
+              },
+              {
+                path: 'tl4',
+                name: 'Proyect',
+                component: Proyect,
+              },
+            ]
           },
           {
             path: 'd7',

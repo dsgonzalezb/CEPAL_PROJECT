@@ -42,7 +42,11 @@ export default {
                 'territorio',
                 'variables',
                 'subseccion',
-                'referencia'
+                'referencia',
+                'indice_tableros',
+                'tableros_seccion',
+                'tablero',
+                'cifra'
             ],
             selectedTable: '',
             folder: ''
