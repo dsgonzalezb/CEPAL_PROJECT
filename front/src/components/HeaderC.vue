@@ -4,8 +4,11 @@
             <div class="logos" @click="$router.push({name: 'Home'})">
                 <img src="@/assets/cepal.png" alt="CEPAL">
                 <img src="@/assets/dnp.jpg" alt="DNP">
-                <div class="title"><i class="fas fa-infinity"></i> <br> MC-GRM</div>
                 
+                
+            </div>
+            <div class="log">
+                <div class="title"><i class="fas fa-infinity"></i> <br> MC-GRM</div>
             </div>
             <div class="buttons">
                 <b-button variant="outline-primary" size="lg" @click="$router.push({name: 'Home'})" v-if="$route.name != 'Home'"><i class="fas fa-arrow-circle-left"></i> {{$t('header.home')}}</b-button>
@@ -148,7 +151,7 @@ export default {
         },
         goToDescriptive(){
             this.$refs['yearS'].hide()
-            this.$router.push({name:'DesIndex', params:{id: this.searcht['ID_TERRITORIO'], year: this.year}})
+            this.$router.push({name:'DesIndex', params:{id: this.searcht['ID_TERRITORIO'], year: this.year, municipio: this.searchData['SUB_DIVI_POL']}})
             this.searchData = this.searcht
             this.searcht = {}
             this.$refs['taSearch'].$data.inputValue = ""
@@ -171,7 +174,10 @@ export default {
     width: 100%
     overflow:  hidden
     display: grid
-    grid-template-columns: 60% 40%
+    grid-template-columns: 40% 30% 30%
+    .log
+        justify-self: center
+        align-self: center
     .logos
         height: 100px
         display: flex

@@ -274,6 +274,7 @@ export default {
             this.idDes = this.$route.params.id
             localStorage.setItem('id_territorio', this.idDes);
             localStorage.setItem('year', this.$route.params.year);
+            localStorage.setItem('municipio', this.$route.params.municipio);
             this.$store.dispatch('setLoading')
             try{
                 var val = await window.eel.find_descriptive(this.idDes)(val)

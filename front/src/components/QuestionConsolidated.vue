@@ -6,7 +6,7 @@
             <div class="question" v-for="(question, i) in questions" :key="i">
                 <!-- {{question['VISIBLE'] == 1}}
                 {{getCalculated(i)}} -->
-                <div v-show="question['VISIBLE'] == 1 && getCalculated(i)">
+                <div v-show="question['VISIBLE'] == 1">
                     <b>{{question['COD_PREGUNTA']}} - {{question['ID_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
                     <div class="cols-c" v-if="answers[i] != undefined ">
                         <!--COL1 -->
@@ -227,8 +227,12 @@
                 </div>
             </div>
         </div>
-        <div style="text-align: right" v-show="questions.length>0">
+        <div style="text-align: left" v-show="questions.length-1 == currentQuestion">
             <b-button variant="outline-success" @click="validAnswers" size="sm"><i class="far fa-save"></i> {{$t('graphics.generate_consolidated')}}</b-button>
+        </div>
+        <div style="text-align: left" v-show="questions.length-1 > currentQuestion">
+            <div style="color: #28a745;">{{$t('graphics.cal_consolidates')}}</div>
+            <b-progress class="w-25" variant='success' :value="currentQuestion" :max="questions.length-1" show-progress animated></b-progress>
         </div>
 
         <b-modal ref="error" id="error" size="md" :ok-only="true" :title="$t('descriptive.valid_data')">
@@ -308,6 +312,7 @@ export default {
     },
     data(){
         return{
+            currentQuestion: 0,
             edit_person: {
                 nombre_edita: '',
                 correo_edita: '',
@@ -410,6 +415,7 @@ export default {
     methods: {
         getCalculated(i){
             if(this.questions.length < 1 ) return false
+            this.currentQuestion = i
             if(this.questions[i]['FORMULA'] == undefined) return false
             if(this.questions[i]['FORMULA'].length<1){
                 return true
@@ -426,7 +432,7 @@ export default {
                             return false
                         }
                         else if(parseInt(answer['dato_text']) < 11 ){
-                            this.setRowsTables(i, parseInt(answer['dato_text']))
+                            this.setRowsTables(i, parseFloat(answer['dato_text']))
                             return true
                         }
                         else if(parseInt(answer['dato_text']) > 10 ){
@@ -448,10 +454,10 @@ export default {
                         let answer = this.getAnswerValues(parseInt(idO))
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                values.push(parseInt(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
                             }
                             else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
-                                values.push(parseInt(answer['dato_calc1']))
+                                values.push(parseFloat(answer['dato_calc1']))
                             }
                             else{
                                 values.push(0)
@@ -521,7 +527,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val1 = parseInt(answer['dato_text'])
+                                val1 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val1 = 0
@@ -579,7 +585,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val2 = parseInt(answer['dato_text'])
+                                val2 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val2 = 0
@@ -766,6 +772,7 @@ export default {
                 var val = await window.eel.getSPDAQuestionsC(this.section)(val)
                 this.questions = JSON.parse(val)
                 for (let i = 0; i < this.questions.length; i++) {
+                    
                     setTimeout( async ()=>{ 
                         try{
                             var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
@@ -927,7 +934,7 @@ export default {
                         try{
                             var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
                             //console.log(val2)
-                            if(val2 != undefined)
+                            if(val2 != undefined &&  this.answers[i] != undefined)
                                 if(val2.length>0){
                                     var val3 = JSON.parse(val2)
                                     this.answers[i].id_pregunta = val3[0].id_pregunta
@@ -1034,6 +1041,7 @@ export default {
 
                                     }
                                 }
+
                         }
                         catch(error){
                             console.log(error)
@@ -1082,6 +1090,14 @@ export default {
                 console.log(error)
                 this.$store.dispatch('clearLoading')
             }
+            for (let i = 0; i < this.questions.length; i++) {
+                setTimeout( async ()=>{ 
+                    this.getCalculated(i)
+                }, 1500);
+                
+            }
+           
+            
             
         },
         validAnswers(){

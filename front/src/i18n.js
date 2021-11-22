@@ -72,7 +72,7 @@ const messages = {
         },
         other_profiles:{
             name: 'Dinámicas administrativas',
-            full_name: 'PERFIL MUNICIPAL HACIA LA TRANCISION DE UN MODELO CIRCULAR EN LA GESTION DE RESIDUOS',
+            full_name: 'DINAMICAS ADMINISTRATIVAS HACIA LA TRANCISION DE ESQUEMAS CIRCULARES EN LA GESTION DE RESIDUOS',
         },
         graphics:{
             generate_consolidated: 'Generar Consolidados',
@@ -80,7 +80,20 @@ const messages = {
             results: 'Tablero resultados',
             actual: 'Escenario actual',
             sankey: 'Diagrama sankey',
-            proyect: 'Escenarios'
+            proyect: 'Escenarios',
+            cal_consolidates: 'Calculando Consolidados',
+            points:{
+                title: 'NIVEL DE CIRCULARIDAD EN LA GESTIÓN DE LOS RESIDUOS GENERADOS',
+                theme: 'Tématica',
+                result: 'Estación de resultado',
+                point: 'Puntaje',
+                mini_bar: '0,25',
+                total_points: 'PUNTAJE TOTAL',
+                level: 'Nivel de circularidad para el municipio',
+                alto: 'C1',
+                medio: 'C2',
+                bajo: 'C3'
+            }
         },
         excel: {
             name: 'Generar reporte consolidado'

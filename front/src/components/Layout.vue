@@ -61,6 +61,7 @@ export default {
     align-items: center;
     padding: 0px;
     margin: 0px;
+    z-index: 1000;
 }
 .infinity-loader {
   position: fixed; /*We have to use it as we are using absolute positioning on its children and we will align it in the center of the page*/

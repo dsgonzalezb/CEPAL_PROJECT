@@ -46,12 +46,15 @@ def find_territory(value):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return 
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return 
     dframe['CODIGO'] = dframe['CODIGO'].astype('string')
     dfilter = dframe.loc[dframe['SUB_DIVI_POL'].str.contains(value) | dframe['CODIGO'].str.contains(str(value))]
     
@@ -64,11 +67,15 @@ def find_descriptive(value):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
             return 
     dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(value)) & (dframe['ANIO'] < 2020)]
     dfilter = dfilter.sort_values(by=['ANIO'])
@@ -209,7 +216,7 @@ def find_descriptive(value):
 
 # ANCHOR get_answered_questions validation
 @eel.expose
-def get_answered_questions():
+def get_answered_questions(year, territory):
     section_list = []
     data = decrypt('data/pregunta')
     dataDumps = json.dumps(data)
@@ -260,7 +267,7 @@ def get_answered_questions():
         dfilter = dframe.loc[(dframe['SECCION'] == dframe2['SECCION'][i]) & (dframe['PAGINA'] == dframe2['PAGINA'][i])]
         #print(dfilter.index)
         if not dfilter.empty:
-            dfilter2 = dframe3.loc[dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]]
+            dfilter2 = dframe3.loc[(dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]) & (dframe3['anio_actual'] == year) & (dframe3['id_territorio'] == territory)]
             #print(dfilter2)
             #print(section_list)
             if not dfilter2.empty:
@@ -273,7 +280,8 @@ def get_answered_questions():
         return True
     
 # ANCHOR get_consolidated_answers validation
-def get_consolidated_answers():
+@eel.expose
+def get_consolidated_answers(year , territory):
     section_list = []
     data = decrypt('data/pregunta')
     dataDumps = json.dumps(data)
@@ -308,9 +316,9 @@ def get_consolidated_answers():
     else:
         return False
     dfilter = dframe.loc[dframe['SECCION'] == 6]
-        #print(dfilter.index)
+    #print(dfilter.index)
     if not dfilter.empty:
-        dfilter2 = dframe3.loc[dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]]
+        dfilter2 = dframe3.loc[(dframe3['id_pregunta'] == dfilter['ID_PREGUNTA'][dfilter.index[0]]) & (dframe3['anio_actual'] == year) & (dframe3['id_territorio'] == territory)]
         #print(dfilter2)
         #print(section_list)
         if not dfilter2.empty:
@@ -433,7 +441,7 @@ def getReferencesQuestion(question, anio, territory):
 
 
 
-# ANCHOR Subsections
+# ANCHOR Subsections by section
 @eel.expose
 def getSubsections(section):
     data = decrypt('data/subseccion')
@@ -452,6 +460,25 @@ def getSubsections(section):
     dfilter = dframe.loc[dframe['SECCION'] == int(section)]
     dfilter = dfilter.sort_values(by=['PAGINA'])
     result = json.loads(dfilter.to_json(orient="records"))
+    return json.dumps(result)
+
+# ANCHOR Subsections all
+@eel.expose
+def getSubsectionsAll():
+    data = decrypt('data/subseccion')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    result = json.loads(dframe.to_json(orient="records"))
     return json.dumps(result)
 
 # ANCHOR getQuestion sin parametros // TODOS
@@ -677,12 +704,15 @@ def getCategory(id_territory):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return 
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[(dframe['ID_TERRITORIO'] == int(id_territory)) & (dframe['ANIO'] < 2020)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
@@ -731,12 +761,15 @@ def getValidationFormula():
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['tipo'] == "VALIDACION"]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
 
@@ -784,14 +817,37 @@ def getPoints(id_question):
     dataDumps = json.dumps(data)
     dframe = None
     try:
-        dframe = pd.DataFrame(eval(data))
+        dframe = pd.DataFrame(data)
     except:
         try:
-            dframe = pd.DataFrame(eval(dataDumps))
+            dframe = pd.DataFrame(eval(data))
         except:
-            return
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
     dfilter = dframe.loc[dframe['ID_PREGUNTA'] == int(id_question)]
     return json.dumps(json.loads(dfilter.to_json(orient="records")))
+
+# ANCHOR getPoints all
+@eel.expose
+def getPointsAll():
+    data = decrypt('data/puntos')
+    dataDumps = json.dumps(data)
+    dframe = None
+    #print(dataDumps)
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    #print(dframe)
+    return json.dumps(json.loads(dframe.to_json(orient="records")))
 
 # ANCHOR getIndexBoard por pestaña
 @eel.expose
@@ -905,6 +961,44 @@ def save_file(file, name):
         # writing the encrypted data
         with open('./data/'+name, 'wb') as encrypted_file:
             encrypted_file.write(encrypted)
+            
+# ANCHOR getSankeyNodes all
+@eel.expose
+def getSankeyNodes():
+    data = decrypt('data/sankey_nodos')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    result = json.loads(dframe.to_json(orient="records"))
+    return json.dumps(result)
+
+# ANCHOR getSankeyLinks all
+@eel.expose
+def getSankeyLinks():
+    data = decrypt('data/sankey_links')
+    dataDumps = json.dumps(data)
+    dframe = None
+    try:
+        dframe = pd.DataFrame(data)
+    except:
+        try:
+            dframe = pd.DataFrame(eval(data))
+        except:
+            try:
+                dframe = pd.DataFrame(eval(dataDumps))
+            except:
+                return
+    result = json.loads(dframe.to_json(orient="records"))
+    return json.dumps(result)
         
     
 eel.init('gui') # or the name of your directory

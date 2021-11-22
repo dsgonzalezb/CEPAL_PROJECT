@@ -1,7 +1,11 @@
 <template>
     <div class="sub-board">
         <div class="menu">
-            <div class="btn btn-sm" :class="{'btn-primary': selectedSubIndex == menu['ID_SECCION'], 'btn-outline-primary': selectedSubIndex != menu['ID_SECCION']}" v-for="(menu,i) in subIndex" :key="i" @click="loadBoards (menu['ID_SECCION'])">
+            <div class="btn btn-sm" 
+            :class="{'btn-primary': selectedSubIndex == menu['ID_SECCION'], 'btn-outline-primary': selectedSubIndex != menu['ID_SECCION']}" 
+            v-for="(menu,i) in subIndex" :key="i" 
+            @click="loadBoards (menu['ID_SECCION'])"
+            style="margin-bottom: 10px; width: 100%">
                 <span v-if="menu['NOMBRE'] != 'NA'">{{menu['NOMBRE']}}</span>
                 <span v-if="menu['NOMBRE'] == 'NA'">TABLERO</span>
             </div>
@@ -24,6 +28,8 @@
             :color1="board['COLOR_BARRA1']"
             :color2="board['COLOR_BARRA2']"
             :id_board="board['ID_TABLERO']"
+            :help="board['AYUDA']"
+            :note="board['NOTA']"
             />
         </div>
         
@@ -59,9 +65,7 @@ export default {
         try{
             var val5 = await window.eel.getSubIndexBoard(this.sub_ind)(val5)
             this.subIndex = JSON.parse(val5)
-            if(this.subIndex.length == 1 ){
-                this.loadBoards(this.subIndex[0]['ID_SECCION'])
-            }
+            this.loadBoards(this.subIndex[0]['ID_SECCION'])
             this.$store.dispatch('clearLoading')
         } catch (error) {
             console.log(error)
@@ -75,9 +79,7 @@ export default {
             try{
                 var val5 = await window.eel.getSubIndexBoard(this.sub_ind)(val5)
                 this.subIndex = JSON.parse(val5)
-                if(this.subIndex.length == 1 ){
-                    this.loadBoards(this.subIndex[0]['ID_SECCION'])
-                }
+                this.loadBoards(this.subIndex[0]['ID_SECCION'])
                 this.$store.dispatch('clearLoading')
             } catch (error) {
                 console.log(error)
@@ -106,6 +108,7 @@ export default {
     display: grid
     grid-template-columns: 200px auto
     gap: 10px
+    margin-top: 15px
 .cards-b
     overflow: hidden
 </style>

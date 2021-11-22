@@ -1,6 +1,6 @@
 <template>
     <div>
-         <board :board="2"/>
+         <board :board="1"/>
     </div>
 </template>
 

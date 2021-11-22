@@ -1,5 +1,6 @@
 <template>
     <div class="card-board" :class="{'card-board-a' : type == 'A', 'card-board-b' : type == 'B', 'card-board-c' : type == 'C'}" v-show="loaded">
+        <span class="help" v-show="help!= 'NA'" v-b-tooltip.hover :title="help" ><i class="fas fa-question-circle"></i></span>
         <div class="board-a" v-if="type == 'A'">
             <div class="column-1">
                 <div class="title">
@@ -88,7 +89,11 @@
             </div>
             
         </div>
-        
+        <br>
+        <br v-if="note != 'NA'">
+        <div class="note" v-if="note != 'NA'">
+            {{note}}
+        </div>
     </div>
 </template>
 
@@ -127,11 +132,11 @@ export default {
         },
         color1:{
             type: String,
-            default: 'rgba(0 ,123 ,255 , 1)'
+            default: '#0000FF'
         },
         color2:{
             type: String,
-            default: 'rgba(0 ,123 ,255 , 1)'
+            default: '#0000FF'
         },
         bart1:{
             type: Number,
@@ -152,7 +157,15 @@ export default {
         id_board:{
             type: Number,
             default: 1
-        }
+        },
+        help:{
+            type: String,
+            default: 'NA'
+        },
+        note:{
+            type: String,
+            default: 'NA'
+        },
     },
     data(){
         return{
@@ -348,9 +361,11 @@ export default {
                             data2: this.figures[i]['CIFRA_B'] == 'NA' ? this.figures[i]['CIFRA_B'] : 0,
                             unit1: this.figures[i]['UNIDAD_A'],
                             unit2: this.figures[i]['UNIDAD_B'],
-                            note:  this.figures[i]['AYUDA'],
+                            help:  this.figures[i]['AYUDA'],
                             color: this.figures[i]['COLOR'],
                             bar: this.figures[i]['BARRA'] == 'NA' ? this.figures[i]['BARRA'] : 0,
+                            etiq1: this.figures[i]['ETIQUETA_A'],
+                            etiq2: this.figures[i]['ETIQUETA_B'],
                         }
                     )   
 
@@ -503,12 +518,12 @@ export default {
                         console.log('answer with id'+ idO +': '+ JSON.stringify(answer) )
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                values.push(parseInt(answer['dato_text']))
-                                console.log('Val text '+ i + ': '+ parseInt(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
+                                console.log('Val text '+ i + ': '+ parseFloat(answer['dato_text']))
                             }
                             else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
-                                values.push(parseInt(answer['dato_calc1']))
-                                console.log('Val calc '+ i + ': '+ answer['dato_calc1'] + ',  parsed: '+ parseInt(answer['dato_calc1']))
+                                values.push(parseFloat(answer['dato_calc1']))
+                                console.log('Val calc '+ i + ': '+ answer['dato_calc1'] + ',  parsed: '+ parseFloat(answer['dato_calc1']))
                             }
                             else{
                                 values.push(0)
@@ -578,7 +593,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val1 = parseInt(answer['dato_text'])
+                                val1 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val1 = 0
@@ -636,7 +651,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val2 = parseInt(answer['dato_text'])
+                                val2 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val2 = 0
@@ -707,27 +722,37 @@ export default {
 <style lang="sass" scoped>
 .card-board
     display: inline-grid
+    justify-content: space-evenly
+    align-items: center
+    position: relative
+    .help
+        cursor: pointer
+        position: absolute
+        top: 5px
+        right: 5px
+    .note
+        text-align: center
 .card-board-a
     margin: 10px
     padding: 10px
     box-shadow: 0 1px 4px rgba(0 ,123 ,255 ,0.9)
     border-radius: 3px
     position: relative
-    width: 650px
+    width: 900px
 .card-board-b
     margin: 10px
     padding: 10px
     box-shadow: 0 1px 4px rgba(0 ,123 ,255 ,0.9)
     border-radius: 3px
     position: relative
-    max-width: 350px
+    max-width: 400px
 .card-board-c
     margin: 10px
     padding: 10px
     box-shadow: 0 1px 4px rgba(0 ,123 ,255 ,0.9)
     border-radius: 3px
     position: relative
-    width: 650px
+    width: 900px
 .board
     .column-1
         display: grid

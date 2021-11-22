@@ -25,12 +25,16 @@ export default {
     name:'Descriptives',
     data(){
         return{
-            completed: false
+            completed: false,
+            year: null,
+            idDes: null,
         }
     },
     async mounted(){
+        this.year =  localStorage.getItem('year');
+        this.idDes =  localStorage.getItem('id_territorio');
         try{
-            var val2 = await window.eel.get_answered_questions()(val2)
+            var val2 = await window.eel.get_answered_questions(this.year, this.idDes)(val2)
             if(val2 != undefined){
                 //console.log(val2)
                 this.completed = val2

@@ -8,7 +8,7 @@
                 <!-- {{question['VISIBLE'] == 1}}
                 {{getCalculated(i)}} -->
                 <div v-show="question['VISIBLE'] == 1 && getCalculated(i)">
-                    <b>{{question['COD_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
+                    <b>{{question['COD_PREGUNTA']}} - {{question['ID_PREGUNTA']}} </b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
                     <div class="cols-c" v-if="answers[i] != undefined ">
                         <!--COL1 -->
                         <div class="col-c" v-if="question['TIPO_1'] != 'NA'">
@@ -25,7 +25,7 @@
                                 <div class="body"  v-for="(tanswers, k) in question['TANSWERS']" :key="k+question['TANSWERS'].length" >
                                     <div class="item" v-for="(item, j) in question['TABLES']" :key="j">
                                         <div v-if="item['TIPO']== 'abierto numero'">
-                                            <b-input v-model="question['TANSWERS'][k][j+1]" @paste.prevent @keypress="validNumber($event)"></b-input>
+                                            <b-input v-model="question['TANSWERS'][k][j+1]"  @keypress="validNumber($event)"></b-input>
                                         </div>
                                         <div v-if="item['TIPO']== 'abierto texto'">
                                             <b-input v-model="question['TANSWERS'][k][j+1]"></b-input>
@@ -42,7 +42,7 @@
                                 
                             </div>
                             <div class="inline" v-if="question['TIPO_1']== 'abierto numero'">
-                                <b-input v-model="answers[i]['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
+                                <b-input v-model="answers[i]['dato_text']"  @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
                             </div>
                             <div class="inline" v-if="question['TIPO_1']== 'abierto texto'">
                                 <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span>
@@ -89,7 +89,7 @@
                                 <chartjs-line  :bind="true"></chartjs-line>
                             </div>
                             <div class="inline" v-if="question['TIPO_2']== 'abierto numero'">
-                                <b-input v-model="answers[i]['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
+                                <b-input v-model="answers[i]['dato_text']"  @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
                             </div>
                             <div class="inline" v-if="question['TIPO_2']== 'abierto texto'">
                                 <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span>
@@ -136,7 +136,7 @@
                                 <chartjs-line  :bind="true"></chartjs-line>
                             </div>
                             <div class="inline" v-if="question['TIPO_3']== 'abierto numero'">
-                                <b-input v-model="answers[i]['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
+                                <b-input v-model="answers[i]['dato_text']"  @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
                             </div>
                             <div class="inline" v-if="question['TIPO_3']== 'abierto texto'">
                                 <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span>
@@ -183,7 +183,7 @@
                                 <chartjs-line  :bind="true"></chartjs-line>
                             </div>
                             <div class="inline" v-if="question['TIPO_4']== 'abierto numero'">
-                                <b-input v-model="answers[i]['dato_text']" @paste.prevent @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
+                                <b-input v-model="answers[i]['dato_text']"  @keypress="validNumber($event)"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
                             </div>
                             <div class="inline" v-if="question['TIPO_4']== 'abierto texto'">
                                 <b-input v-model="answers[i]['dato_text']"></b-input> <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span>
@@ -343,7 +343,7 @@ export default {
                 2010,
                 2009
             ],
-            regN: /^[0-9]+$/,
+            regN: /[-+]?[0-9]*\.?[0-9]*/,
             labels: {
                 es: {
                     labelPrevDecade: 'Década anterior',
@@ -426,13 +426,13 @@ export default {
                         if(parseInt(answer['dato_text']) == 0 || answer['dato_text'] == null || answer['dato_text'] == undefined || answer['dato_text'] == '' ){
                             return false
                         }
-                        else if(parseInt(answer['dato_text']) < 11 ){
-                            this.setRowsTables(i, parseInt(answer['dato_text']))
+                        else if(parseInt(answer['dato_text']) < 31 ){
+                            this.setRowsTables(i, parseFloat(answer['dato_text']))
                             return true
                         }
-                        else if(parseInt(answer['dato_text']) > 10 ){
+                        else if(parseInt(answer['dato_text']) > 30 ){
                             this.setAnswerValueTable(parseInt(idO))
-                            this.setRowsTables(i, 10)
+                            this.setRowsTables(i, 30)
                             return true
                         }
                         else{
@@ -447,12 +447,14 @@ export default {
                     for (let i = 0; i < idOList.length; i++) {
                         let idO = idOList[i].split("&")[1]
                         let answer = this.getAnswerValues(parseInt(idO))
+                        parseFloat('____________________SUM')
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                values.push(parseInt(answer['dato_text']))
+                                console.log(parseFloat(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
                             }
                             else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
-                                values.push(parseInt(answer['dato_calc1']))
+                                values.push(parseFloat(answer['dato_calc1']))
                             }
                             else{
                                 values.push(0)
@@ -460,7 +462,12 @@ export default {
                         }
                         
                     }
-                    let sum = values.reduce((a, b) => a + b, 0)
+                    let sum = 0
+                    for (let i = 0; i < values.length; i++) {
+                        sum += values[i]
+                        
+                    }
+                    console.log(sum)
                     this.setCalculatedValue(i, 1, sum)
                     return true
                 }
@@ -522,7 +529,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val1 = parseInt(answer['dato_text'])
+                                val1 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val1 = 0
@@ -580,7 +587,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                val2 = parseInt(answer['dato_text'])
+                                val2 = parseFloat(answer['dato_text'])
                             }
                             else{
                                 val2 = 0
@@ -631,13 +638,13 @@ export default {
                 
             }
             //console.log(this.questions[i]['COD_PREGUNTA'])
-            if( formula.tipo == this.constants_calculated.compose){
-                /* console.log('______________________________________________________________________')
+            if( formula.tipo == this.constants_calculated.simple){
+                console.log('______________________________________________________________________')
                 console.log('CPD: '+formula['CPD'])
                 console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
                 console.log('CPO: '+formula['CPO']+' - '+CPOType)
                 console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
-                console.log('ALIAS: '+formula['alias']) */
+                console.log('ALIAS: '+formula['alias'])
             } 
             
             return operators[formula['OP']](val1,val2)
@@ -1324,7 +1331,7 @@ export default {
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer1 != undefined) {
                             if(answer1['dato_text'] != null || answer1['dato_text'] != undefined || answer1['dato_text'] != '' ){
-                                val1 = parseInt(answer1['dato_text'])
+                                val1 = parseFloat(answer1['dato_text'])
                             }
                             else{
                                 val1 = null
@@ -1347,7 +1354,7 @@ export default {
                     if(questionType2['TIPO_1'] == 'abierto numero'){
                         if(answer2 != undefined) {
                             if(answer2['dato_text'] != null || answer2['dato_text'] != undefined || answer2['dato_text'] != '' ){
-                                val2 = parseInt(answer2['dato_text'])
+                                val2 = parseFloat(answer2['dato_text'])
                             }
                             else{
                                 val2 = null

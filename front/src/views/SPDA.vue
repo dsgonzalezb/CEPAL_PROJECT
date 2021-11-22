@@ -15,8 +15,25 @@
         </div>
         
         <hr>
+        <h3 v-b-tooltip.hover :title="subsects[wizard-1]['AYUDA']" v-if="subsects[wizard-1]['AYUDA'] != 'NA'"><b>{{subsects[wizard-1]['TITULO']}}</b></h3>
+        <h3 v-b-tooltip.hover v-else><b>{{subsects[wizard-1]['TITULO']}}</b></h3>
+        <br>
+        <br>
+        <br>
         <question :section="2" :wizard="wizard" :key="wizard" />
-        
+        <hr>
+        <div class="wizard">
+            <div class="bt1"  v-for="(sect, i) in subsects" :key="i" >
+                <div class="bt" :class="{'active': wizard == sect['PAGINA'] }" v-b-tooltip.hover :title="sect['TITULO']" @click="wizard = sect['PAGINA']">
+                    {{ sect['PAGINA'] }}
+                </div>
+                <div v-if="subsects.length != i+1">
+                    <svg height="50" width="100">
+                        <line x1="0" y1="25" x2="100" y2="25" style="stroke:#007bff;stroke-width:2" />
+                    </svg>    
+                </div>
+            </div>
+        </div>
     </div>
 
 </template>
@@ -50,7 +67,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-h2
+h2 , h3
     text-align: center
 .wizard
     width: 650px

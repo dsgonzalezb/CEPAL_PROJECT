@@ -46,7 +46,9 @@ export default {
                 'indice_tableros',
                 'tableros_seccion',
                 'tablero',
-                'cifra'
+                'cifra',
+                'sankey_nodos',
+                'sankey_links'
             ],
             selectedTable: '',
             folder: ''
@@ -99,6 +101,7 @@ export default {
 
 <style lang="sass" scoped>
 .settings
+    min-height: 500px
     .controls
         width: 80%
         margin: 0 auto
