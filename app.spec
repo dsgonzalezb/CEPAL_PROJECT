@@ -5,9 +5,9 @@ block_cipher = None
 
 
 a = Analysis(['app.py'],
-             pathex=['C:\\Users\\user\\Documents\\CEPAL_PROJECT'],
+             pathex=[],
              binaries=[],
-             datas=[('C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\eel\\eel.js', 'eel'), ('gui', 'gui')],
+             datas=[('C:\\Users\\blcas\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\eel\\eel.js', 'eel'), ('gui', 'gui')],
              hiddenimports=['bottle_websocket'],
              hookspath=[],
              hooksconfig={},

@@ -450,18 +450,30 @@ export default {
                     let values =[]
                     
                     for (let i = 0; i < idOList.length; i++) {
-                        let idO = idOList[i].split("&")[1]
-                        let answer = this.getAnswerValues(parseInt(idO))
-                        if(answer != undefined) {
-                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                values.push(parseFloat(answer['dato_text']))
+                        var CPOType = "NA"
+                        if(idOList[i].indexOf("&") != -1)  CPOType = "ID"
+                        if(idOList[i].indexOf("!") != -1)  CPOType = "ALIAS"
+                        if(CPOType == "ID") {
+                            let idO = idOList[i].split("&")[1]
+                            let answer = this.getAnswerValues(parseInt(idO))
+                            parseFloat('____________________SUM')
+                            if(answer != undefined) {
+                                if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
+                                    console.log(parseFloat(answer['dato_text']))
+                                    values.push(parseFloat(answer['dato_text']))
+                                }
+                                else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                    values.push(parseFloat(answer['dato_calc1']))
+                                }
+                                else{
+                                    values.push(0)
+                                }
                             }
-                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
-                                values.push(parseFloat(answer['dato_calc1']))
-                            }
-                            else{
-                                values.push(0)
-                            }
+                        }
+                        else if(CPOType == "ALIAS") {
+                            let formulaX = this.getAliasFormula(idOList[i])
+                            if(formulaX != undefined)
+                               values.push(this.simpleCalculated(formulaX))
                         }
                         
                     }
@@ -935,7 +947,7 @@ export default {
                             var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
                             //console.log(val2)
                             if(val2 != undefined &&  this.answers[i] != undefined)
-                                if(val2.length>0){
+                                if(val2.length>2){
                                     var val3 = JSON.parse(val2)
                                     this.answers[i].id_pregunta = val3[0].id_pregunta
                                     this.answers[i].A = val3[0].A

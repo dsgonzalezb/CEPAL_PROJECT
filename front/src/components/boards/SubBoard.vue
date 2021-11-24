@@ -1,6 +1,6 @@
 <template>
-    <div class="sub-board">
-        <div class="menu">
+    <div class="sub-board" :class="{'proy': proy}">
+        <div class="menu" v-show="!proy">
             <div class="btn btn-sm" 
             :class="{'btn-primary': selectedSubIndex == menu['ID_SECCION'], 'btn-outline-primary': selectedSubIndex != menu['ID_SECCION']}" 
             v-for="(menu,i) in subIndex" :key="i" 
@@ -30,6 +30,7 @@
             :id_board="board['ID_TABLERO']"
             :help="board['AYUDA']"
             :note="board['NOTA']"
+            :alt_ans="alt_ans"
             />
         </div>
         
@@ -47,6 +48,14 @@ export default {
             type: Number,
             default: 1
         },
+        proy:{
+            type: Boolean,
+            default: false
+        },
+        alt_ans:{
+            type: Array,
+            default: function(){ return [] }
+        }
     },
     data(){
         return{
@@ -111,4 +120,6 @@ export default {
     margin-top: 15px
 .cards-b
     overflow: hidden
+.proy
+    grid-template-columns: 100%
 </style>

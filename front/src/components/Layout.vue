@@ -39,8 +39,6 @@ export default {
     components: {
         'header-c' : HeaderC
     },
-    beforeCreate: function() {
-    },
     computed: {
         isLoading() {
             return this.$store.getters.isLoading > 0;

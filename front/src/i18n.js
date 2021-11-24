@@ -93,6 +93,11 @@ const messages = {
                 alto: 'C1',
                 medio: 'C2',
                 bajo: 'C3'
+            },
+            proyects:{
+                title: 'Caracteristicas del escenario alternativo',
+                year: 'Año',
+                alternative: 'Desarrollo escenario alternativo'
             }
         },
         excel: {

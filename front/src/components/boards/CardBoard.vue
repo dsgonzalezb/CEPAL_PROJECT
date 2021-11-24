@@ -166,6 +166,10 @@ export default {
             type: String,
             default: 'NA'
         },
+        alt_ans:{
+            type: Array,
+            default: function(){ return [] }
+        }
     },
     data(){
         return{
@@ -478,10 +482,16 @@ export default {
         },
         getAnswerValues(id){
             let ans = this.ansd.filter(e=>{ return e.id_pregunta == parseInt(id) })[0]
+            if( ans == undefined){
+                ans = this.alt_ans.filter(e=>{ return e.id_pregunta == parseInt(id)})[0]
+                return ans
+            }
+            else{
             /* for (let i = 0; i < this.ansd.length; i++) {
                 if(this.ansd[i].id_pregunta == parseInt(id)) ans = this.ansd[i]
             } */
-            return ans
+                return ans
+            }
             
         },
         getQuestions(id){
@@ -513,22 +523,30 @@ export default {
                     let values =[]
                     console.log('________________')
                     for (let i = 0; i < idOList.length; i++) {
-                        let idO = idOList[i].split("&")[1]
-                        let answer = this.getAnswerValues(parseInt(idO))
-                        console.log('answer with id'+ idO +': '+ JSON.stringify(answer) )
-                        if(answer != undefined) {
-                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                values.push(parseFloat(answer['dato_text']))
-                                console.log('Val text '+ i + ': '+ parseFloat(answer['dato_text']))
+                        var CPOType = "NA"
+                        if(idOList[i].indexOf("&") != -1)  CPOType = "ID"
+                        if(idOList[i].indexOf("!") != -1)  CPOType = "ALIAS"
+                        if(CPOType == "ID") {
+                            let idO = idOList[i].split("&")[1]
+                            let answer = this.getAnswerValues(parseInt(idO))
+                            parseFloat('____________________SUM')
+                            if(answer != undefined) {
+                                if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
+                                    console.log(parseFloat(answer['dato_text']))
+                                    values.push(parseFloat(answer['dato_text']))
+                                }
+                                else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                    values.push(parseFloat(answer['dato_calc1']))
+                                }
+                                else{
+                                    values.push(0)
+                                }
                             }
-                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
-                                values.push(parseFloat(answer['dato_calc1']))
-                                console.log('Val calc '+ i + ': '+ answer['dato_calc1'] + ',  parsed: '+ parseFloat(answer['dato_calc1']))
-                            }
-                            else{
-                                values.push(0)
-                                console.log('Val null '+ i + ': '+ 0)
-                            }
+                        }
+                        else if(CPOType == "ALIAS") {
+                            let formulaX = this.getAliasFormula(idOList[i])
+                            if(formulaX != undefined)
+                               values.push(this.simpleCalculated(formulaX))
                         }
                         
                     }

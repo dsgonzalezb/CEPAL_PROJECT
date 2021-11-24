@@ -151,7 +151,10 @@ export default {
         },
         goToDescriptive(){
             this.$refs['yearS'].hide()
-            this.$router.push({name:'DesIndex', params:{id: this.searcht['ID_TERRITORIO'], year: this.year, municipio: this.searchData['SUB_DIVI_POL']}})
+            localStorage.setItem('id_territorio', this.searcht['ID_TERRITORIO']);
+            localStorage.setItem('year', this.year);
+            localStorage.setItem('municipio', this.searcht['SUB_DIVI_POL']);
+            this.$router.push({name:'DesIndex'})
             this.searchData = this.searcht
             this.searcht = {}
             this.$refs['taSearch'].$data.inputValue = ""

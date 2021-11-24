@@ -10,7 +10,7 @@
                 <div class="n-data" v-b-tooltip.hover :title="figure.data1">
                     {{ Intl.NumberFormat().format( figure.data1)}}
                 </div>
-                <div class="n-unit">
+                <div class="n-unit" v-if="figure.unit1 != 'NA'">
                     <b>{{figure.unit1}}</b>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="n-data"  v-b-tooltip.hover :title="figure.data2">
                     {{Intl.NumberFormat().format(figure.data2)}}
                 </div>
-                <div class="n-unit">
+                <div class="n-unit" v-if="figure.unit2 != 'NA'">
                     <b>{{figure.unit2}}</b>
                 </div>
             </div>

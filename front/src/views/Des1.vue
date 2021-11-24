@@ -270,7 +270,7 @@ export default {
         //console.log('Des 1 '+this.$loading)
     },
     async mounted(){
-        if(this.$route.params.id != null){
+        /* if(this.$route.params.id != null){
             this.idDes = this.$route.params.id
             localStorage.setItem('id_territorio', this.idDes);
             localStorage.setItem('year', this.$route.params.year);
@@ -301,7 +301,7 @@ export default {
                 this.$store.dispatch('clearLoading')
             }
         }
-        else{
+        else{ */
             try{
                 this.idDes =  localStorage.getItem('id_territorio');
                 this.$store.dispatch('setLoading')
@@ -328,7 +328,7 @@ export default {
             catch{
                 this.$store.dispatch('clearLoading')
             }
-        }
+        /* } */
         
     },
     computed:{
@@ -495,14 +495,11 @@ export default {
     font-weight: bold
 
 .table 
-	width: 100%
-	border: 1px solid #EEEEEE
-
-
-
+    width: 100%
+    border: 1px solid #EEEEEE
 .table-data, .header__item 
-	flex: 1 1 20%
-	text-align: center
+    flex: 1 1 20%
+    text-align: center
 .table-data
     font-size: 0.7rem
 
