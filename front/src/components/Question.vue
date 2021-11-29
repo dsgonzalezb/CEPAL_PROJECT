@@ -77,7 +77,7 @@
                                 <b>Año {{year}}</b>
                             </div>
                             <div class="inline2" v-if="question['TIPO_1']== 'año editable'">
-                            <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                            <span v-if="question['UNIDAD_1'] != 'NA'">{{question['UNIDAD_1']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt" @input="reloadRef(i)"></v-select>
                             </div>
                             <br>
                             <br v-if="question['TIPO_1'] != 'titulo'" >
@@ -124,7 +124,7 @@
                                 <b>Año {{year}}</b>
                             </div>
                             <div class="inline2" v-if="question['TIPO_2']== 'año editable'">
-                            <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                            <span v-if="question['UNIDAD_2'] != 'NA'">{{question['UNIDAD_2']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt" @input="reloadRef(i)"></v-select>
                             </div>
                             <br>
                             <br v-if="question['TIPO_2'] != 'titulo'" >
@@ -171,7 +171,7 @@
                                 <b>Año {{year}}</b>
                             </div>
                             <div class="inline2" v-if="question['TIPO_3']== 'año editable'">
-                            <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                            <span v-if="question['UNIDAD_3'] != 'NA'">{{question['UNIDAD_3']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt" @input="reloadRef(i)"></v-select>
                             </div>
                             <br>
                             <br v-if="question['TIPO_3'] != 'titulo'" >
@@ -218,7 +218,7 @@
                                 <b>Año {{year}}</b>
                             </div>
                             <div class="inline2" v-if="question['TIPO_4']== 'año editable'">
-                            <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt"></v-select>
+                            <span v-if="question['UNIDAD_4'] != 'NA'">{{question['UNIDAD_4']}}</span> <v-select v-model="answers[i]['anio']" :options="yearOpt" @input="reloadRef(i)"></v-select>
                             </div>
                             <br>
                             <br v-if="question['TIPO_4'] != 'titulo'" >
@@ -330,7 +330,14 @@ export default {
             isLoad: false,
             year: null,
             idDes: null,
+            cod_dane : null,
             yearOpt: [
+                2025,
+                2024,
+                2023,
+                2022,
+                2021,
+                2020,
                 2019,
                 2018,
                 2017,
@@ -341,7 +348,16 @@ export default {
                 2012,
                 2011,
                 2010,
-                2009
+                2009,
+                2008,
+                2007,
+                2006,
+                2005,
+                2004,
+                2003,
+                2002,
+                2001,
+                2000
             ],
             regN: /[-+]?[0-9]*\.?[0-9]*/,
             labels: {
@@ -373,6 +389,7 @@ export default {
     async mounted(){
         this.year =  localStorage.getItem('year');
         this.idDes =  localStorage.getItem('id_territorio');
+        this.cod_dane = localStorage.getItem('COD_DANE');
         this.$store.dispatch('year')
         this.isLoad=false
         this.updateQuestions()
@@ -500,6 +517,47 @@ export default {
         },
 
         simpleCalculated(formula){
+            if(formula.tipo == this.constants_calculated.sum){
+                let idOList = formula['CPO'].split(";")
+                let values =[]
+                
+                for (let i = 0; i < idOList.length; i++) {
+                    var CPOTypeSum = "NA"
+                    if(idOList[i].indexOf("&") != -1)  CPOTypeSum = "ID"
+                    if(idOList[i].indexOf("!") != -1)  CPOTypeSum = "ALIAS"
+                    if(CPOTypeSum == "ID") {
+                        let idO = idOList[i].split("&")[1]
+                        let answer = this.getAnswerValues(parseInt(idO))
+                        parseFloat('____________________SUM')
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
+                                console.log(parseFloat(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
+                            }
+                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                values.push(parseFloat(answer['dato_calc1']))
+                            }
+                            else{
+                                values.push(0)
+                            }
+                        }
+                    }
+                    else if(CPOTypeSum == "ALIAS") {
+                        let formulaX = this.getAliasFormula(idOList[i])
+                        if(formulaX != undefined)
+                            values.push(this.getCalculated(formulaX))
+                    }
+                    
+                }
+                let sum = 0
+                for (let i = 0; i < values.length; i++) {
+                    sum += values[i]
+                    
+                }
+                console.log(sum)
+                return sum
+            }
+
             var CPOType = "NA"
             var CPO2Type = "NA"
             //console.log(formula)
@@ -778,6 +836,36 @@ export default {
             if(cant <= count) return true
             else return false
         },
+        async reloadRef(i){
+            this.$store.dispatch('setLoading')
+            try{
+                //console.log('Hi')
+                var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], this.answers[i].anio, this.cod_dane)(val3)
+                if(val3 != undefined){
+                    //console.log(val3)
+                    let yv = JSON.parse(val3)
+                    if(yv.length>0){
+                        //if(i == 7){ console.log(JSON.parse(val2))}
+                        this.questions[i]['REFERENCE'] = yv[0]
+                        this.answers[i].dato_ref = this.questions[i]['REFERENCE']['DATA']
+                    }
+                    else{
+                        this.questions[i]['REFERENCE'] = []
+                    }
+
+                }
+                else{
+                    this.questions[i]['REFERENCE'] = []
+                }
+                this.$store.dispatch('clearLoading')
+            }
+            catch(error){
+                console.log(error)
+                console.log('in index '+ i)
+                this.questions[i]['REFERENCE'] = []
+                this.$store.dispatch('clearLoading')
+            }
+        },
         async updateQuestions(){
             this.isLoad = false
             this.answers = []
@@ -850,7 +938,7 @@ export default {
                         else customy = this.answers[i].anio_actual
                         try{
                             //console.log('Hi')
-                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.idDes)(val3)
+                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.cod_dane)(val3)
                             if(val3 != undefined){
                                 //console.log(val3)
                                 let yv = JSON.parse(val3)
@@ -870,8 +958,8 @@ export default {
                         catch(error){
                             console.log(error)
                             console.log('in index '+ i)
-                            this.questions[i]['REFERENCE']
-                            }
+                            this.questions[i]['REFERENCE'] = []
+                        }
                         
                     }, 500);
 
@@ -1094,7 +1182,7 @@ export default {
 
             this.$store.dispatch('setLoading')
             try{
-                var val10 = await window.eel.getReferences(this.year, this.idDes)(val10)
+                var val10 = await window.eel.getReferences(this.year, this.cod_dane)(val10)
                 this.references = JSON.parse(val10)
                 this.$store.dispatch('clearLoading')
             }
@@ -1227,6 +1315,14 @@ export default {
                     let val2 = this.questions[i]['PUNTOS'][j]['VALOR_2']
                     let type = this.questions[i]['PUNTOS'][j]['TIPO']
                     let points =   this.questions[i]['PUNTOS'][j]['PUNTOS']
+                    let value_compare = 0
+
+                    if(this.questions[i]['TIPO_1'] == 'abierto numero'){
+                        value_compare = this.answers[i]['dato_text']
+                    }
+                    else if(this.questions[i]['TIPO_1'] == 'calculado'){
+                        value_compare = this.answers[i]['dato_calc1']
+                    }
 
                     if(type == "MULTIPLE"){
                         let parsed_value1 = val1.toUpperCase()
@@ -1295,13 +1391,13 @@ export default {
                         let parsed_value1 = val1 != 'NA' ? parseFloat(val1.replace(",", ".")) : 'NA'
                         let parsed_value2 = val2 != 'NA' ? parseFloat(val2.replace(",", ".")) : 'NA'
                         if(op2 == 'NA'){
-                            operators[op1](this.answers[i]['dato_text'], parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            operators[op1](value_compare, parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
                             this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
                         }
                         else{
                             let r_op1 = null , r_op2 = null;
-                            r_op1 = operators[op1](this.answers[i]['dato_text'], parsed_value1)
-                            r_op2 = operators[op2](this.answers[i]['dato_text'], parsed_value2)
+                            r_op1 = operators[op1](value_compare, parsed_value1)
+                            r_op2 = operators[op2](value_compare, parsed_value2)
                             r_op1 && r_op2 ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
                             this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
                         }
@@ -1310,13 +1406,13 @@ export default {
                         let parsed_value1 = val1 != 'NA' ? parseFloat(val1.replace(",", ".")) : 'NA'
                         let parsed_value2 = val2 != 'NA' ? parseFloat(val2.replace(",", ".")) : 'NA'
                         if(op2 == 'NA'){
-                            operators[op1](this.answers[i]['dato_text'], parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
+                            operators[op1](value_compare, parsed_value1) ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
                             this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
                         }
                         else{
                             let r_op1 = null , r_op2 = null;
-                            r_op1 = operators[op1](this.answers[i]['dato_text'], parsed_value1)
-                            r_op2 = operators[op2](this.answers[i]['dato_text'], parsed_value2)
+                            r_op1 = operators[op1](value_compare, parsed_value1)
+                            r_op2 = operators[op2](value_compare, parsed_value2)
                             r_op1 && r_op2 ? this.answers[i].puntaje =  points : this.answers[i].puntaje = 0
                             this.answers[i].puntaje != 0 ? j = this.questions[i]['PUNTOS'].length : ''
                         }

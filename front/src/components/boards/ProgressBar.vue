@@ -1,11 +1,11 @@
 <template>
     <div class="progress-b">
         <div class="loadbar" :class="{'loadbar-s' : size == 'S','loadbar-sm' : size == 'SM'}" v-if="orientation == 'V'" :style="'box-shadow: 0 1px 4px '+color+'; border-color: '+color">
-            <strong class="bar" :style="'height:'+bar+'%; background-color:'+color+'BB'"><span v-if="size != 'SM' && showT">{{Intl.NumberFormat().format(bar)}}%</span></strong>
+            <strong class="bar" :style="'height:'+bar+'%; background-color:'+color+'BB'"><span v-if="size != 'SM' && showT">{{Intl.NumberFormat("en-IN").format(bar)}}%</span></strong>
         </div>
 
          <div class="loadbar2" :class="{'loadbar2-s' : size == 'S','loadbar2-sm' : size == 'SM'}" v-if="orientation == 'H'" :style="'box-shadow: 0 1px 4px '+color+'; border-color: '+color">
-            <strong class="bar2" :style="'width:'+bar+'%; background-color:'+color+'BB'"><span v-if="size != 'SM' && showT">{{Intl.NumberFormat().format(bar)}}%</span></strong>
+            <strong class="bar2" :style="'width:'+bar+'%; background-color:'+color+'BB'"><span v-if="size != 'SM' && showT">{{Intl.NumberFormat("en-IN").format(bar)}}%</span></strong>
         </div>
     </div>
 </template>
@@ -43,6 +43,7 @@ export default {
     display: grid
     align-items: center
     justify-items: center
+    white-space: unset
 .loadbar
     margin: 15px
     width: 40px
@@ -54,7 +55,7 @@ export default {
     position: relative
 .loadbar-s
     width: 20px
-    font-size: 0.8rem
+    font-size: 1rem
 .loadbar-sm
     width: 10px
     min-height: 50px
@@ -81,7 +82,7 @@ export default {
     border-radius: 3px 
 .loadbar2-s
     height: 20px
-    font-size: 0.8rem
+    font-size: 1rem
     .bar2
         line-height: 15px
 .loadbar2-sm

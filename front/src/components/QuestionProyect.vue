@@ -341,6 +341,7 @@ export default {
             isLoad: false,
             year: null,
             idDes: null,
+            cod_dane: null,
             yearOpt: [
                 2019,
                 2018,
@@ -394,6 +395,7 @@ export default {
         }
         this.year =  parseInt(localStorage.getItem('year'))+1;
         this.idDes =  localStorage.getItem('id_territorio');
+        this.cod_dane = localStorage.getItem('COD_DANE');
         this.$store.dispatch('year')
         this.isLoad=false
         this.updateQuestions()
@@ -928,7 +930,7 @@ export default {
                         else customy = this.answers[i].anio_actual
                         try{
                             //console.log('Hi')
-                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.idDes)(val3)
+                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.cod_dane)(val3)
                             if(val3 != undefined){
                                 //console.log(val3)
                                 let yv = JSON.parse(val3)
@@ -1172,7 +1174,7 @@ export default {
 
             this.$store.dispatch('setLoading')
             try{
-                var val10 = await window.eel.getReferences(this.year, this.idDes)(val10)
+                var val10 = await window.eel.getReferences(this.year, this.cod_dane)(val10)
                 this.references = JSON.parse(val10)
                 this.$store.dispatch('clearLoading')
             }

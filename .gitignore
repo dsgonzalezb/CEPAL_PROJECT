@@ -1,2 +1,6 @@
 
 front/node_modules/
+_pycache_
+build
+dist
+dist2

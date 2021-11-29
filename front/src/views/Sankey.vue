@@ -1,8 +1,61 @@
 <template>
-  <div class="container">
-    <div class="wrap">
-      <div id="chart"></div>
+  <div>
+    <div class="title">
+        <h2><b>{{$t('graphics.sankeys.title')}}</b></h2>
     </div>
+    <br>
+    <div class="load-c" v-if="!load">
+        <div class="loader">
+            <div>
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <span>{{$t('graphics.cal_graphs')}}</span>
+        </div>
+    </div>
+    <div class="contain-pro">
+        <div class="list">
+            <div v-for="(node,i) in nodes" :key="i" class="item">
+                <div class="icon" :style="'background-color: '+ listColors[i]"></div> <div>{{node['ETIQUETA']}}  - {{node['Leyenda']}} </div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="wrap">
+            <div id="chart"></div>
+        </div>
+    </div>
+    
   </div>
 </template>
 
@@ -28,7 +81,9 @@ export default {
           compose: 'CALC_COMPUESTO',
           equal:  'IGUAL'
       },
-      loaded: false
+      loaded: false,
+      listColors: [],
+      load: false
     }
   },
   async mounted(){
@@ -106,8 +161,8 @@ export default {
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
-            var formatNumber = d3.format(",.0f"),
-                format = function(d) { return formatNumber(d) + " TWh"; },
+            var formatNumber = d3.format(",.2f"),
+                format = function(d) { return formatNumber(d) + " Ton/año"; },
                 color = d3.scale.category20();
 
             var svg = d3.select("#chart").append("svg")
@@ -134,11 +189,11 @@ export default {
             }
 
             for (let i = 0; i < this.links.length; i++) {
-              let valueCal =  this.getCalculated(this.links[i]['ID_FORMULA'])
+              let valueCal =  this.getCalculated(this.formulaAlias.filter(e => { return e.id_cal == this.links[i]['ID_FORMULA'] } )[0])
               lin.push({
                 "source" : this.links[i]['NODO_O'],
                 "target" : this.links[i]['NODOD'],
-                "value": isNaN(valueCal) ? 1 : valueCal
+                "value": isNaN(valueCal) ? 0  : valueCal == 0 ? 1 : valueCal
               })
               
             }
@@ -171,15 +226,18 @@ export default {
                 .origin(function(d) { return d; })
                 .on("dragstart", function() { this.parentNode.appendChild(this); })
                 .on("drag", dragmove));
-
+            var self = this
             node.append("rect")
                 .attr("height", function(d) { return d.dy; })
                 .attr("width", sankey.nodeWidth())
-                .style("fill", function(d) { return d.color = color(d.name.replace(/ .*/, "")); })
+                .style("fill", function(d) {
+                    self.listColors.push(color(d.name.replace(/ .*/, "")))
+                    return d.color = color(d.name.replace(/ .*/, "")); 
+                })
                 .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
               .append("title")
                 .text(function(d) { return d.name + "\n" + format(d.value); });
-
+            
             node.append("text")
                 .attr("x", -6)
                 .attr("y", function(d) { return d.dy / 2; })
@@ -199,7 +257,7 @@ export default {
 
 
 
-
+            this.load = true
 
           }
           catch(error){
@@ -234,7 +292,7 @@ export default {
     },
     getAliasFormula(alias){
         return this.formulaAlias.filter(e=>{
-            return e.alias == alias
+            return e.id_cal == parseInt(alias.split("!")[1])
         })[0]
     },
     getRefValue(ref){
@@ -253,10 +311,11 @@ export default {
                 let idOList = formula['CPO'].split(";")
                 let values =[]
                 console.log('________________')
+                console.log(JSON.stringify(formula) )
                 for (let i = 0; i < idOList.length; i++) {
                     let idO = idOList[i].split("&")[1]
                     let answer = this.getAnswerValues(parseInt(idO))
-                    console.log('answer with id'+ idO +': '+ JSON.stringify(answer) )
+                    
                     if(answer != undefined) {
                         if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                             values.push(parseFloat(answer['dato_text']))
@@ -295,6 +354,47 @@ export default {
         }
     },
     simpleCalculated(formula){
+        if(formula.tipo == this.constants_calculated.sum){
+                let idOList = formula['CPO'].split(";")
+                let values =[]
+                
+                for (let i = 0; i < idOList.length; i++) {
+                    var CPOTypeSum = "NA"
+                    if(idOList[i].indexOf("&") != -1)  CPOTypeSum = "ID"
+                    if(idOList[i].indexOf("!") != -1)  CPOTypeSum = "ALIAS"
+                    if(CPOTypeSum == "ID") {
+                        let idO = idOList[i].split("&")[1]
+                        let answer = this.getAnswerValues(parseInt(idO))
+                        parseFloat('____________________SUM')
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
+                                console.log(parseFloat(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
+                            }
+                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                values.push(parseFloat(answer['dato_calc1']))
+                            }
+                            else{
+                                values.push(0)
+                            }
+                        }
+                    }
+                    else if(CPOTypeSum == "ALIAS") {
+                        let formulaX = this.getAliasFormula(idOList[i])
+                        if(formulaX != undefined)
+                            values.push(this.getCalculated(formulaX))
+                    }
+                    
+                }
+                let sum = 0
+                for (let i = 0; i < values.length; i++) {
+                    sum += values[i]
+                    
+                }
+                console.log(sum)
+                return sum
+            }
+
         var CPOType = "NA"
         var CPO2Type = "NA"
         //console.log(formula)
@@ -443,14 +543,12 @@ export default {
             
         }
         //console.log(this.questions[i]['COD_PREGUNTA'])
-        if( formula.tipo == this.constants_calculated.compose){
-            /* console.log('______________________________________________________________________')
-            console.log('CPD: '+formula['CPD'])
-            console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
-            console.log('CPO: '+formula['CPO']+' - '+CPOType)
-            console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
-            console.log('ALIAS: '+formula['alias']) */
-        }
+        console.log('______________________________________________________________________')
+        console.log('CPD: '+formula['CPD'])
+        console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
+        console.log('CPO: '+formula['CPO']+' - '+CPOType)
+        console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
+        console.log('ALIAS: '+formula['alias'])
         console.log(JSON.stringify(formula))
         console.log(formula['OP'])
         return operators[formula['OP']](val1,val2)
@@ -460,7 +558,148 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="sass" scoped>
+h2 , h3
+    text-align: center
+.contain-pro
+    display: grid
+    grid-template-columns: 20% 79%
+    gap: 15px
+.list
+    padding: 5px
+    max-height: 550px
+    overflow-y: auto
+    .item
+        display: grid
+        grid-template-columns: 10% 89%
+        gap: 5px
+        font-size: 80%
+        align-items: center
+.icon
+    border-radius: 3px
+    width: 100%
+    height: 100%
+.load-c
+    display: grid
+    justify-items: center
+.loader
+    --background: linear-gradient(135deg, #23C4F8, #275EFE)
+    --shadow: #{rgba(#275EFE, .28)}
+    --text: #6C7486
+    --page: #{rgba(#fff, .36)}
+    --page-fold: #{rgba(#fff, .52)}
+    --duration: 3s
+    width: 200px
+    height: 140px
+    position: relative
+    &:before,
+    &:after 
+        --r: -6deg
+        content: ''
+        position: absolute
+        bottom: 8px
+        width: 120px
+        top: 80%
+        box-shadow: 0 16px 12px var(--shadow)
+        transform: rotate(var(--r))
+    &:before
+        left: 4px
+    &:after
+        --r: 6deg
+        right: 4px
+    div
+        width: 100%
+        height: 100%
+        border-radius: 13px
+        position: relative
+        z-index: 1
+        perspective: 600px
+        box-shadow: 0 4px 6px var(--shadow)
+        background-image: var(--background)
+        ul 
+            margin: 0
+            padding: 0
+            list-style: none
+            position: relative
+            li
+                --r: 180deg
+                --o: 0
+                --c: var(--page)
+                position: absolute
+                top: 10px
+                left: 10px
+                transform-origin: 100% 50%
+                color: var(--c)
+                opacity: var(--o)
+                transform: rotateY(var(--r))
+                animation: var(--duration) ease infinite
+                $i: 2
+                @while $i < 6
+                    &:nth-child(#{$i})
+                        --c: var(--page-fold)
+                        animation-name: page-#{$i}
+                    $i: $i + 1
+                svg
+                    width: 90px
+                    height: 120px
+                    display: block
+                &:first-child
+                    --r: 0deg
+                    --o: 1
+                &:last-child
+                    --o: 1
+    span
+        display: block
+        left: 0
+        right: 0
+        top: 100%
+        margin-top: 20px
+        text-align: center
+        color: var(--text)
+
+$i: 2
+@while $i < 6
+    $delay: $i * 15 - 30
+    @keyframes page-#{$i}
+        #{0 + $delay}%
+            transform: rotateY(180deg)
+            opacity: 0
+        #{20 + $delay}%
+            opacity: 1
+        #{35 + $delay}%,
+        100%
+            opacity: 0
+        #{50 + $delay}%,
+        100%
+            transform: rotateY(0deg)
+    $i: $i + 1
+
+html
+    box-sizing: border-box
+    -webkit-font-smoothing: antialiased
 
 
+*
+    box-sizing: inherit
+    &:before,
+    &:after 
+        box-sizing: inherit
+
+
+// Center & dribbble
+body
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #1C212E
+    font-family: 'Roboto', Arial
+    .dribbble
+        position: fixed
+        display: block
+        right: 24px
+        bottom: 24px
+        img
+            display: block
+            width: 76px
 </style>

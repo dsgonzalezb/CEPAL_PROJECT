@@ -8,7 +8,7 @@
         <div class="figure-text" v-if="figure.data1 != 'NA'"  :style="'box-shadow: 0 1px 4px '+figure.color+'; border-color: '+figure.color+'; background-color:'+figure.color+'55'">
             <div class="data-in">
                 <div class="n-data" v-b-tooltip.hover :title="figure.data1">
-                    {{ Intl.NumberFormat().format( figure.data1)}}
+                    {{ Intl.NumberFormat("en-IN").format( figure.data1)}}
                 </div>
                 <div class="n-unit" v-if="figure.unit1 != 'NA'">
                     <b>{{figure.unit1}}</b>
@@ -24,7 +24,7 @@
         <div class="figure-text" v-if="figure.data2 != 'NA'"  :style="'box-shadow: 0 1px 4px '+figure.color+'; border-color: '+figure.color+'; background-color:'+figure.color+'55'">
             <div class="data-in">
                 <div class="n-data"  v-b-tooltip.hover :title="figure.data2">
-                    {{Intl.NumberFormat().format(figure.data2)}}
+                    {{Intl.NumberFormat("en-IN").format(figure.data2)}}
                 </div>
                 <div class="n-unit" v-if="figure.unit2 != 'NA'">
                     <b>{{figure.unit2}}</b>
@@ -73,6 +73,7 @@ export default {
     width: 250px
     text-align: center
     position: relative
+    white-space: normal
     .data-in
 
         display: grid
@@ -87,14 +88,14 @@ export default {
             white-space: nowrap
             text-overflow: ellipsis
         .n-unit
-            font-size: 65%
+            font-size: 75%
     .help
         cursor: pointer
         position: absolute
         top: 5px
         right: 5px
     .note
-        font-size: 65%
+        font-size: 75%
     .icon
         font-size: 2rem
     .figure-text

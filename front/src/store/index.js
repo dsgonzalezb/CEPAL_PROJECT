@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     loading: 0,
+    territory: 0
   },
   mutations: {
     increaseLoading (state) {
@@ -17,6 +18,10 @@ export default new Vuex.Store({
         } else {
           state.loading -= 1;
         }
+    },
+    set_territory(state, payload){
+      state.territory = payload
+      localStorage.setItem('id_territorio', payload);
     }
   },
   actions: {
@@ -25,11 +30,17 @@ export default new Vuex.Store({
     },
     setLoading({commit}) {
         commit('increaseLoading');
+    },
+    setTerritory({commit}, payload){
+      commit('set_territory', payload)
     }
   },
   getters:{
     isLoading (state) {
         return state.loading;
+    },
+    territory(state){
+      return state.territory;
     }
   },
   modules:{

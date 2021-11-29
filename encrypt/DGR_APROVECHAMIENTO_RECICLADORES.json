@@ -1,0 +1,757 @@
+[
+ {
+   "COD_DANE": 73275,
+   "ANIO": 2021,
+   "RECICLADORES": 150
+ },
+ {
+   "COD_DANE": 73001,
+   "ANIO": 2021,
+   "RECICLADORES": 375
+ },
+ {
+   "COD_DANE": 73443,
+   "ANIO": 2021,
+   "RECICLADORES": 8
+ },
+ {
+   "COD_DANE": 76036,
+   "ANIO": 2021,
+   "RECICLADORES": 17
+ },
+ {
+   "COD_DANE": 76113,
+   "ANIO": 2021,
+   "RECICLADORES": 26
+ },
+ {
+   "COD_DANE": 76122,
+   "ANIO": 2021,
+   "RECICLADORES": 17
+ },
+ {
+   "COD_DANE": 76001,
+   "ANIO": 2021,
+   "RECICLADORES": 3489
+ },
+ {
+   "COD_DANE": 76147,
+   "ANIO": 2021,
+   "RECICLADORES": 44
+ },
+ {
+   "COD_DANE": 76248,
+   "ANIO": 2021,
+   "RECICLADORES": 18
+ },
+ {
+   "COD_DANE": 76306,
+   "ANIO": 2021,
+   "RECICLADORES": 7
+ },
+ {
+   "COD_DANE": 76318,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 76111,
+   "ANIO": 2021,
+   "RECICLADORES": 91
+ },
+ {
+   "COD_DANE": 76364,
+   "ANIO": 2021,
+   "RECICLADORES": 90
+ },
+ {
+   "COD_DANE": 76520,
+   "ANIO": 2021,
+   "RECICLADORES": 198
+ },
+ {
+   "COD_DANE": 76834,
+   "ANIO": 2021,
+   "RECICLADORES": 164
+ },
+ {
+   "COD_DANE": 91001,
+   "ANIO": 2021,
+   "RECICLADORES": 15
+ },
+ {
+   "COD_DANE": 5079,
+   "ANIO": 2021,
+   "RECICLADORES": 50
+ },
+ {
+   "COD_DANE": 5088,
+   "ANIO": 2021,
+   "RECICLADORES": 1020
+ },
+ {
+   "COD_DANE": 5091,
+   "ANIO": 2021,
+   "RECICLADORES": 3
+ },
+ {
+   "COD_DANE": 5129,
+   "ANIO": 2021,
+   "RECICLADORES": 47
+ },
+ {
+   "COD_DANE": 5154,
+   "ANIO": 2021,
+   "RECICLADORES": 65
+ },
+ {
+   "COD_DANE": 5212,
+   "ANIO": 2021,
+   "RECICLADORES": 72
+ },
+ {
+   "COD_DANE": 5148,
+   "ANIO": 2021,
+   "RECICLADORES": 81
+ },
+ {
+   "COD_DANE": 5697,
+   "ANIO": 2021,
+   "RECICLADORES": 65
+ },
+ {
+   "COD_DANE": 5266,
+   "ANIO": 2021,
+   "RECICLADORES": 73
+ },
+ {
+   "COD_DANE": 5318,
+   "ANIO": 2021,
+   "RECICLADORES": 24
+ },
+ {
+   "COD_DANE": 5360,
+   "ANIO": 2021,
+   "RECICLADORES": 94
+ },
+ {
+   "COD_DANE": 5376,
+   "ANIO": 2021,
+   "RECICLADORES": 41
+ },
+ {
+   "COD_DANE": 5380,
+   "ANIO": 2021,
+   "RECICLADORES": 97
+ },
+ {
+   "COD_DANE": 5440,
+   "ANIO": 2021,
+   "RECICLADORES": 65
+ },
+ {
+   "COD_DANE": 5001,
+   "ANIO": 2021,
+   "RECICLADORES": 4509
+ },
+ {
+   "COD_DANE": 5591,
+   "ANIO": 2021,
+   "RECICLADORES": 34
+ },
+ {
+   "COD_DANE": 5615,
+   "ANIO": 2021,
+   "RECICLADORES": 204
+ },
+ {
+   "COD_DANE": 5631,
+   "ANIO": 2021,
+   "RECICLADORES": 58
+ },
+ {
+   "COD_DANE": 5642,
+   "ANIO": 2021,
+   "RECICLADORES": 9
+ },
+ {
+   "COD_DANE": 5664,
+   "ANIO": 2021,
+   "RECICLADORES": 16
+ },
+ {
+   "COD_DANE": 5674,
+   "ANIO": 2021,
+   "RECICLADORES": 17
+ },
+ {
+   "COD_DANE": 5686,
+   "ANIO": 2021,
+   "RECICLADORES": 7
+ },
+ {
+   "COD_DANE": 5761,
+   "ANIO": 2021,
+   "RECICLADORES": 7
+ },
+ {
+   "COD_DANE": 5893,
+   "ANIO": 2021,
+   "RECICLADORES": 11
+ },
+ {
+   "COD_DANE": 81001,
+   "ANIO": 2021,
+   "RECICLADORES": 55
+ },
+ {
+   "COD_DANE": 88001,
+   "ANIO": 2021,
+   "RECICLADORES": 15
+ },
+ {
+   "COD_DANE": 8001,
+   "ANIO": 2021,
+   "RECICLADORES": 3191
+ },
+ {
+   "COD_DANE": 8296,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 8433,
+   "ANIO": 2021,
+   "RECICLADORES": 86
+ },
+ {
+   "COD_DANE": 8573,
+   "ANIO": 2021,
+   "RECICLADORES": 72
+ },
+ {
+   "COD_DANE": 8638,
+   "ANIO": 2021,
+   "RECICLADORES": 169
+ },
+ {
+   "COD_DANE": 8758,
+   "ANIO": 2021,
+   "RECICLADORES": 533
+ },
+ {
+   "COD_DANE": 11001,
+   "ANIO": 2021,
+   "RECICLADORES": 22082
+ },
+ {
+   "COD_DANE": 13001,
+   "ANIO": 2021,
+   "RECICLADORES": 368
+ },
+ {
+   "COD_DANE": 13836,
+   "ANIO": 2021,
+   "RECICLADORES": 5
+ },
+ {
+   "COD_DANE": 15087,
+   "ANIO": 2021,
+   "RECICLADORES": 20
+ },
+ {
+   "COD_DANE": 15176,
+   "ANIO": 2021,
+   "RECICLADORES": 32
+ },
+ {
+   "COD_DANE": 15238,
+   "ANIO": 2021,
+   "RECICLADORES": 313
+ },
+ {
+   "COD_DANE": 15469,
+   "ANIO": 2021,
+   "RECICLADORES": 39
+ },
+ {
+   "COD_DANE": 15572,
+   "ANIO": 2021,
+   "RECICLADORES": 81
+ },
+ {
+   "COD_DANE": 15757,
+   "ANIO": 2021,
+   "RECICLADORES": 22
+ },
+ {
+   "COD_DANE": 15759,
+   "ANIO": 2021,
+   "RECICLADORES": 448
+ },
+ {
+   "COD_DANE": 15001,
+   "ANIO": 2021,
+   "RECICLADORES": 112
+ },
+ {
+   "COD_DANE": 15407,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 17174,
+   "ANIO": 2021,
+   "RECICLADORES": 55
+ },
+ {
+   "COD_DANE": 17380,
+   "ANIO": 2021,
+   "RECICLADORES": 29
+ },
+ {
+   "COD_DANE": 18001,
+   "ANIO": 2021,
+   "RECICLADORES": 47
+ },
+ {
+   "COD_DANE": 18753,
+   "ANIO": 2021,
+   "RECICLADORES": 20
+ },
+ {
+   "COD_DANE": 85010,
+   "ANIO": 2021,
+   "RECICLADORES": 30
+ },
+ {
+   "COD_DANE": 85250,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 85001,
+   "ANIO": 2021,
+   "RECICLADORES": 370
+ },
+ {
+   "COD_DANE": 19001,
+   "ANIO": 2021,
+   "RECICLADORES": 215
+ },
+ {
+   "COD_DANE": 20060,
+   "ANIO": 2021,
+   "RECICLADORES": 5
+ },
+ {
+   "COD_DANE": 20001,
+   "ANIO": 2021,
+   "RECICLADORES": 257
+ },
+ {
+   "COD_DANE": 27001,
+   "ANIO": 2021,
+   "RECICLADORES": 1
+ },
+ {
+   "COD_DANE": 23162,
+   "ANIO": 2021,
+   "RECICLADORES": 84
+ },
+ {
+   "COD_DANE": 23417,
+   "ANIO": 2021,
+   "RECICLADORES": 39
+ },
+ {
+   "COD_DANE": 23001,
+   "ANIO": 2021,
+   "RECICLADORES": 631
+ },
+ {
+   "COD_DANE": 23555,
+   "ANIO": 2021,
+   "RECICLADORES": 88
+ },
+ {
+   "COD_DANE": 23660,
+   "ANIO": 2021,
+   "RECICLADORES": 19
+ },
+ {
+   "COD_DANE": 23807,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 25001,
+   "ANIO": 2021,
+   "RECICLADORES": 51
+ },
+ {
+   "COD_DANE": 25599,
+   "ANIO": 2021,
+   "RECICLADORES": 7
+ },
+ {
+   "COD_DANE": 25086,
+   "ANIO": 2021,
+   "RECICLADORES": 28
+ },
+ {
+   "COD_DANE": 25126,
+   "ANIO": 2021,
+   "RECICLADORES": 139
+ },
+ {
+   "COD_DANE": 25175,
+   "ANIO": 2021,
+   "RECICLADORES": 498
+ },
+ {
+   "COD_DANE": 25214,
+   "ANIO": 2021,
+   "RECICLADORES": 55
+ },
+ {
+   "COD_DANE": 25260,
+   "ANIO": 2021,
+   "RECICLADORES": 23
+ },
+ {
+   "COD_DANE": 25269,
+   "ANIO": 2021,
+   "RECICLADORES": 113
+ },
+ {
+   "COD_DANE": 25286,
+   "ANIO": 2021,
+   "RECICLADORES": 165
+ },
+ {
+   "COD_DANE": 25290,
+   "ANIO": 2021,
+   "RECICLADORES": 85
+ },
+ {
+   "COD_DANE": 25307,
+   "ANIO": 2021,
+   "RECICLADORES": 117
+ },
+ {
+   "COD_DANE": 25377,
+   "ANIO": 2021,
+   "RECICLADORES": 4
+ },
+ {
+   "COD_DANE": 25430,
+   "ANIO": 2021,
+   "RECICLADORES": 8
+ },
+ {
+   "COD_DANE": 25473,
+   "ANIO": 2021,
+   "RECICLADORES": 199
+ },
+ {
+   "COD_DANE": 25592,
+   "ANIO": 2021,
+   "RECICLADORES": 1
+ },
+ {
+   "COD_DANE": 25740,
+   "ANIO": 2021,
+   "RECICLADORES": 31
+ },
+ {
+   "COD_DANE": 25743,
+   "ANIO": 2021,
+   "RECICLADORES": 8
+ },
+ {
+   "COD_DANE": 25754,
+   "ANIO": 2021,
+   "RECICLADORES": 1528
+ },
+ {
+   "COD_DANE": 25772,
+   "ANIO": 2021,
+   "RECICLADORES": 9
+ },
+ {
+   "COD_DANE": 25785,
+   "ANIO": 2021,
+   "RECICLADORES": 28
+ },
+ {
+   "COD_DANE": 25799,
+   "ANIO": 2021,
+   "RECICLADORES": 29
+ },
+ {
+   "COD_DANE": 25817,
+   "ANIO": 2021,
+   "RECICLADORES": 31
+ },
+ {
+   "COD_DANE": 25843,
+   "ANIO": 2021,
+   "RECICLADORES": 44
+ },
+ {
+   "COD_DANE": 25875,
+   "ANIO": 2021,
+   "RECICLADORES": 29
+ },
+ {
+   "COD_DANE": 25899,
+   "ANIO": 2021,
+   "RECICLADORES": 168
+ },
+ {
+   "COD_DANE": 95001,
+   "ANIO": 2021,
+   "RECICLADORES": 121
+ },
+ {
+   "COD_DANE": 41132,
+   "ANIO": 2021,
+   "RECICLADORES": 7
+ },
+ {
+   "COD_DANE": 41298,
+   "ANIO": 2021,
+   "RECICLADORES": 8
+ },
+ {
+   "COD_DANE": 41396,
+   "ANIO": 2021,
+   "RECICLADORES": 13
+ },
+ {
+   "COD_DANE": 41001,
+   "ANIO": 2021,
+   "RECICLADORES": 426
+ },
+ {
+   "COD_DANE": 41551,
+   "ANIO": 2021,
+   "RECICLADORES": 30
+ },
+ {
+   "COD_DANE": 41770,
+   "ANIO": 2021,
+   "RECICLADORES": 45
+ },
+ {
+   "COD_DANE": 41885,
+   "ANIO": 2021,
+   "RECICLADORES": 9
+ },
+ {
+   "COD_DANE": 44430,
+   "ANIO": 2021,
+   "RECICLADORES": 71
+ },
+ {
+   "COD_DANE": 44001,
+   "ANIO": 2021,
+   "RECICLADORES": 545
+ },
+ {
+   "COD_DANE": 47189,
+   "ANIO": 2021,
+   "RECICLADORES": 11
+ },
+ {
+   "COD_DANE": 47288,
+   "ANIO": 2021,
+   "RECICLADORES": 51
+ },
+ {
+   "COD_DANE": 47001,
+   "ANIO": 2021,
+   "RECICLADORES": 525
+ },
+ {
+   "COD_DANE": 50006,
+   "ANIO": 2021,
+   "RECICLADORES": 188
+ },
+ {
+   "COD_DANE": 50150,
+   "ANIO": 2021,
+   "RECICLADORES": 12
+ },
+ {
+   "COD_DANE": 50223,
+   "ANIO": 2021,
+   "RECICLADORES": 6
+ },
+ {
+   "COD_DANE": 50313,
+   "ANIO": 2021,
+   "RECICLADORES": 181
+ },
+ {
+   "COD_DANE": 50318,
+   "ANIO": 2021,
+   "RECICLADORES": 46
+ },
+ {
+   "COD_DANE": 50573,
+   "ANIO": 2021,
+   "RECICLADORES": 168
+ },
+ {
+   "COD_DANE": 50606,
+   "ANIO": 2021,
+   "RECICLADORES": 20
+ },
+ {
+   "COD_DANE": 50680,
+   "ANIO": 2021,
+   "RECICLADORES": 27
+ },
+ {
+   "COD_DANE": 50689,
+   "ANIO": 2021,
+   "RECICLADORES": 52
+ },
+ {
+   "COD_DANE": 50001,
+   "ANIO": 2021,
+   "RECICLADORES": 1908
+ },
+ {
+   "COD_DANE": 52356,
+   "ANIO": 2021,
+   "RECICLADORES": 82
+ },
+ {
+   "COD_DANE": 52001,
+   "ANIO": 2021,
+   "RECICLADORES": 310
+ },
+ {
+   "COD_DANE": 54001,
+   "ANIO": 2021,
+   "RECICLADORES": 349
+ },
+ {
+   "COD_DANE": 54405,
+   "ANIO": 2021,
+   "RECICLADORES": 60
+ },
+ {
+   "COD_DANE": 54498,
+   "ANIO": 2021,
+   "RECICLADORES": 32
+ },
+ {
+   "COD_DANE": 54518,
+   "ANIO": 2021,
+   "RECICLADORES": 75
+ },
+ {
+   "COD_DANE": 54874,
+   "ANIO": 2021,
+   "RECICLADORES": 105
+ },
+ {
+   "COD_DANE": 63001,
+   "ANIO": 2021,
+   "RECICLADORES": 136
+ },
+ {
+   "COD_DANE": 63470,
+   "ANIO": 2021,
+   "RECICLADORES": 9
+ },
+ {
+   "COD_DANE": 63690,
+   "ANIO": 2021,
+   "RECICLADORES": 5
+ },
+ {
+   "COD_DANE": 66170,
+   "ANIO": 2021,
+   "RECICLADORES": 80
+ },
+ {
+   "COD_DANE": 66400,
+   "ANIO": 2021,
+   "RECICLADORES": 15
+ },
+ {
+   "COD_DANE": 66001,
+   "ANIO": 2021,
+   "RECICLADORES": 211
+ },
+ {
+   "COD_DANE": 66687,
+   "ANIO": 2021,
+   "RECICLADORES": 6
+ },
+ {
+   "COD_DANE": 68077,
+   "ANIO": 2021,
+   "RECICLADORES": 22
+ },
+ {
+   "COD_DANE": 68081,
+   "ANIO": 2021,
+   "RECICLADORES": 511
+ },
+ {
+   "COD_DANE": 68001,
+   "ANIO": 2021,
+   "RECICLADORES": 265
+ },
+ {
+   "COD_DANE": 68276,
+   "ANIO": 2021,
+   "RECICLADORES": 52
+ },
+ {
+   "COD_DANE": 68307,
+   "ANIO": 2021,
+   "RECICLADORES": 31
+ },
+ {
+   "COD_DANE": 68406,
+   "ANIO": 2021,
+   "RECICLADORES": 16
+ },
+ {
+   "COD_DANE": 68547,
+   "ANIO": 2021,
+   "RECICLADORES": 31
+ },
+ {
+   "COD_DANE": 68655,
+   "ANIO": 2021,
+   "RECICLADORES": 13
+ },
+ {
+   "COD_DANE": 68679,
+   "ANIO": 2021,
+   "RECICLADORES": 67
+ },
+ {
+   "COD_DANE": 70215,
+   "ANIO": 2021,
+   "RECICLADORES": 16
+ },
+ {
+   "COD_DANE": 70001,
+   "ANIO": 2021,
+   "RECICLADORES": 301
+ },
+ {
+   "COD_DANE": 73268,
+   "ANIO": 2021,
+   "RECICLADORES": 77
+ }
+]

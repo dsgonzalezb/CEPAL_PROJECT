@@ -32,16 +32,27 @@
                     ></vue-bootstrap-typeahead>
                     <!--<b-button variant="outline-primary"><i class="fas fa-search"></i> {{$t('header.start')}}</b-button>-->
                 </div>
-                <div class="sub-location" v-if="($route.name == 'Des1' || $route.name == 'SPDA' || $route.name == 'Manager' || $route.name == 'REP' || $route.name == 'OtherProfiles' || $route.name == 'Graphs' || $route.name == 'Excel' ) && searchData['CODIGO'] != undefined">
+                <div class="sub-location" v-if="($route.name == 'Des1' || $route.name == 'SPDA' || $route.name == 'Manager' || $route.name == 'REP' || $route.name == 'OtherProfiles' || $route.name == 'Graphs' || $route.name == 'Results'  || $route.name == 'Actual' || $route.name == 'Sankey' || $route.name == 'Proyect' || $route.name == 'Excel' ) && searchData['CODIGO'] != undefined">
                     <span>{{searchData['CODIGO']}} - {{searchData['SUB_DIVI_POL']}} - {{searchData['DIVI_POL']}} - {{searchData['PAIS'].toUpperCase()}}</span> <span class="year-r"> AÑO {{year}}</span>
                 </div>
                 <div class="sub-location" v-else>
                     {{$t('header.sub_loc')}}
                 </div>
             </div>
-            <div class="category" v-if="descriptive.length>0">
-                
-                Categoria: {{descriptive[0]['CATEGORIA']}}
+            
+            <div class="category" v-if="descriptive.length>0 && ($route.name != 'Home' && $route.name != 'Settings')">
+                <span v-if="descriptive[0]['CATEGORIA'] = 'C1-Alta'" v-b-modal.category>
+                    Categoria: C1
+                </span>
+                <span v-else-if="descriptive[0]['CATEGORIA'] = 'C2-Media'" v-b-modal.category>
+                    Categoria: C2
+                </span>
+                <span v-else-if="descriptive[0]['CATEGORIA'] = 'C3-Baja'" v-b-modal.category>
+                    Categoria: C3
+                </span>
+                <span v-else>
+                    Categoria: {{descriptive[0]['CATEGORIA']}}
+                </span>
             </div>
         </div>
 
@@ -50,6 +61,42 @@
                 {{$t('header.year_loc')}} <br><br>
                 <b-form-select v-model="year" :options="yearOpt"></b-form-select> <br><br>
                 <b-button variant="outline-primary" @click="goToDescriptive"><i class="fas fa-check"></i> {{$t('header.select')}}</b-button>
+            </div>
+            
+        </b-modal>
+
+        <b-modal ref="category" id="category" size="m" hide-footer :title="''">
+            <div  v-if="descriptive.length>0 ">
+                <h2 v-if="descriptive[0]['CATEGORIA'] = 'C1-Alta'" v-b-modal.category>
+                    Categoria: C1
+                </h2>
+                <h2 v-else-if="descriptive[0]['CATEGORIA'] = 'C2-Media'" v-b-modal.category>
+                    Categoria: C2
+                </h2>
+                <h2 v-else-if="descriptive[0]['CATEGORIA'] = 'C3-Baja'" v-b-modal.category>
+                    Categoria: C3
+                </h2>
+                <h2 v-else>
+                    Categoria: {{descriptive[0]['CATEGORIA']}}
+                </h2>
+                <span v-if="descriptive[0]['CATEGORIA'] = 'C1-Alta'">
+                    Municipios que incorporan en la gestión de sus residuos, infraestructura y practicas asociadas a la actividad de aprovechamiento en el marco de la prestación del servicio público de aseo, que en conjunto representan cerca del 96% de la base de recicladores de oficio a nivel nacional, lo que permite a partir de sus condiciones socioeconómicas, productivas y a las ventajas comparativas asociadas con dinámicas de aglomeración y regionalización, potencializar la incorporación de materiales a cadenas de valor, dinamizando el mercado local y regional; generando así oportunidades de nuevos encadenamientos productivos y la reducción de la cantidad de residuos dispuestos. <br><br>
+                    Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad. 
+
+                </span>
+                <span v-else-if="descriptive[0]['CATEGORIA'] = 'C2-Media'">
+                    Municipios con bajos niveles de aprovechamiento de residuos en el marco de la prestación del servicio público de aseo, los cuales representan en su conjunto el 3,5% de la población recicladora reportada a nivel nacional, condición que restringe las oportunidades de incorporar materiales a cadenas de valor, a pesar de que algunos de los municipios de esta categoría cuentan con potencialidades socioeconómicas y productivas que les permitirían activar encadenamientos productivos asociados con la valorización de materiales.   <br><br>
+                    Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
+                </span>
+                <span v-else-if="descriptive[0]['CATEGORIA'] = 'C3-Baja'">
+                    Municipios cuya gestión de los residuos se orienta principalmente a la disposición final y que por sus condiciones socioeconómicas y productivas cuentan con limitadas alternativas asociadas a la activación de mercados de materiales valorizados, donde las oportunidades en la circularidad de sus residuos se concentran en el fortalecimiento de procesos colaborativos y la implementación de micro y pequeños procesos de valorización.    <br><br>
+                    Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
+                </span>
+                <span v-else>
+                    
+                    Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
+                </span>
+
             </div>
             
         </b-modal>
@@ -154,6 +201,8 @@ export default {
             localStorage.setItem('id_territorio', this.searcht['ID_TERRITORIO']);
             localStorage.setItem('year', this.year);
             localStorage.setItem('municipio', this.searcht['SUB_DIVI_POL']);
+            localStorage.setItem('COD_DANE', this.searcht['CODIGO'])
+            this.$store.dispatch('setTerritory', this.searcht['ID_TERRITORIO'])
             this.$router.push({name:'DesIndex'})
             this.searchData = this.searcht
             this.searcht = {}

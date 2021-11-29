@@ -1,0 +1,3458 @@
+[
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "12,9%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5034
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "4%",
+   "METALES": "11%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5034
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "19%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5045
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "12,0%",
+   "METALES": "23,7%",
+   "VIDRIO": "1,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5045
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "7,3%",
+   "METALES": "28,2%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5079
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "9%",
+   "METALES": "22%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5079
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "11%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5088
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "10,1%",
+   "METALES": "4,7%",
+   "VIDRIO": "6,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5088
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,8%",
+   "METALES": "22,7%",
+   "VIDRIO": "0,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5129
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "23%",
+   "METALES": "13%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5129
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "0%",
+   "METALES": "100%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5142
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5142
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,3%",
+   "METALES": "17,8%",
+   "VIDRIO": "16,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "3,0%",
+   "COD_DANE": 5148
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "23%",
+   "METALES": "18%",
+   "VIDRIO": "19%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5148
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "36%",
+   "METALES": "6%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5154
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "44,2%",
+   "METALES": "3,6%",
+   "VIDRIO": "1,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5154
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "36,4%",
+   "METALES": "2,2%",
+   "VIDRIO": "18,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5212
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "15%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5212
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,1%",
+   "METALES": "18,0%",
+   "VIDRIO": "19,5%",
+   "MADERA": "0,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5266
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "14%",
+   "VIDRIO": "19%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5266
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "42%",
+   "METALES": "2%",
+   "VIDRIO": "20%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5308
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "33,4%",
+   "METALES": "2,2%",
+   "VIDRIO": "8,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5308
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "0,0%",
+   "METALES": "14,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5310
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5310
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "19%",
+   "VIDRIO": "25%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "22,4%",
+   "METALES": "1,7%",
+   "VIDRIO": "31,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,8%",
+   "METALES": "10,6%",
+   "VIDRIO": "24,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5360
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "14%",
+   "VIDRIO": "20%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5360
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "10%",
+   "VIDRIO": "19%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5376
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,5%",
+   "METALES": "14,0%",
+   "VIDRIO": "19,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5376
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,1%",
+   "METALES": "10,2%",
+   "VIDRIO": "7,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5380
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "26%",
+   "METALES": "10%",
+   "VIDRIO": "8%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5380
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "13%",
+   "VIDRIO": "18%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5440
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "23,6%",
+   "METALES": "11,8%",
+   "VIDRIO": "22,8%",
+   "MADERA": "0,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5440
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,6%",
+   "METALES": "9,9%",
+   "VIDRIO": "15,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "18%",
+   "METALES": "11%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "82%",
+   "METALES": "2%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5591
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "76,2%",
+   "METALES": "1,5%",
+   "VIDRIO": "1,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5591
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,9%",
+   "METALES": "10,9%",
+   "VIDRIO": "22,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,2%",
+   "COD_DANE": 5615
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "11%",
+   "VIDRIO": "18%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5615
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "35%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5631
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,2%",
+   "METALES": "37,8%",
+   "VIDRIO": "10,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5631
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "22,1%",
+   "METALES": "12,3%",
+   "VIDRIO": "8,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "1,3%",
+   "COD_DANE": 5642
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "11%",
+   "METALES": "15%",
+   "VIDRIO": "18%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5642
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "6%",
+   "METALES": "29%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5664
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5664
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,1%",
+   "METALES": "23,2%",
+   "VIDRIO": "22,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5674
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "23%",
+   "VIDRIO": "17%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5674
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "12%",
+   "VIDRIO": "13%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5686
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,5%",
+   "METALES": "8,8%",
+   "VIDRIO": "17,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5686
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "13%",
+   "VIDRIO": "16%",
+   "MADERA": "0%",
+   "TEXTIL": "4%",
+   "COD_DANE": 5697
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "24,6%",
+   "METALES": "13,2%",
+   "VIDRIO": "16,0%",
+   "MADERA": "0,3%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 5697
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5847
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "13%",
+   "METALES": "3%",
+   "VIDRIO": "24%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5847
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "0%",
+   "METALES": "1%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5887
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5887
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 5893
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "36%",
+   "METALES": "1%",
+   "VIDRIO": "42%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 5893
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "45%",
+   "METALES": "0%",
+   "VIDRIO": "5%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 81001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "42,4%",
+   "METALES": "9,9%",
+   "VIDRIO": "2,3%",
+   "MADERA": "0,5%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 81001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "29,3%",
+   "METALES": "10,6%",
+   "VIDRIO": "17,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8078
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "17%",
+   "VIDRIO": "8%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8078
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "8%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,7%",
+   "METALES": "9,7%",
+   "VIDRIO": "2,4%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,0%",
+   "METALES": "10,6%",
+   "VIDRIO": "8,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8296
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "14%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8296
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "41%",
+   "METALES": "15%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8433
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,5%",
+   "METALES": "12,9%",
+   "VIDRIO": "6,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8433
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "42,9%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8520
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "14%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8520
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "35%",
+   "METALES": "14%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,1%",
+   "METALES": "21,0%",
+   "VIDRIO": "2,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "4,5%",
+   "METALES": "0,3%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8634
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "48%",
+   "METALES": "20%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8634
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "15%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8638
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "37,9%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8638
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "22,5%",
+   "METALES": "3,5%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8685
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "1%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "3%",
+   "COD_DANE": 8685
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "42%",
+   "METALES": "11%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 8758
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "24,6%",
+   "METALES": "8,5%",
+   "VIDRIO": "4,2%",
+   "MADERA": "0,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 8758
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,6%",
+   "METALES": "10,7%",
+   "VIDRIO": "2,0%",
+   "MADERA": "2,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 13001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "10%",
+   "VIDRIO": "3%",
+   "MADERA": "5%",
+   "TEXTIL": "0%",
+   "COD_DANE": 13001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "0%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 13836
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "0,0%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 13836
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "40,0%",
+   "METALES": "4,3%",
+   "VIDRIO": "20,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15087
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "4%",
+   "VIDRIO": "12%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15087
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "45%",
+   "METALES": "12%",
+   "VIDRIO": "21%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15176
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "32,6%",
+   "METALES": "5,9%",
+   "VIDRIO": "14,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15176
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,0%",
+   "METALES": "10,9%",
+   "VIDRIO": "14,4%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15238
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "8%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15238
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "6%",
+   "VIDRIO": "25%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15469
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 15469
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 15516
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "39%",
+   "METALES": "6%",
+   "VIDRIO": "13%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15516
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "37%",
+   "VIDRIO": "1%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15572
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,6%",
+   "METALES": "18,5%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15572
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,2%",
+   "METALES": "1,2%",
+   "VIDRIO": "14,4%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15757
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "39%",
+   "METALES": "8%",
+   "VIDRIO": "12%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15757
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "9%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15759
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,5%",
+   "METALES": "7,4%",
+   "VIDRIO": "14,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15759
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 15776
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "35%",
+   "METALES": "15%",
+   "VIDRIO": "22%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15776
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "28%",
+   "METALES": "4%",
+   "VIDRIO": "12%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15806
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "72,5%",
+   "METALES": "11,9%",
+   "VIDRIO": "14,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15806
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "11,8%",
+   "METALES": "7,0%",
+   "VIDRIO": "15,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "6%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "52%",
+   "METALES": "7%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 15861
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 15861
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,8%",
+   "METALES": "14,6%",
+   "VIDRIO": "35,4%",
+   "MADERA": "1,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 15407
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "14%",
+   "VIDRIO": "34%",
+   "MADERA": "2%",
+   "TEXTIL": "1%",
+   "COD_DANE": 15407
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "24%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 17174
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "20,1%",
+   "METALES": "22,9%",
+   "VIDRIO": "9,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 17174
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "16,5%",
+   "METALES": "28,7%",
+   "VIDRIO": "6,6%",
+   "MADERA": "3,6%",
+   "TEXTIL": "0,7%",
+   "COD_DANE": 17001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "17%",
+   "VIDRIO": "6%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 17001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "31%",
+   "METALES": "15%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 18001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "11,0%",
+   "METALES": "44,2%",
+   "VIDRIO": "5,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 18001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 18753
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "29%",
+   "VIDRIO": "12%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 18753
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "47%",
+   "METALES": "0%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 85010
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 85010
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "6,3%",
+   "METALES": "0,0%",
+   "VIDRIO": "13,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 85250
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "6%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 85250
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "39%",
+   "METALES": "5%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 85001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "39,6%",
+   "METALES": "7,5%",
+   "VIDRIO": "1,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 85001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,1%",
+   "METALES": "17,9%",
+   "VIDRIO": "12,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 19001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "11%",
+   "METALES": "15%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 19001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "27%",
+   "VIDRIO": "2%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 19573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "22,5%",
+   "METALES": "4,9%",
+   "VIDRIO": "3,4%",
+   "MADERA": "3,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 19573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,1%",
+   "METALES": "3,6%",
+   "VIDRIO": "4,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 20011
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "13%",
+   "VIDRIO": "29%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 20011
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "20%",
+   "VIDRIO": "18%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 20060
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 20060
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "23,8%",
+   "METALES": "5,0%",
+   "VIDRIO": "19,0%",
+   "MADERA": "6,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 20001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "51%",
+   "METALES": "3%",
+   "VIDRIO": "10%",
+   "MADERA": "3%",
+   "TEXTIL": "0%",
+   "COD_DANE": 20001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "42%",
+   "METALES": "0%",
+   "VIDRIO": "1%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 27001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 27001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "6,2%",
+   "METALES": "30,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 23162
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "13%",
+   "METALES": "23%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 23162
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "15%",
+   "METALES": "23%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 23417
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "1,1%",
+   "METALES": "20,8%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 23417
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,5%",
+   "METALES": "20,5%",
+   "VIDRIO": "0,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 23001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "16%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 23001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "15%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 23555
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,6%",
+   "METALES": "15,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 23555
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "0,1%",
+   "METALES": "16,9%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 23660
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "3%",
+   "METALES": "20%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 23660
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "42%",
+   "METALES": "15%",
+   "VIDRIO": "38%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25035
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25035
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25599
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "26%",
+   "VIDRIO": "26%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25599
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "16,0%",
+   "METALES": "22,0%",
+   "VIDRIO": "4,5%",
+   "MADERA": "1,3%",
+   "TEXTIL": "0,6%",
+   "COD_DANE": 11001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "15%",
+   "VIDRIO": "6%",
+   "MADERA": "5%",
+   "TEXTIL": "0%",
+   "COD_DANE": 11001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,3%",
+   "METALES": "27,7%",
+   "VIDRIO": "11,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25126
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "17%",
+   "VIDRIO": "18%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25126
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25154
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "36,1%",
+   "METALES": "17,1%",
+   "VIDRIO": "22,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25154
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "12,6%",
+   "METALES": "16,8%",
+   "VIDRIO": "7,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25175
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "20%",
+   "METALES": "13%",
+   "VIDRIO": "11%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25175
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "11%",
+   "METALES": "26%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25214
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,9%",
+   "METALES": "16,7%",
+   "VIDRIO": "17,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25214
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25260
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "30%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25260
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "22%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25269
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,3%",
+   "METALES": "23,6%",
+   "VIDRIO": "11,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25269
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "29,3%",
+   "METALES": "7,5%",
+   "VIDRIO": "0,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25286
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "15%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25286
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "38%",
+   "METALES": "9%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25290
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "5,4%",
+   "METALES": "43,9%",
+   "VIDRIO": "9,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25290
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25307
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "23%",
+   "VIDRIO": "17%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25307
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "27%",
+   "METALES": "8%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25322
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "3,2%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25322
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,1%",
+   "METALES": "10,3%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25377
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "6%",
+   "VIDRIO": "19%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25377
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "41%",
+   "METALES": "10%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25386
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25386
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "32,3%",
+   "METALES": "8,5%",
+   "VIDRIO": "9,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25407
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "11%",
+   "VIDRIO": "17%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25407
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "39%",
+   "METALES": "8%",
+   "VIDRIO": "5%",
+   "MADERA": "2%",
+   "TEXTIL": "1%",
+   "COD_DANE": 25430
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,8%",
+   "METALES": "1,1%",
+   "VIDRIO": "1,6%",
+   "MADERA": "0,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25430
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,5%",
+   "METALES": "8,0%",
+   "VIDRIO": "1,1%",
+   "MADERA": "0,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25473
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "30%",
+   "METALES": "20%",
+   "VIDRIO": "8%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25473
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "80%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "3%",
+   "COD_DANE": 25535
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25535
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25592
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "9%",
+   "METALES": "62%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25592
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "19%",
+   "VIDRIO": "35%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25612
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25612
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,8%",
+   "METALES": "12,3%",
+   "VIDRIO": "27,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25740
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "10%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25740
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "71%",
+   "METALES": "0%",
+   "VIDRIO": "1%",
+   "MADERA": "1%",
+   "TEXTIL": "2%",
+   "COD_DANE": 25743
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 25743
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,2%",
+   "METALES": "4,2%",
+   "VIDRIO": "5,1%",
+   "MADERA": "15,0%",
+   "TEXTIL": "1,4%",
+   "COD_DANE": 25754
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "34%",
+   "METALES": "5%",
+   "VIDRIO": "4%",
+   "MADERA": "6%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25754
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "10%",
+   "VIDRIO": "21%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25781
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,4%",
+   "METALES": "10,0%",
+   "VIDRIO": "18,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25781
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,3%",
+   "METALES": "27,6%",
+   "VIDRIO": "13,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25785
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "26%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25785
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "27%",
+   "VIDRIO": "11%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25799
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,3%",
+   "METALES": "19,6%",
+   "VIDRIO": "14,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25799
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,8%",
+   "METALES": "8,0%",
+   "VIDRIO": "30,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25817
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "5%",
+   "VIDRIO": "23%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25817
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "4%",
+   "METALES": "2%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25843
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,6%",
+   "METALES": "14,8%",
+   "VIDRIO": "9,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25843
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "7,8%",
+   "METALES": "2,9%",
+   "VIDRIO": "7,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25875
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "8%",
+   "METALES": "1%",
+   "VIDRIO": "17%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25875
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "11%",
+   "METALES": "15%",
+   "VIDRIO": "17%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 25899
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,3%",
+   "METALES": "12,0%",
+   "VIDRIO": "19,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 25899
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,5%",
+   "METALES": "13,9%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 95001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "30%",
+   "METALES": "13%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 95001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "45%",
+   "METALES": "7%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41016
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "42,5%",
+   "METALES": "17,4%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41016
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "69,1%",
+   "METALES": "3,5%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41078
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "59%",
+   "METALES": "3%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41078
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "49%",
+   "METALES": "11%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41132
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "44,5%",
+   "METALES": "17,3%",
+   "VIDRIO": "6,4%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41132
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 41319
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "13%",
+   "METALES": "12%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41319
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "4%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41396
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,2%",
+   "METALES": "5,3%",
+   "VIDRIO": "16,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41396
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "32,5%",
+   "METALES": "14,1%",
+   "VIDRIO": "5,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "28%",
+   "METALES": "12%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "44%",
+   "METALES": "3%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41524
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "47,0%",
+   "METALES": "8,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41524
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 41551
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "49%",
+   "METALES": "5%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41551
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "39%",
+   "METALES": "14%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41615
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,1%",
+   "METALES": "22,3%",
+   "VIDRIO": "11,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41615
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "55,9%",
+   "METALES": "2,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 41799
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "7%",
+   "VIDRIO": "1%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 41799
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "10%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 44430
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,2%",
+   "METALES": "11,3%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 44430
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "40,6%",
+   "METALES": "13,4%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 44001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "48%",
+   "METALES": "13%",
+   "VIDRIO": "5%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 44001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "12%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 47053
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,8%",
+   "METALES": "8,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 47053
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "29,6%",
+   "METALES": "18,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 47189
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "51%",
+   "METALES": "17%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 47189
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "34%",
+   "METALES": "18%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 47288
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,3%",
+   "METALES": "17,8%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 47288
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "27,0%",
+   "METALES": "20,8%",
+   "VIDRIO": "5,4%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 47001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "35%",
+   "METALES": "17%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 47001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "31%",
+   "METALES": "17%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50006
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "31,1%",
+   "METALES": "16,5%",
+   "VIDRIO": "9,2%",
+   "MADERA": "0,7%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50006
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,8%",
+   "METALES": "19,1%",
+   "VIDRIO": "2,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50150
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "44%",
+   "METALES": "12%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50150
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "18%",
+   "METALES": "5%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50223
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 50223
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,2%",
+   "METALES": "14,3%",
+   "VIDRIO": "4,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50313
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "6%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50313
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "31%",
+   "METALES": "11%",
+   "VIDRIO": "22%",
+   "MADERA": "0%",
+   "TEXTIL": "2%",
+   "COD_DANE": 50318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "29,8%",
+   "METALES": "7,9%",
+   "VIDRIO": "23,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,7%",
+   "COD_DANE": 50318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "46,6%",
+   "METALES": "14,8%",
+   "VIDRIO": "2,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50568
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "5%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50568
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "36%",
+   "METALES": "8%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "41,8%",
+   "METALES": "8,2%",
+   "VIDRIO": "2,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50573
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "45,4%",
+   "METALES": "16,6%",
+   "VIDRIO": "1,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50606
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "45%",
+   "METALES": "6%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50606
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "42%",
+   "METALES": "19%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50680
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "39,0%",
+   "METALES": "14,6%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50680
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "32,5%",
+   "METALES": "4,6%",
+   "VIDRIO": "5,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50689
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "3%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50689
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "5%",
+   "VIDRIO": "6%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 50001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,7%",
+   "METALES": "7,0%",
+   "VIDRIO": "6,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 50001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "8,4%",
+   "METALES": "8,2%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,3%",
+   "COD_DANE": 52356
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "5%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 52356
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "22%",
+   "METALES": "8%",
+   "VIDRIO": "2%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 52001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "22,6%",
+   "METALES": "18,7%",
+   "VIDRIO": "4,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 52001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "16,6%",
+   "METALES": "4,2%",
+   "VIDRIO": "10,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 54001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "27%",
+   "METALES": "8%",
+   "VIDRIO": "5%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 54001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "52%",
+   "METALES": "8%",
+   "VIDRIO": "14%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 54405
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "56,1%",
+   "METALES": "13,4%",
+   "VIDRIO": "7,1%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 54405
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "16,9%",
+   "METALES": "9,1%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 54498
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "26%",
+   "METALES": "16%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 54498
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "14%",
+   "VIDRIO": "8%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 54518
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "10,3%",
+   "METALES": "11,3%",
+   "VIDRIO": "12,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 54518
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "36,9%",
+   "METALES": "7,9%",
+   "VIDRIO": "1,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 54874
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "6%",
+   "VIDRIO": "1%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 54874
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "7%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 63001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "19,1%",
+   "METALES": "3,9%",
+   "VIDRIO": "1,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 63001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 63690
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "23%",
+   "METALES": "24%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 63690
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "7%",
+   "VIDRIO": "9%",
+   "MADERA": "3%",
+   "TEXTIL": "0%",
+   "COD_DANE": 66170
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,8%",
+   "METALES": "8,5%",
+   "VIDRIO": "9,3%",
+   "MADERA": "3,4%",
+   "TEXTIL": "0,2%",
+   "COD_DANE": 66170
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "23,0%",
+   "METALES": "12,0%",
+   "VIDRIO": "12,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 66001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "23%",
+   "METALES": "9%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 66001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "34%",
+   "METALES": "3%",
+   "VIDRIO": "5%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 66682
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 66682
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,5%",
+   "METALES": "10,7%",
+   "VIDRIO": "30,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 66687
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "35%",
+   "METALES": "8%",
+   "VIDRIO": "24%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 66687
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "40%",
+   "METALES": "5%",
+   "VIDRIO": "9%",
+   "MADERA": "2%",
+   "TEXTIL": "0%",
+   "COD_DANE": 68081
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "35,3%",
+   "METALES": "4,1%",
+   "VIDRIO": "8,7%",
+   "MADERA": "0,7%",
+   "TEXTIL": "0,1%",
+   "COD_DANE": 68081
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,5%",
+   "METALES": "2,3%",
+   "VIDRIO": "9,1%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,1%",
+   "COD_DANE": 68001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "4%",
+   "VIDRIO": "11%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 68001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "7%",
+   "VIDRIO": "15%",
+   "MADERA": "0%",
+   "TEXTIL": "1%",
+   "COD_DANE": 68276
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "31,0%",
+   "METALES": "7,2%",
+   "VIDRIO": "18,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,8%",
+   "COD_DANE": 68276
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,9%",
+   "METALES": "6,9%",
+   "VIDRIO": "16,6%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,6%",
+   "COD_DANE": 68307
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "7%",
+   "VIDRIO": "19%",
+   "MADERA": "0%",
+   "TEXTIL": "1%",
+   "COD_DANE": 68307
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "20%",
+   "METALES": "6%",
+   "VIDRIO": "30%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 68406
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "23,6%",
+   "METALES": "5,6%",
+   "VIDRIO": "30,1%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 68406
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 68432
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "11%",
+   "VIDRIO": "27%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 68432
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "7%",
+   "VIDRIO": "11%",
+   "MADERA": "0%",
+   "TEXTIL": "1%",
+   "COD_DANE": 68547
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,7%",
+   "METALES": "5,8%",
+   "VIDRIO": "14,1%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,7%",
+   "COD_DANE": 68547
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "39,8%",
+   "METALES": "11,9%",
+   "VIDRIO": "18,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "1,8%",
+   "COD_DANE": 68655
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "17%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "6%",
+   "COD_DANE": 68655
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "17%",
+   "METALES": "9%",
+   "VIDRIO": "13%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 68679
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "15,4%",
+   "METALES": "23,8%",
+   "VIDRIO": "17,1%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,1%",
+   "COD_DANE": 68679
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "33,0%",
+   "METALES": "7,9%",
+   "VIDRIO": "24,7%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 68689
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 68689
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "5%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 70215
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "28,1%",
+   "METALES": "8,2%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 70215
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "14,3%",
+   "METALES": "3,1%",
+   "VIDRIO": "69,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 70708
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "18%",
+   "METALES": "2%",
+   "VIDRIO": "51%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 70708
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "1%",
+   "METALES": "0%",
+   "VIDRIO": "90%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 70742
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "18,4%",
+   "METALES": "13,5%",
+   "VIDRIO": "53,3%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 70742
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "2,3%",
+   "METALES": "31,7%",
+   "VIDRIO": "0,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 70001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "4%",
+   "METALES": "14%",
+   "VIDRIO": "1%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 70001
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "66%",
+   "METALES": "0%",
+   "VIDRIO": "3%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73168
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "59,1%",
+   "METALES": "1,8%",
+   "VIDRIO": "8,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 73168
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "36,4%",
+   "METALES": "28,1%",
+   "VIDRIO": "1,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 73268
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "27%",
+   "METALES": "20%",
+   "VIDRIO": "20%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73268
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "29%",
+   "VIDRIO": "23%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73275
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73275
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73319
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "49%",
+   "VIDRIO": "10%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73319
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "10%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "1%",
+   "COD_DANE": 73001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "20,6%",
+   "METALES": "13,5%",
+   "VIDRIO": "6,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,4%",
+   "COD_DANE": 73001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "27,4%",
+   "METALES": "37,0%",
+   "VIDRIO": "9,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 73443
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "71%",
+   "METALES": "5%",
+   "VIDRIO": "7%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73443
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "21%",
+   "VIDRIO": "34%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73449
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73449
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73504
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "16%",
+   "METALES": "48%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 73504
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "74%",
+   "METALES": "2%",
+   "VIDRIO": "1%",
+   "MADERA": "5%",
+   "TEXTIL": "2%",
+   "COD_DANE": 73585
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73585
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 73671
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "82%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "5%",
+   "TEXTIL": "1%",
+   "COD_DANE": 73671
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "24%",
+   "METALES": "25%",
+   "VIDRIO": "3%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76036
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,0%",
+   "METALES": "17,2%",
+   "VIDRIO": "2,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76036
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,6%",
+   "METALES": "13,3%",
+   "VIDRIO": "2,8%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76111
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "10%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76111
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "24%",
+   "VIDRIO": "4%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76113
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "34,3%",
+   "METALES": "10,6%",
+   "VIDRIO": "4,7%",
+   "MADERA": "3,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76113
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,7%",
+   "METALES": "18,1%",
+   "VIDRIO": "14,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76122
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "13%",
+   "VIDRIO": "12%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76122
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "19%",
+   "METALES": "15%",
+   "VIDRIO": "9%",
+   "MADERA": "2%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "17,6%",
+   "METALES": "17,1%",
+   "VIDRIO": "9,7%",
+   "MADERA": "2,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76001
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "100,0%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76126
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 76126
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "15%",
+   "METALES": "24%",
+   "VIDRIO": "23%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76130
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "10,0%",
+   "METALES": "42,1%",
+   "VIDRIO": "6,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76130
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "26,7%",
+   "METALES": "17,1%",
+   "VIDRIO": "4,8%",
+   "MADERA": "0,1%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76147
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "4%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76147
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "27%",
+   "METALES": "26%",
+   "VIDRIO": "2%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76233
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "25,6%",
+   "METALES": "14,5%",
+   "VIDRIO": "3,3%",
+   "MADERA": "2,3%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76233
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "21,4%",
+   "METALES": "1,6%",
+   "VIDRIO": "4,7%",
+   "MADERA": "0,8%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76248
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "29%",
+   "METALES": "17%",
+   "VIDRIO": "7%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76248
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "26%",
+   "METALES": "27%",
+   "VIDRIO": "2%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76275
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "31,6%",
+   "METALES": "8,9%",
+   "VIDRIO": "1,9%",
+   "MADERA": "0,2%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76275
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "32,7%",
+   "METALES": "15,3%",
+   "VIDRIO": "15,9%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76306
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "37%",
+   "METALES": "21%",
+   "VIDRIO": "12%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76306
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "25%",
+   "METALES": "19%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "27,7%",
+   "METALES": "1,4%",
+   "VIDRIO": "9,2%",
+   "MADERA": "0,4%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76318
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "41,1%",
+   "METALES": "9,3%",
+   "VIDRIO": "14,9%",
+   "MADERA": "2,8%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76364
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "27%",
+   "METALES": "17%",
+   "VIDRIO": "8%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76364
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "0%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76400
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "0,1%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76400
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "35,1%",
+   "METALES": "5,0%",
+   "VIDRIO": "12,4%",
+   "MADERA": "0,4%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76520
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "32%",
+   "METALES": "5%",
+   "VIDRIO": "13%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76520
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "31%",
+   "METALES": "11%",
+   "VIDRIO": "13%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76563
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "30,2%",
+   "METALES": "2,0%",
+   "VIDRIO": "13,8%",
+   "MADERA": "0,3%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76563
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "43,0%",
+   "METALES": "0,0%",
+   "VIDRIO": "6,2%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76670
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "26%",
+   "METALES": "25%",
+   "VIDRIO": "3%",
+   "MADERA": "1%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76670
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "9%",
+   "METALES": "9%",
+   "VIDRIO": "9%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76834
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "11,5%",
+   "METALES": "8,8%",
+   "VIDRIO": "4,5%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76834
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "100,0%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76869
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 76869
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "21%",
+   "METALES": "27%",
+   "VIDRIO": "5%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76890
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "NR",
+   "METALES": "NR",
+   "VIDRIO": "NR",
+   "MADERA": "NR",
+   "TEXTIL": "NR",
+   "COD_DANE": 76890
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "50,6%",
+   "METALES": "4,1%",
+   "VIDRIO": "19,4%",
+   "MADERA": "5,7%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76892
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "33%",
+   "METALES": "16%",
+   "VIDRIO": "17%",
+   "MADERA": "2%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76892
+ },
+ {
+   "ANIO": 2020,
+   "PLASTICOS": "0%",
+   "METALES": "0%",
+   "VIDRIO": "0%",
+   "MADERA": "0%",
+   "TEXTIL": "0%",
+   "COD_DANE": 76895
+ },
+ {
+   "ANIO": 2019,
+   "PLASTICOS": "0,0%",
+   "METALES": "0,0%",
+   "VIDRIO": "0,0%",
+   "MADERA": "0,0%",
+   "TEXTIL": "0,0%",
+   "COD_DANE": 76895
+ }
+]

@@ -24,7 +24,7 @@ def decrypt():
               
 def encrypt():
     fernet = Fernet(key)
-    f = open('TABLA.json', encoding="utf8")
+    f = open('DGR_TONELADAS_APROVECHADAS_TOTAL.json', encoding="utf8")
     data = json.load(f)
     str = json.dumps(data)
     # opening the original file to encrypt
@@ -34,7 +34,7 @@ def encrypt():
     
     # opening the file in write mode and 
     # writing the encrypted data
-    with open('../data/tabla', 'wb') as encrypted_file:
+    with open('../data/DGR_TONELADAS_APROVECHADAS_TOTAL', 'wb') as encrypted_file:
         encrypted_file.write(encrypted) 
 if __name__ == "__main__":
     encrypt()

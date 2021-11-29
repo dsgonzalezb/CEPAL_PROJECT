@@ -1,5 +1,5 @@
 <template>
-    <div class="descript">
+    <div class="descript" key="territory">
         <div class="side">
             <div class="tag" :class="{'active': $route.name == 'Des1'}" @click="$router.push({name:'Des1'})"><i class="fas fa-chart-line"></i> {{$t('descriptive.name')}}</div>
             <div class="tag" :class="{'active': $route.name == 'SPDA'}" @click="$router.push({name:'SPDA'})" v-b-tooltip.hover :title="$t('spda.full_name')"><i class="fas fa-poll-h"></i> {{$t('spda.name')}}</div>
@@ -30,18 +30,37 @@ export default {
             idDes: null,
         }
     },
+    watch:{
+        territory : function(){
+            this.year =  localStorage.getItem('year');
+            this.idDes =  localStorage.getItem('id_territorio');
+            this.getValid()
+        }
+    },
+    computed:{
+        territory(){
+            return this.$store.getters.territory;
+        }
+    },
+
     async mounted(){
         this.year =  localStorage.getItem('year');
         this.idDes =  localStorage.getItem('id_territorio');
-        try{
-            var val2 = await window.eel.get_answered_questions(this.year, this.idDes)(val2)
-            if(val2 != undefined){
-                //console.log(val2)
-                this.completed = val2
+        this.getValid()
+    },
+    methods:{
+        async getValid(){
+            this.completed = false
+            try{
+                var val2 = await window.eel.get_answered_questions(this.year, this.idDes)(val2)
+                if(val2 != undefined){
+                    //console.log(val2)
+                    this.completed = val2
+                }
             }
-        }
-        catch(error){
-            console.log(error)
+            catch(error){
+                console.log(error)
+            }
         }
     }
 }

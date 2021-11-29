@@ -119,7 +119,8 @@ export default {
     gap: 10px
     margin-top: 15px
 .cards-b
-    overflow: hidden
+    overflow-x: auto
+    white-space: nowrap
 .proy
     grid-template-columns: 100%
 </style>

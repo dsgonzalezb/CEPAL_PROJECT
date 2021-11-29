@@ -31,7 +31,7 @@ export default {
         return{
             isShow: false,
             pass: '',
-            clave: '123', //'zb$AYqcgEo^c',
+            clave:'zb$AYqcgEo^c', //, '123'
             listTables:[
                 'descriptiva',
                 'formula',

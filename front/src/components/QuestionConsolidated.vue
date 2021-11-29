@@ -334,6 +334,7 @@ export default {
             isLoad: false,
             year: null,
             idDes: null,
+            cod_dane: null,
             yearOpt: [
                 2019,
                 2018,
@@ -377,6 +378,7 @@ export default {
     async mounted(){
         this.year =  localStorage.getItem('year');
         this.idDes =  localStorage.getItem('id_territorio');
+        this.cod_dane = localStorage.getItem('COD_DANE');
         this.$store.dispatch('year')
         this.isLoad=false
         this.updateQuestions()
@@ -459,7 +461,7 @@ export default {
                             parseFloat('____________________SUM')
                             if(answer != undefined) {
                                 if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                    console.log(parseFloat(answer['dato_text']))
+                                    //console.log(parseFloat(answer['dato_text']))
                                     values.push(parseFloat(answer['dato_text']))
                                 }
                                 else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
@@ -500,6 +502,46 @@ export default {
         },
 
         simpleCalculated(formula){
+            if(formula.tipo == this.constants_calculated.sum){
+                let idOList = formula['CPO'].split(";")
+                let values =[]
+                
+                for (let i = 0; i < idOList.length; i++) {
+                    var CPOTypeSum = "NA"
+                    if(idOList[i].indexOf("&") != -1)  CPOTypeSum = "ID"
+                    if(idOList[i].indexOf("!") != -1)  CPOTypeSum = "ALIAS"
+                    if(CPOTypeSum == "ID") {
+                        let idO = idOList[i].split("&")[1]
+                        let answer = this.getAnswerValues(parseInt(idO))
+                        parseFloat('____________________SUM')
+                        if(answer != undefined) {
+                            if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
+                                console.log(parseFloat(answer['dato_text']))
+                                values.push(parseFloat(answer['dato_text']))
+                            }
+                            else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
+                                values.push(parseFloat(answer['dato_calc1']))
+                            }
+                            else{
+                                values.push(0)
+                            }
+                        }
+                    }
+                    else if(CPOTypeSum == "ALIAS") {
+                        let formulaX = this.getAliasFormula(idOList[i])
+                        if(formulaX != undefined)
+                            values.push(this.getCalculated(formulaX))
+                    }
+                    
+                }
+                let sum = 0
+                for (let i = 0; i < values.length; i++) {
+                    sum += values[i]
+                    
+                }
+                console.log(sum)
+                return sum
+            }
             var CPOType = "NA"
             var CPO2Type = "NA"
             //console.log(formula)
@@ -654,8 +696,18 @@ export default {
             console.log('CPO: '+formula['CPO']+' - '+CPOType)
             console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
             console.log('ALIAS: '+formula['alias']) */
+            //console.log(formula)
             //console.log(formula['OP'])
-            return operators[formula['OP']](val1,val2)
+            let oper_end = 0
+            try {
+                oper_end = operators[formula['OP']](val1,val2)
+            } catch (error) {
+                console.log(formula['OP'])
+                console.log(val1)
+                console.log(val2)
+                console.log(formula)
+            }
+            return oper_end
 
         },
         getRefValue(ref){
@@ -849,7 +901,7 @@ export default {
                         else customy = this.answers[i].anio_actual
                         try{
                             //console.log('Hi')
-                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.idDes)(val3)
+                            var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.cod_dane)(val3)
                             if(val3 != undefined){
                                 //console.log(val3)
                                 let yv = JSON.parse(val3)
@@ -1094,7 +1146,7 @@ export default {
 
             this.$store.dispatch('setLoading')
             try{
-                var val10 = await window.eel.getReferences(this.year, this.idDes)(val10)
+                var val10 = await window.eel.getReferences(this.year, this.cod_dane)(val10)
                 this.references = JSON.parse(val10)
                 this.$store.dispatch('clearLoading')
             }
