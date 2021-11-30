@@ -519,19 +519,26 @@ export default {
                 return 0
             }
             else{
+                if(formula.id_cal == 402){
+                     console.log('Here')
+                }
                 //console.log(formula.tipo)
                 if(formula.tipo == this.constants_calculated.sum){
                     let idOList = formula['CPO'].split(";")
                     let values =[]
                     console.log('________________')
+                    console.log('lista')
+                    console.log(idOList)
                     for (let i = 0; i < idOList.length; i++) {
                         var CPOType = "NA"
                         if(idOList[i].indexOf("&") != -1)  CPOType = "ID"
                         if(idOList[i].indexOf("!") != -1)  CPOType = "ALIAS"
+                        console.log(CPOType)
                         if(CPOType == "ID") {
                             let idO = idOList[i].split("&")[1]
                             let answer = this.getAnswerValues(parseInt(idO))
-                            parseFloat('____________________SUM')
+                            console.log('____________________SUM')
+                            console.log(answer)
                             if(answer != undefined) {
                                 if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                                     console.log(parseFloat(answer['dato_text']))
@@ -585,7 +592,7 @@ export default {
                     if(CPOTypeSum == "ID") {
                         let idO = idOList[i].split("&")[1]
                         let answer = this.getAnswerValues(parseInt(idO))
-                        parseFloat('____________________SUM')
+                        console.log('____________________SUM')
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
                                 console.log(parseFloat(answer['dato_text']))

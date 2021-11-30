@@ -571,7 +571,7 @@ def getSPDAQuestionsC(section):
                 dframe = pd.DataFrame(eval(dataDumps))
             except:
                 return
-    dfilter = dframe.loc[dframe['SECCION'] == int(section)]
+    dfilter = dframe.loc[(dframe['SECCION'] == int(section))]
     dfilter = dfilter.sort_values(by=['ORDEN'])
     result = json.loads(dfilter.to_json(orient="records"))
     return json.dumps(result)

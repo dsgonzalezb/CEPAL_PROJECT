@@ -5,9 +5,9 @@
         <div class="questions" v-if="answers.length>0 && isLoad" @mouseover="$forceUpdate()">
             <div class="question" v-for="(question, i) in questions" :key="i">
                 <!-- {{question['VISIBLE'] == 1}}
-                {{getCalculated(i)}} -->
+                {{question['VISIBLE'] == 1 && getCalculated(i)}}  v-show="question['VISIBLE'] == 1 "-->
                 <div v-show="question['VISIBLE'] == 1">
-                    <b>{{question['COD_PREGUNTA']}} - {{question['ID_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span> <span class="help" v-show="question['AYUDA'] != 'NA'" v-b-tooltip.hover :title="question['AYUDA']" ><i class="fas fa-question-circle"></i></span>
+                    <b>{{i}} - {{question['COD_PREGUNTA']}} - {{question['ID_PREGUNTA']}}</b> <b v-if="question['TIPO_1'] == 'titulo'">{{question['PREGUNTA']}}</b> <span v-else>{{question['PREGUNTA']}}</span>
                     <div class="cols-c" v-if="answers[i] != undefined ">
                         <!--COL1 -->
                         <div class="col-c" v-if="question['TIPO_1'] != 'NA'">
@@ -312,7 +312,7 @@ export default {
     },
     data(){
         return{
-            currentQuestion: 0,
+            currentQuestion: 1,
             edit_person: {
                 nombre_edita: '',
                 correo_edita: '',
@@ -389,7 +389,7 @@ export default {
             this.ques = JSON.parse(val5)
             this.$store.dispatch('clearLoading')
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             this.$store.dispatch('clearLoading')
         }
 
@@ -400,7 +400,7 @@ export default {
             if(this.ansd == null) this.ansd = []
             this.$store.dispatch('clearLoading')
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             this.$store.dispatch('clearLoading')
         }
 
@@ -410,26 +410,29 @@ export default {
             this.validationF = JSON.parse(val7)
             this.$store.dispatch('clearLoading')
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             this.$store.dispatch('clearLoading')
         }
     },
     methods: {
         getCalculated(i){
             if(this.questions.length < 1 ) return false
-            this.currentQuestion = i
             if(this.questions[i]['FORMULA'] == undefined) return false
             if(this.questions[i]['FORMULA'].length<1){
                 return true
             }
             else{
-                //console.log(this.questions[i]['FORMULA'][0].tipo)
+
+                if(i == 40){
+                    //console.log(this.questions[i]['FORMULA'])
+                }
+                ////console.log(this.questions[i]['FORMULA'][0].tipo)
                 if(this.questions[i]['FORMULA'][0].tipo == this.constants_calculated.table){
                     let idO = this.questions[i]['FORMULA'][0]['CPO'].split("&")[1]
-                    //console.log(idO)
+                    ////console.log(idO)
                     if(this.questions[i]['FORMULA'][0]['OP'] == '='){
                         let answer = this.getAnswerValues(parseInt(idO))
-                        //console.log(answer)
+                        ////console.log(answer)
                         if(parseInt(answer['dato_text']) == 0 || answer['dato_text'] == null || answer['dato_text'] == undefined || answer['dato_text'] == '' ){
                             return false
                         }
@@ -461,7 +464,7 @@ export default {
                             parseFloat('____________________SUM')
                             if(answer != undefined) {
                                 if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                    //console.log(parseFloat(answer['dato_text']))
+                                    ////console.log(parseFloat(answer['dato_text']))
                                     values.push(parseFloat(answer['dato_text']))
                                 }
                                 else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
@@ -484,6 +487,9 @@ export default {
                     return true
                 }
                 if(this.questions[i]['FORMULA'][0].tipo == this.constants_calculated.simple){
+                    if(i == 40){
+                        //console.log(this.questions[i]['FORMULA'][0])
+                    }
                     let value = this.simpleCalculated(this.questions[i]['FORMULA'][0])
                     this.setCalculatedValue(i, 1, value)
                     return true
@@ -513,10 +519,10 @@ export default {
                     if(CPOTypeSum == "ID") {
                         let idO = idOList[i].split("&")[1]
                         let answer = this.getAnswerValues(parseInt(idO))
-                        parseFloat('____________________SUM')
+                        ////console.log('____________________SUM')
                         if(answer != undefined) {
                             if(answer['dato_text'] != null && answer['dato_text'] != undefined && answer['dato_text'] != '' ){
-                                console.log(parseFloat(answer['dato_text']))
+                                ////console.log(parseFloat(answer['dato_text']))
                                 values.push(parseFloat(answer['dato_text']))
                             }
                             else if( answer['dato_calc1'] != null && answer['dato_calc1'] != undefined && answer['dato_calc1'] != ''){
@@ -539,12 +545,12 @@ export default {
                     sum += values[i]
                     
                 }
-                console.log(sum)
+                //console.log(sum)
                 return sum
             }
             var CPOType = "NA"
             var CPO2Type = "NA"
-            //console.log(formula)
+            ////console.log(formula)
             if(formula['CPO'].indexOf("&") != -1)  CPOType = "ID"
             if(formula['CPO'].indexOf("#") != -1)  CPOType = "VAR"
             if(formula['CPO'].indexOf("!") != -1)  CPOType = "ALIAS"
@@ -575,8 +581,8 @@ export default {
                 let idO = formula['CPO'].split("&")[1]
                 let answer = this.getAnswerValues(parseInt(idO))
                 let questionType1 = this.getQuestions(parseInt(idO))
-               /*  console.log(answer)
-                console.log(questionType1) */
+               /*  //console.log(answer)
+                //console.log(questionType1) */
                 if(questionType1 != undefined){
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
@@ -633,8 +639,8 @@ export default {
                 let idO2 = formula['CPO2'].split("&")[1]
                 let answer = this.getAnswerValues(parseInt(idO2))
                 let questionType1 = this.getQuestions(parseInt(idO2))
-                /* console.log(answer)
-                console.log(questionType1) */
+                /* //console.log(answer)
+                //console.log(questionType1) */
                 if(questionType1 != undefined){
                     if(questionType1['TIPO_1'] == 'abierto numero'){
                         if(answer != undefined) {
@@ -659,10 +665,10 @@ export default {
                 }
             }
             else if(CPO2Type == "VAR") {
-                //console.log(formula['CPO2'])
-                //console.log(this.variables)
+                ////console.log(formula['CPO2'])
+                ////console.log(this.variables)
                 let varO2 = this.variables.filter(e=>{return e['NOMBRE'] == formula['CPO2']})[0]
-                //console.log(varO2)
+                ////console.log(varO2)
                 if(varO2 != undefined) {
                     val2 = varO2['VALOR']
                 }
@@ -683,29 +689,29 @@ export default {
             else if(CPO2Type == "REF"){
                 let idO2 = formula['CPO2'].split("?")[1]
                 let valu = this.getRefValue(idO2)
-                //console.log(valu)
+                ////console.log(valu)
                 if (valu != undefined){
                     val2 = parseFloat(valu['DATA'])
                 }
                 
             }
-            //console.log(this.questions[i]['COD_PREGUNTA'])
-            /* console.log('______________________________________________________________________')
-            console.log('CPD: '+formula['CPD'])
-            console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
-            console.log('CPO: '+formula['CPO']+' - '+CPOType)
-            console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
-            console.log('ALIAS: '+formula['alias']) */
-            //console.log(formula)
-            //console.log(formula['OP'])
+            ////console.log(this.questions[i]['COD_PREGUNTA'])
+            /* //console.log('______________________________________________________________________')
+            //console.log('CPD: '+formula['CPD'])
+            //console.log(val1 + formula['OP'] + val2 + "=" + operators[formula['OP']](val1,val2))
+            //console.log('CPO: '+formula['CPO']+' - '+CPOType)
+            //console.log('CPO2: '+formula['CPO2']+' - '+CPO2Type)
+            //console.log('ALIAS: '+formula['alias']) */
+            ////console.log(formula)
+            ////console.log(formula['OP'])
             let oper_end = 0
             try {
                 oper_end = operators[formula['OP']](val1,val2)
             } catch (error) {
-                console.log(formula['OP'])
-                console.log(val1)
-                console.log(val2)
-                console.log(formula)
+                //console.log(formula['OP'])
+                //console.log(val1)
+                //console.log(val2)
+                //console.log(formula)
             }
             return oper_end
 
@@ -842,7 +848,7 @@ export default {
                             var val2 = await window.eel.getSPDAAnswers(this.questions[i]['ID_PREGUNTA'])(val2)
                             if(val2 != undefined)
                                 if(val2.length>0){
-                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    //if(i == 7){ //console.log(JSON.parse(val2))}
                                     this.questions[i]['RESPUESTAS'] = JSON.parse(val2)
                                     this.isLoad = true
                                 }
@@ -856,8 +862,8 @@ export default {
                             }
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                             this.questions[i]['RESPUESTAS'] = []
                         }
                         this.answers.push(
@@ -900,13 +906,13 @@ export default {
                         if(this.answers[i].anio != '') customy = this.answers[i].anio
                         else customy = this.answers[i].anio_actual
                         try{
-                            //console.log('Hi')
+                            ////console.log('Hi')
                             var val3 = await window.eel.getReferencesQuestion(this.questions[i]['ID_PREGUNTA'], customy, this.cod_dane)(val3)
                             if(val3 != undefined){
-                                //console.log(val3)
+                                ////console.log(val3)
                                 let yv = JSON.parse(val3)
                                 if(yv.length>0){
-                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    //if(i == 7){ //console.log(JSON.parse(val2))}
                                     this.questions[i]['REFERENCE'] = yv[0]
                                     this.answers[i].dato_ref = this.questions[i]['REFERENCE']['DATA']
                                 }
@@ -919,8 +925,8 @@ export default {
                             }
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                             this.questions[i]['REFERENCE']
                             }
                         
@@ -931,7 +937,7 @@ export default {
                             var val2 = await window.eel.getTables(this.questions[i]['ID_PREGUNTA'])(val2)
                             if(val2 != undefined)
                                 if(val2.length>0){
-                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    //if(i == 7){ //console.log(JSON.parse(val2))}
                                     this.questions[i]['TABLES'] = JSON.parse(val2)
                                     this.questions[i]['TANSWERS'] = []
                                 }
@@ -945,8 +951,8 @@ export default {
                             }
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                             this.questions[i]['TABLES'] = []
                             this.questions[i]['TANSWERS'] = []
                         }
@@ -957,7 +963,7 @@ export default {
                             var val2 = await window.eel.getFormula(this.questions[i]['ID_PREGUNTA'])(val2)
                             if(val2 != undefined)
                                 if(val2.length>0){
-                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    //if(i == 7){ //console.log(JSON.parse(val2))}
                                     this.questions[i]['FORMULA'] = JSON.parse(val2)
                                 }
                                 else
@@ -966,8 +972,8 @@ export default {
                                 this.questions[i]['FORMULA'] = []
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                             this.questions[i]['FORMULA'] = []
                         }
                     }, 500);
@@ -977,7 +983,7 @@ export default {
                             var val2 = await window.eel.getPoints(this.questions[i]['ID_PREGUNTA'])(val2)
                             if(val2 != undefined)
                                 if(val2.length>0){
-                                    //if(i == 7){ console.log(JSON.parse(val2))}
+                                    //if(i == 7){ //console.log(JSON.parse(val2))}
                                     this.questions[i]['PUNTOS'] = JSON.parse(val2)
                                 }
                                 else{
@@ -988,8 +994,8 @@ export default {
                             }
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                             this.questions[i]['PUNTOS'] = []
                         }
                     }, 500);
@@ -997,7 +1003,7 @@ export default {
                     setTimeout( async ()=>{ 
                         try{
                             var val2 = await window.eel.getUserAnswers(this.questions[i]['ID_PREGUNTA'], this.year, this.idDes)(val2)
-                            //console.log(val2)
+                            ////console.log(val2)
                             if(val2 != undefined &&  this.answers[i] != undefined)
                                 if(val2.length>2){
                                     var val3 = JSON.parse(val2)
@@ -1031,10 +1037,10 @@ export default {
                                     this.answers[i].id_territorio = val3[0].id_territorio
 
                                     if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
-                                        //console.log(i)
+                                        ////console.log(i)
                                         try {
                                             if(this.answers[i]['A'] == 1){
-                                                //console.log(i + ' S')
+                                                ////console.log(i + ' S')
                                                 this.answers[i]['dato_unico'] =  this.questions[i]['RESPUESTAS'][0] 
                                             }
                                             if(this.answers[i]['B'] == 1){
@@ -1066,7 +1072,7 @@ export default {
                                             }
                                             
                                         } catch (error) {
-                                            console.log('fail load - ' + error)
+                                            //console.log('fail load - ' + error)
                                         }
                                     }
                                     if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
@@ -1083,8 +1089,8 @@ export default {
                                         columH = this.answers[i]['H'].split(';')
                                         columI = this.answers[i]['I'].split(';')
                                         columJ = this.answers[i]['J'].split(';')
-                                        //console.log(columA)
-                                        //console.log(columG)
+                                        ////console.log(columA)
+                                        ////console.log(columG)
                                         for (let n = 0; n < columA.length-1; n++) {
                                             this.questions[i]['TANSWERS'].push(
                                                 {
@@ -1108,15 +1114,15 @@ export default {
 
                         }
                         catch(error){
-                            console.log(error)
-                            console.log('in index '+ i)
+                            //console.log(error)
+                            //console.log('in index '+ i)
                         }
                     }, 500);
                 }
                 this.isLoad=true
                 this.$store.dispatch('clearLoading')
             } catch (error) {
-                console.log(error)
+                //console.log(error)
                 this.isLoad=true
                 this.$store.dispatch('clearLoading')
             }
@@ -1127,7 +1133,7 @@ export default {
                 this.variables = JSON.parse(val5)
                 this.$store.dispatch('clearLoading')
             } catch (error) {
-                console.log(error)
+                //console.log(error)
                 this.isLoad=true
                 this.$store.dispatch('clearLoading')
             }
@@ -1139,7 +1145,7 @@ export default {
                 this.$store.dispatch('clearLoading')
             }
             catch(error){
-                console.log(error)
+                //console.log(error)
                 this.$store.dispatch('clearLoading')
             }
             
@@ -1151,14 +1157,17 @@ export default {
                 this.$store.dispatch('clearLoading')
             }
             catch(error){
-                console.log(error)
+                //console.log(error)
                 this.$store.dispatch('clearLoading')
             }
             for (let i = 0; i < this.questions.length; i++) {
                 setTimeout( async ()=>{ 
+                    if(i == 40) //console.log(this.questions[i])
                     this.getCalculated(i)
-                }, 1500);
-                
+                    setTimeout(()=>{
+                        this.currentQuestion = i
+                    }, 500)
+                }, 10000);
             }
            
             
@@ -1175,7 +1184,7 @@ export default {
                     if(this.answers[i]['dato_text'] == "" || this.answers[i]['dato_text'] == null){
                         this.error = true
                         this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                        //console.log(i)
+                        ////console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'selección multiple' || this.questions[i]['TIPO_2']== 'selección multiple' || this.questions[i]['TIPO_3']== 'selección multiple' || this.questions[i]['TIPO_4']== 'selección multiple') {
@@ -1193,14 +1202,14 @@ export default {
                     if(count == 0){
                         this.error = true
                         this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                        //console.log(i)
+                        ////console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'selección unica' || this.questions[i]['TIPO_2']== 'selección unica' || this.questions[i]['TIPO_3']== 'selección unica' || this.questions[i]['TIPO_4']== 'selección unica') {
                     if(this.answers[i]['dato_unico']['TEXTO'] == undefined){
                         this.error = true
                         this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                        //console.log(i)
+                        ////console.log(i)
                     }
                     else{
                         this.answers[i]['A'] = 0
@@ -1222,7 +1231,7 @@ export default {
                     if(this.answers[i]['anio'] == "" || this.answers[i]['anio'] == null){
                         this.error = true
                         this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                        //console.log(i)
+                        ////console.log(i)
                     }
                 }
                 if (this.questions[i]['TIPO_1']== 'tabla' || this.questions[i]['TIPO_2']== 'tabla' || this.questions[i]['TIPO_3']== 'tabla' || this.questions[i]['TIPO_4']== 'tabla') {
@@ -1244,7 +1253,7 @@ export default {
                                 if(this.questions[i]['TANSWERS'][j][k+1] == "" || this.questions[i]['TANSWERS'][j][k+1] == null){
                                     this.error = true
                                     this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                                    //console.log(i)
+                                    ////console.log(i)
                                 }
                                 else{
                                     let alphabet = String.fromCharCode(64 + k+1);
@@ -1256,7 +1265,7 @@ export default {
                                 if(this.questions[i]['TANSWERS'][j][k+1] == undefined){
                                     this.error = true
                                     this.errorMessage += "<b>" +this.questions[i]['COD_PREGUNTA'] + "</b> " + this.questions[i]['PREGUNTA'] + "<br>"
-                                    //console.log(i)
+                                    ////console.log(i)
                                 }
                                 else{
                                     let alphabet = String.fromCharCode(64 + k+1);
@@ -1294,10 +1303,10 @@ export default {
                         parsed_value1 != 'NA' ? parsed_value1 = parsed_value1.split(";") : ''
                         parsed_value2 != 'NA' ? parsed_value2 = parsed_value2.split(";") : ''
                         let operation = []
-                        console.log(op1)
-                        console.log(this.questions[i]['PUNTOS'][j]['ID_PREGUNTA'])
-                        console.log(parsed_value1)
-                        console.log('____________________________________________')
+                        //console.log(op1)
+                        //console.log(this.questions[i]['PUNTOS'][j]['ID_PREGUNTA'])
+                        //console.log(parsed_value1)
+                        //console.log('____________________________________________')
                         if(op1 == '='){
                             
                             for (let k = 0; k < parsed_value1.length; k++) {
@@ -1472,7 +1481,7 @@ export default {
             }
             var answerS =  JSON.stringify(this.answers)
             var answ = JSON.parse(answerS)
-            //console.log(answ)
+            ////console.log(answ)
             for (let i = 0; i < answ.length; i++) {
                 delete answ[i].dato_unico
             }
@@ -1486,7 +1495,7 @@ export default {
             }
             catch(error){
                 this.$store.dispatch('clearLoading')
-                console.log('Error')
+                //console.log('Error')
             }
         },
         makeToast(variant = null, message) {
@@ -1501,7 +1510,7 @@ export default {
         validNumber(event){
             
             if(event.charCode === 0 || this.regN.test(String.fromCharCode(event.charCode))){
-                //console.log(event.charCode)
+                ////console.log(event.charCode)
                 return true
             } else {
                 event.preventDefault();
