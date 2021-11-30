@@ -63,7 +63,7 @@ const messages = {
         },
         manager:{
             name: 'Gestores',
-            full_name: 'GESTIÓN REALIZADA POR EMPRESAS GESTORAS NO AFECTAS AL SERVICIO PUBLICO DE ASEO',
+            full_name: 'GESTIÓN REALIZADA POR EMPRESAS GESTORAS NO AFECTAS AL SERVICIO PÚBLICO DE ASEO',
             add_table: 'Añadir Registro'
         },
         rep:{

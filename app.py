@@ -118,6 +118,7 @@ def find_descriptive(value):
     ]
     #Densidad Empresas
     dfilter['POBLACION_EN_MIL'] = dfilter['POBLACION_TOTAL'] / 10000
+    print(dfilter['EMPRESAS'] )
     dfilter['DENSIDAD_EMPRESAS'] = dfilter['EMPRESAS'] / dfilter['POBLACION_EN_MIL']
     bussinessDatsets =[
         {

@@ -5,7 +5,7 @@
                 Exportar Datos 
             </h2>
             <p>
-                Ahora que ha completado el diligenciamiento de los formularios con la información de economía circular de su municipio, ya puede consultar y exportar la información consignada en esta herramienta por medio de un formato xlsx,  el cual podrá ser enviado por el encargado del municipio a la entidad que promueve el diligenciamiento de esta herramienta.
+                Ahora que ha completado el diligenciamiento de los formularios definidos en cada uno de los módulos a partir de la información cargada y la metodología establecida y conoce el nivel de circularidad en la gestión de los residuos municipales, así como indicadores que orientaran la toma de decisiones, ya puede consultar y exportar la información consignada en esta herramienta por medio de un formato xlsx,  el cual podrá ser enviado por el encargado del municipio a la entidad que promueve el diligenciamiento de esta herramienta.
             </p>
             <p>
                 Recuerde que debe adjuntar los soportes respectivos junto al archivo xlsx obtenido en esta herramienta.  Es de aclarar que esta información no se considera oficial hasta que sea validada y consolidada por el ente encargado de dicha tarea, en donde la información podrá ser verificada para su consolidación y uso oficial con los datos anexos suministrados por el remitente del correo.

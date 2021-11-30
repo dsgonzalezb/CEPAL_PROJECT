@@ -89,7 +89,9 @@
                 <li>Actualizar el POT (POT/PBOT/EOT ) incorporando usos del suelo compatibles con infraestructura asociada a la gestión de residuos.</li>
                 <li>Promover la estructuración y puesta en marcha de proyectos públicos y/o privados orientados hacia la valorización de residuos con el fin de competir en convocatorias de recursos públicos (IAT, FCTeI, MinCiencias, entidades y organizaciones del SNCTI) o privados (fondos de inversión – banca).  </li>
             </ul>
-
+            <br>
+            <br>
+            Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
         </b-modal>
 
         <b-modal ref="c2" id="c2" size="xl" hide-footer title="Nivel de circularidad Media">
@@ -115,6 +117,9 @@
                 <li>Generar alianzas con las Cámaras de Comercio y agremiaciones con el fin de identificar el ecosistema productivo al interior del municipio y en las entidades territoriales cercanas, asociado con la valorización de residuos  y la transformación de materiales e insumo obtenidos del tratamiento de residuos. </li>
                 <li>Incentivar la ubicación al interior del municipio de gestores de residuos no afectos al servicio público de aseo. </li>
             </ul>
+            <br>
+            <br>
+            Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
         </b-modal>
 
         <b-modal ref="c1" id="c1" size="xl" hide-footer title="Nivel de circularidad Alta">
@@ -142,6 +147,9 @@
                 <li>Incorporar guías, manuales o protocolos que promuevan la valorización de residuos.</li>
 
             </ul>
+            <br>
+            <br>
+            Estos retos presentados son acumulativos con el aumento de categoría, de tal manera que para que un municipio se ubique en la categoría alta adicional a los retos particulares señalados, ha implementado en parte o todo los retos de las categorías baja y media, lo mismo sucede con la categoría media en relación con la baja; a su vez los contenidos de esta imagen permite que los municipios ubicados en categorías inferiores cuenten con líneas de acción hacia el aumento de su nivel de circularidad.
         </b-modal>
 
     </div>
